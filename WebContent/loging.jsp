@@ -1,51 +1,67 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="css/loging.css">
-  <title>Login</title>
+    <title>loginpage</title>
+    <link rel="stylesheet" href="css/loging.css">
 </head>
 <body>
-    
-    <section>
-        <div>
+
+    <div class="main">
+        <div class="navbar">
+           
+
+            <div class="menu">
+                <ul>
+                    <li><a href="register.jsp">adoooo</a></li>
+                    <li><a href="#">adoooo</a></li>
+                    <li><a href="#">adooo</a></li>
+                    <li><a href="#">adooo</a></li>
+                    <li><a href="#">adoooo</a></li>
+                    <li><a href="#">adoooo</a></li>
+                    
+                </ul>
+            </div>
+
+            <div class="search">
+                <input class="srch" type="search" name="" placeholder="Type To text">
+                <a href="#"> <button class="btn">Search</button></a>
+            </div>
+
+        </div> 
+        <div class="content">
+        
+            <h1>A fit body, a calm mind,   <br><span>a house full of</span> <br>love. ...</h1>
             <p> <a href="#">Back to Home</a></p>
             
-        </div>
 
-        
-       
-      
+                
 
-        <div class="form-box">
-            <div class="form-value">
-                <form action="">
-                    <h2>Login</h2>
-                    <div class="inputbox">
-                        <ion-icon name="mail-outline"></ion-icon>
-                        <input type="email" required>
-                        <label for="">Email</label>
+                <div class="form">
+                    <h2>Login Here</h2>
+                    <input type="email" name="email" placeholder="Enter Email Here"required >
+                    <input type="password" name="" placeholder="Enter Password Here"required >
+                    <button class="btnn"><a href="#">Login</a></button>
+
+                    <p class="link">Don't have an account<br>
+                    <a href="register.jsp">Sign up </a> here</a></p>
+                    <p class="liw">Log in with</p>
+
+                    <div class="icons">
+                        <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+                        <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+                        <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+                        <a href="#"><ion-icon name="logo-google"></ion-icon></a>
+                        <a href="#"><ion-icon name="logo-skype"></ion-icon></a>
                     </div>
-                    <div class="inputbox">
-                        <ion-icon name="lock-closed-outline"></ion-icon>
-                        <input type="password" required>
-                        <label for="">Password</label>
+
+                </div>
                     </div>
-                    <div class="forget">
-                        <label for=""><input type="checkbox">Remember Me  <a href="#">Forget Password</a></label>
-                      
-                    </div>
-                    <button>Log in</button>
-                    <div class="register">
-                        <p>Don't have a account <a href="register.jsp">Register</a></p>
-                        
-                    </div>
-                </form>
-            </div>
+                </div>
         </div>
-    </section>
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    </div>
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
 </body>
 </html>
