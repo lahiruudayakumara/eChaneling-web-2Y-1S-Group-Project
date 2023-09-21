@@ -28,13 +28,14 @@ public class adminLoginServlet extends HttpServlet {
 		try {
 			List<Admin> adminDetails = AdminDBUtil.validate(userName, password);
 			request.setAttribute("adminDetails", adminDetails);
+			
+			RequestDispatcher dis = request.getRequestDispatcher("admin_dashboard.jsp");
+			dis.forward(request, response);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
 		}
 		
-		RequestDispatcher dis = request.getRequestDispatcher("admin_dashboard.jsp");
-		dis.forward(request, response);
 	}
 
 }
