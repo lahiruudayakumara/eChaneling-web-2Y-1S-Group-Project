@@ -9,21 +9,22 @@ import java.util.List;
 
 
 public class AdminDBUtil {
-	
-	private static Connection con = null;
-	private static Statement stmt = null;
-	private static ResultSet rs = null;
-	
 	public static List<Admin> validate (String userName, String password){
 		ArrayList<Admin> admin = new ArrayList<>();
 		
+		//Create Database Connection
+		String url = "jdbc:mysql://localhost:3306/echannelling";
+		String user = "root";
+		String pass = "";
+		
 		//Validate
 		try {
-			con = DBConnect.getConnection();
-			stmt = con.createStatement();
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection con = DriverManager.getConnection(url, user, pass);
+			Statement stmt = con.createStatement();
 			
 			String sql = "SELECT * FROM admin WHERE userName = '" + userName + "' AND password = '" + password + "'";
-			rs = stmt.executeQuery(sql);
+			ResultSet rs = stmt.executeQuery(sql);
 			
 			if(rs.next()) {
 				int id = rs.getInt(1);
