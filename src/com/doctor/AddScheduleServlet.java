@@ -31,10 +31,10 @@ public class AddScheduleServlet extends HttpServlet {
 		boolean isTrue = scheduleDBUtil.createSchedule(docName, docRegNum, date, startTime, endTime, location);
 
 		if(isTrue == true) {
-			RequestDispatcher dis = request.getRequestDispatcher("success.jsp");
-			dis.forward(request, response);
+			RequestDispatcher dis1 = request.getRequestDispatcher("success.jsp");
+			dis1.forward(request, response);
 		} else {
-			RequestDispatcher dis2 = request.getRequestDispatcher("unsucess.jsp");
+			RequestDispatcher dis2 = request.getRequestDispatcher("unsuccess.jsp");
 			dis2.forward(request, response);
 		}
 	}
