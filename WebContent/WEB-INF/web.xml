@@ -8,8 +8,6 @@
     <servlet-name>login</servlet-name>
     <url-pattern>/log</url-pattern>
   </servlet-mapping>
-  
-  <!-- Add Doctor  -->
   <servlet>
     <servlet-name>addDoctor</servlet-name>
     <servlet-class>com.admin.AddDoctorServlet</servlet-class>
@@ -18,5 +16,12 @@
     <servlet-name>addDoctor</servlet-name>
     <url-pattern>/add</url-pattern>
   </servlet-mapping>
-  
+  <servlet>
+    <servlet-name>docCreateSchedule</servlet-name>
+    <servlet-class>com.doctor.AddScheduleServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>docCreateSchedule</servlet-name>
+    <url-pattern>/createSchedule</url-pattern>
+  </servlet-mapping>
 </web-app>
