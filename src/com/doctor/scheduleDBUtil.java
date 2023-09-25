@@ -10,7 +10,7 @@ public class scheduleDBUtil {
 
 		String url = "jdbc:mysql://localhost:3306/echannelling";
 		String user = "root";
-		String pass = "";
+		String pass = "2023";
 
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
