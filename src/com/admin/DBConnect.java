@@ -6,7 +6,7 @@ import java.sql.DriverManager;
 public class DBConnect {
 	private static String url = "jdbc:mysql://localhost:3306/echannelling";
 	private static String user = "root";
-	private static String pass = "";
+	private static String pass = "2023";
 	private static Connection con;
 	
 	public static Connection getConnection() {
