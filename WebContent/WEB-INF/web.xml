@@ -22,6 +22,6 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>docCreateSchedule</servlet-name>
-    <url-pattern>/createSchedule</url-pattern>
+    <url-pattern>/addSchedule</url-pattern>
   </servlet-mapping>
 </web-app>
