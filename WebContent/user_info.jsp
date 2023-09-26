@@ -65,13 +65,14 @@
             <p><strong>Vanue:</strong><##########></p>
             
         </div>
-        <div class="Settings">
-            <a href="update details.html" class="Settings">Account Settings</a>
-            </div>
         </div>
         
-    </div>
+    
+    
 </body>
+<div class="Settings">
+            <a href="update_details.jsp" class="Settings"><center>Account Settings</center></a>
+            </div>
 
 </html>
 

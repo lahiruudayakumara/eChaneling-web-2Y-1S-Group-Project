@@ -35,76 +35,12 @@ body {
             margin-bottom: 20px;
         }
 
-        .button-group {
-            display: flex;
-            justify-content: center;
-        }
-
-        .button-group button {
-           
-            color: rgb(255, 255, 255);
-            border: none;
-            padding: 12px 20px;
-            margin: 0 10px;
-            cursor: pointer;
-        }
-
-        .button-group button.change-details {
-            background-color: #d6ff09;
-        }
-
-        .button-group button.change-password {
-            background-color: #4CAF50;
-        }
-
-        .button-group button.delete-account {
-            background-color: #f44336;
-        }
-
-        .button-group button:hover {
-            opacity: 0.8;
-        }
-
-
-        .button {
-            padding: 10px 20px;
-            font-size: 16px;
-            background-color: rgb(10, 246, 14);
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            float: left;
-            margin-right: 10px;
-        }
-
-
-.dropdown {
-    position: relative;
-    display: inline-block;
-    margin-top: 10px;
-    transition: all 0.3s; 
-}
-
-
-.dropbtn {
-    background-color: #b72828;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s; 
-}
-
-
-
-
-
-
+        
 .Settings {
     display: inline-block;
-    padding: 10px 20px;
+    width: 150px; 
+    height: 20px; 
+    padding: 5px 2px;
     background-color: #5dc823;
     color: white;
     text-decoration: none;
