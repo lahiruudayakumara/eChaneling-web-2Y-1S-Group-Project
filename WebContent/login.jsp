@@ -34,6 +34,7 @@
         <div class="content">
         
             <h1>A fit body, a calm mind,   <br><span>a house full of</span> <br>love. ...</h1>
+            
             <p> <a href="#">Back to Home</a></p>
             
 
@@ -41,9 +42,12 @@
 
                 <div class="form">
                     <h2>Login Here</h2>
-                    <input type="email" name="email" placeholder="Enter Email Here"required >
-                    <input type="password" name="" placeholder="Enter Password Here"required >
-                    <button class="btnn"><a href="#">Login</a></button>
+                    <form action="reguser" method="post">
+	                    <input type="username" name="uid" placeholder="Enter Usename Here"required autocomplete="off" >
+	                    <input type="password" name="pass" placeholder="Enter Password Here"required autocomplete="off">
+	                    <input type="submit" name="btnn" value="Login" style="width: 240px; height: 40px; background: rgba(10, 186, 54, 0.7); border: none; margin-top: 30px; font-size: 18px; border-radius: 10px; cursor: pointer; color: #fff; transition: background 0.4s ease, color 0.4s ease;" onmouseover="this.style.background='#fff'; this.style.color='#00a41e';" onmouseout="this.style.background='rgba(10, 186, 54, 0.7)'; this.style.color='#fff';">
+
+                    </form>
 
                     <p class="link">Don't have an account<br>
                     <a href="register.jsp">Sign up </a> here</a></p>

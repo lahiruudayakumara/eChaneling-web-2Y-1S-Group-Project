@@ -10,10 +10,6 @@ body {
 	min-height: 100vh;
 }
 		
-	
-
-
-
         .user-info {
             display: flex;
             flex-direction: column;
@@ -36,23 +32,7 @@ body {
         }
 
         
-.Settings {
-    display: inline-block;
-    width: 150px; 
-    height: 20px; 
-    padding: 5px 2px;
-    background-color: #5dc823;
-    color: white;
-    text-decoration: none;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
 
-.Settings:hover {
-    background-color: #f60404;
-}
 
         
           

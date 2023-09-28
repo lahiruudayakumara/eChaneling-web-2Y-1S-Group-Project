@@ -10,6 +10,16 @@
     <url-pattern>/log</url-pattern>
   </servlet-mapping>
   
+
+    <servlet>
+    <servlet-name>registerUser</servlet-name>
+    <servlet-class>com.user.RegisteruserServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>registerUser</servlet-name>
+    <url-pattern>/reguser</url-pattern>
+
   <servlet>
     <servlet-name>addDoctor</servlet-name>
     <servlet-class>com.admin.AddDoctorServlet</servlet-class>
