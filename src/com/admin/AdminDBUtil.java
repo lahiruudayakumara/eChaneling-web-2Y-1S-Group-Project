@@ -7,16 +7,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+
 public class AdminDBUtil {
 	
+	private static boolean isSucess;
 	private static Connection con = null;
 	private static Statement stmt = null;
 	private static ResultSet rs = null;
 	
-	public static List<Admin> validate (String userName, String password){
-		ArrayList<Admin> admin = new ArrayList<>();
-		
-		//Validate
+	public static boolean validate (String userName, String password){
+	
+		//Validate admin userName and Password
 		try {
 			con = DBConnect.getConnection();
 			stmt = con.createStatement();
@@ -25,21 +26,45 @@ public class AdminDBUtil {
 			rs = stmt.executeQuery(sql);
 			
 			if(rs.next()) {
-				int id = rs.getInt(1);
-				String name = rs.getString(2);
-				String email = rs.getString(3);
-				String userU = rs.getString(4);
-				String passU = rs.getString(5);
-				
-				Admin a = new Admin(id, name, email, userU, passU);
-				admin.add(a);
-		
+				isSucess = true;
+			} else {
+				isSucess = false;
 			}
 		}
 		catch(Exception e) {
 			e.printStackTrace();
 		}
 		
+		return isSucess;
+	}
+	
+	public static List<Admin> getAdmin(String userName){
+		
+		ArrayList<Admin> admin = new ArrayList<>();
+		
+		try {
+			con = DBConnect.getConnection();
+			stmt = con.createStatement();
+			
+			String sql = "SELECT * FROM admin WHERE userName = '" + userName + "'";
+			rs = stmt.executeQuery(sql);
+			
+			while(rs.next()) {
+				int id = rs.getInt(1);
+				String fName = rs.getString(2);
+				String uName = rs.getString(3);
+				String uRole = rs.getString(4);
+				String email = rs.getString(5);
+				String mobile = rs.getString(6);
+				String passU = rs.getString(7);
+				
+				Admin a = new Admin(id, fName, email, mobile, passU, uName, uRole);
+				admin.add(a);
+			}
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
 		return admin;
 	}
 }
