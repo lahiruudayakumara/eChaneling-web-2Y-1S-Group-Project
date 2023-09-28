@@ -12,7 +12,7 @@
   <body>
     <div class="container">
       <h1 class="form-title">Registration</h1>
-      <form action="#">
+      <form action="reguser" method="post">
         <div class="main-user-info">
           <div class="user-input-box">
             <label for="fullName">Full Name</label>
@@ -50,15 +50,23 @@
                     id="password"
                     name="password"
                     placeholder="Enter Password"/>
-            
-                    
+                              
           </div>
-          <div class="user-input-box">
-            <label for="confirmPassword">Confirm Password</label>
+          
+             <div class="user-input-box">
+            <label for="password">Password</label>
             <input type="password"
-                    id="confirmPassword"
-                    name="confirmPassword"
-                    placeholder="Confirm Password"/>
+                    id="password"
+                    name="password"
+                    placeholder="Enter Password"/>
+                    
+              </div>
+          <div class="user-input-box">
+            <label for="username">User name</label>
+            <input type="trxt"
+                    id="username"
+                    name="username"
+                    placeholder="User name"/>
           </div>
         </div>
         <div class="gender-details-box">
