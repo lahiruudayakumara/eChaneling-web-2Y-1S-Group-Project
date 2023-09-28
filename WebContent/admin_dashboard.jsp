@@ -38,10 +38,11 @@
 				<img src="img/admin_avatar.png">
 				<div class="user_details">
 					<c:forEach var="admin" items="${adminDetails }">
-					<h3>${admin.name}</h3>
+					<h3>${admin.fullName}</h3>
 					<p>User Name : ${admin.userName}</p>
 					<p>User Name : ${admin.email}</p>
-					<p>Your Role: Admin</p>
+					<p>Your Role: ${admin.userRole}</p>
+					<p>Mobile : ${admin.phoneNo}</p>
 					</c:forEach>
 				</div>
 			</div>	
