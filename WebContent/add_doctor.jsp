@@ -7,10 +7,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="log" method="post">
-		user Name<input type="text"  name="uName">
-		Password <input type="password" name="pass">
-		<input type="submit" value="Submit" name="submit">
+	<form action="add" method="post">
+		<label>Insert Name</label>
+		<input type="text" name="docName" >
+		<label>Insert Mobile No : </label>
+		<input type="text" name="docMobile" >
+		<input type="submit" value="Add Doctor" name="submit" >
 	</form>
 </body>
 </html>

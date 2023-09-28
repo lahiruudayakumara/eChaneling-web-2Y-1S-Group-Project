@@ -1,6 +1,7 @@
 package com.admin;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -17,25 +18,30 @@ import javax.servlet.http.HttpServletResponse;
 public class adminLoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String userName = request.getParameter("uid");
-		String password = request.getParameter("pass");
+		PrintWriter out = response.getWriter();
+		response.setContentType("text/html");
 		
-		try {
-			List<Admin> adminDetails = AdminDBUtil.validate(userName, password);
+		String userName = request.getParameter("uName");
+		String password = request.getParameter("pass");
+		boolean isTrue;
+		
+		isTrue = AdminDBUtil.validate(userName, password);
+		
+		if(isTrue == true) {
+			List<Admin> adminDetails =  AdminDBUtil.getAdmin(userName);
 			request.setAttribute("adminDetails", adminDetails);
 			
 			RequestDispatcher dis = request.getRequestDispatcher("admin_dashboard.jsp");
 			dis.forward(request, response);
-		}
-		catch (Exception e) {
-			e.printStackTrace();
-		}
-		
+		} else {
+			out.println("<script type='text/javascript'>");
+			out.println("alert('Your username and password is incorrect');");
+			out.println("location = 'admin_login.jsp'");
+			out.println("</script>");
+		}	
 	}
 
 }
