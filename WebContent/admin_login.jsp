@@ -8,7 +8,7 @@
 </head>
 <body>
 	<form action="log" method="post">
-		user Name<input type="text"  name="uid">
+		user Name<input type="text"  name="uName">
 		Password <input type="password" name="pass">
 		<input type="submit" value="Submit" name="submit">
 	</form>

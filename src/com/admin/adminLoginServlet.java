@@ -24,7 +24,7 @@ public class adminLoginServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		response.setContentType("text/html");
 		
-		String userName = request.getParameter("uid");
+		String userName = request.getParameter("uName");
 		String password = request.getParameter("pass");
 		boolean isTrue;
 		
