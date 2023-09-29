@@ -3,26 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script>
-    window.addEventListener('DOMContentLoaded', (event) => {
-        const deleteAccountButton = document.querySelector('.account-delete');
 
-        deleteAccountButton.addEventListener('click', (event) => {
-            event.preventDefault(); // Prevent the default form submission
-
-            const result = confirm('Are you sure you want to delete your account?'); // Display the pop-up dialog box
-
-            if (result) {
-                // User clicked "OK" or "Yes"
-                // Perform delete account action or redirect to delete account page
-                window.location.href = 'delete_user.php?id=<?php echo $ID; ?>';
-            } else {
-                // User clicked "Cancel" or "No"
-                // Do nothing or perform any desired action
-            }
-        });
-    });
-</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Profile</title>
@@ -50,50 +31,88 @@
 <body>
 
     <main>
-        <section id="account-delete">
+        <section id="account-delete" >
             <h2>Delete Account</h2>
-            <button id="delete-account-button">Delete My Account</button>
+            <button id="delete-account-button" type="submit" onclick="myFunction()">Delete My Account</button>
         </section>
     </main>
+    
+    <script>
+function myFunction() {
+  let text;
+  if (confirm("Do you wont to delete user account?") == true) {
+		    var form = document.createElement("form");
+		    form.method = "post";
+		    form.action = "userDelete";
 
+		    document.body.appendChild(form);
+		    form.submit();
+  } 
+ 
+}
+</script>
+
+   <main>
+    <section id="change-password">
+        <h2>Change Password</h2>
+        <form id="change-password-form" action="passwordUpdate" method="post" onsubmit="return confirm('Do you want to change your password?');">
+
+            <label for="new-password">New Password:</label>
+            <input type="password" id="new-password" name="new-password" required>
+
+            <label for="confirm-password">Confirm New Password:</label>
+            <input type="password" id="confirm-password" name="confirmPassword" required>
+
+            <button type="submit">Change Password</button>
+        </form>
+    </section>
+</main>
+
+	<%
+		String nic = request.getParameter("nic");
+		String name = request.getParameter("name");
+		String email = request.getParameter("email");
+		String address = request.getParameter("address");
+		String tpno = request.getParameter("tpno");
+	%>
     <main>
-        <section id="change-password">
-            <h2>Change Password</h2>
-            <form id="change-password-form">
-                <label for="current-password">Current Password:</label>
-                <input type="password" id="current-password" name="current-password" required>
+    <section id="update-details">
+        <h2>Update User Details</h2>
+        <form id="update-details-form" action="userUpdate" method="post" onsubmit="return confirm('Do you want to update your details?');">
 
-                <label for="new-password">New Password:</label>
-                <input type="password" id="new-password" name="new-password" required>
+            <label for="userNic">User NIC:</label>
+            <input type="text" id="userNic" name="userNic" value="<%= nic %>" required readonly>
 
-                <label for="confirm-password">Confirm New Password:</label>
-                <input type="password" id="confirm-password" name="confirm-password" required>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" value="<%= name %>" required>
 
-                <button type="submit">Change Password</button>
-            </form>
-        </section>
-    </main>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" value="<%= email %>" required>
 
-    <main>
-        <section id="update-details">
-            <h2>Update User Details</h2>
-            <form id="update-details-form">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" value="<%= address %>" required>
 
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" value="<%= tpno %>" required>
 
-                <label for="address">Address:</label>
-                <input type="text" id="address" name="address" required>
+            <button type="submit">Update Details</button>
+        </form>
+    </section>
+</main>
 
-                <label for="phone">Phone Number:</label>
-                <input type="tel" id="phone" name="phone" required>
-
-                <button type="submit">Update Details</button>
-            </form>
-        </section>
     </main>
 
 </body>
+
+<script>
+        document.getElementById('change-password-form').addEventListener('submit', function(event) {
+            const password = document.getElementById('new-password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+
+            if (password !== confirmPassword) {
+                alert('Passwords do not match.');
+                event.preventDefault();
+            }
+        });
+    </script>
 </html>
