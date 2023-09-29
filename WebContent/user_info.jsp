@@ -1,7 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
 
-<!DOCTYPE html>
+    <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>    
+    <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+    
 <html lang="en">
 
 <head>
@@ -98,11 +100,22 @@
 
         <img src="img/user.jpeg" alt="User Photo" class="user-photo">
         <div class="user-details">
-            <p><strong>Name:</strong><#####></p>
-            <p><strong>ID Number:</strong><########></p>
-            <p><strong>Email:</strong><########></p>
-            <p><strong>Address:</strong><########></p>
-            <p><strong>Telephone Number:</strong><########></p>
+        
+        <c:forEach var = "user" items= "${userDetails}">
+        
+        <c:set var="nic" value="${user.nic }" />
+        <c:set var="name" value="${user.name}" />
+        <c:set var="email" value="${user.email}" />
+        <c:set var="address" value="${user.address}" />
+        <c:set var="tpno" value="${user.tpno}" />
+        
+            <p><strong>Name:</strong>${user.name}</p>
+            <p><strong>ID Number:</strong>${user.nic}</p>
+            <p><strong>Email:</strong>${user.email}</p>
+            <p><strong>Address:</strong>${user.address}</p>
+            <p><strong>Telephone Number:</strong>${user.tpno}</p>
+            
+            </c:forEach>
             
         
             
@@ -114,8 +127,15 @@
 </body>
            <center>
            <div class="Settings">
-            <a href="update_details.jsp" class="Settings"><center>Account Settings</center></a>
-            <a href="update_details.jsp" class="Settings"><center>Appoiment Detailes</center></a>
+           	<c:url value="update_details.jsp" var="userupdate">
+           		<c:param name="nic" value="${nic}"/>
+           		<c:param name="name" value="${name}"/>
+           		<c:param name="email" value="${email}"/>
+           		<c:param name="address" value="${address}"/>
+           		<c:param name="tpno" value="${tpno}"/>
+           	</c:url>
+            <a href="${userupdate }" class="Settings"><center>Account Settings</center></a>
+            <a href="yohan gona" class="Settings"><center>Appoiment Detailes</center></a>
             </div>
             </center>
             
