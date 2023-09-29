@@ -6,10 +6,12 @@ import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class RegisteruserServlet
@@ -26,16 +28,25 @@ public class RegisteruserServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		response.setContentType("text/html");
 		
-		String userName = request.getParameter("uid");
+		String Name = request.getParameter("fName");
+		String userNic = request.getParameter("nic");
+		String userEmail = request.getParameter("email");
+		String userTp = request.getParameter("phoneNumber");
+		String userAddress = request.getParameter("address");
 		String password = request.getParameter("pass");
+		String userName = request.getParameter("username");
+		
+		int conTpno = Integer.parseInt(userTp);
+		
 		boolean isTrue;
 		
-		isTrue = RegisteruserDBUtil.validate(userName, password);
+		isTrue = RegisteruserDBUtil.addUserInfo( userNic,Name, userAddress, userEmail, conTpno, password, userName );
 		
 		if(isTrue == true) {
-			List<User> adminDetails =  RegisteruserDBUtil.getAdmin(userName);
-			request.setAttribute("adminDetails", adminDetails);
-			
+			HttpSession session = request.getSession();
+			List<User> userDetails =  RegisteruserDBUtil.getUserDetails(userName);
+			session.setAttribute("usernic", userName);
+			request.setAttribute("userDetails", userDetails);
 			RequestDispatcher dis = request.getRequestDispatcher("user_info.jsp");
 			dis.forward(request, response);
 		} else {
@@ -45,5 +56,11 @@ public class RegisteruserServlet extends HttpServlet {
 			out.println("</script>");
 		}	
 	}
-}
+	
+	
+		
+		
+		
+	}
+
 
