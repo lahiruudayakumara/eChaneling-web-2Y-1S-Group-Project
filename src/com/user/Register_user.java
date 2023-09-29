@@ -5,8 +5,8 @@ public class Register_user extends User {
 	private String password;
 	private String username;
 	
-	public Register_user(String name, String nic, String address, String email, int tpno, String password,String username) {
-		super(name, nic, address, email, tpno);
+	public Register_user(String nic, String name, String address, String email, int tpno, String password,String username) {
+		super( nic, name, address, email, tpno);
 		this.password = password;
 		this.username = username;
 	}
