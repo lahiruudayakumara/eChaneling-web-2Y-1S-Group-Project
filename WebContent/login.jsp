@@ -9,6 +9,11 @@
 </head>
 <body>
 
+ <% 
+String username = "John";
+session.setAttribute("username", username);
+%>
+
     <div class="main">
         <div class="navbar">
            
@@ -42,9 +47,9 @@
 
                 <div class="form">
                     <h2>Login Here</h2>
-                    <form action="reguser" method="post">
-	                    <input type="username" name="uid" placeholder="Enter Usename Here"required autocomplete="off" >
-	                    <input type="password" name="pass" placeholder="Enter Password Here"required autocomplete="off">
+                    <form action="regloging" method="post">
+	                    <input type="username" name="uid" placeholder="Enter Usename Here" required autocomplete="off" >
+	                    <input type="password" name="pass" placeholder="Enter Password Here" required autocomplete="off">
 	                    <input type="submit" name="btnn" value="Login" style="width: 240px; height: 40px; background: rgba(10, 186, 54, 0.7); border: none; margin-top: 30px; font-size: 18px; border-radius: 10px; cursor: pointer; color: #fff; transition: background 0.4s ease, color 0.4s ease;" onmouseover="this.style.background='#fff'; this.style.color='#00a41e';" onmouseout="this.style.background='rgba(10, 186, 54, 0.7)'; this.style.color='#fff';">
 
                     </form>
