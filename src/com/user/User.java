@@ -1,13 +1,13 @@
 package com.user;
 
 public class User {
-	protected String name;
 	protected String nic;
+	protected String name;
 	protected String address;
 	protected String email;
 	protected int tpno;
 	
-	public User(String name, String nic, String address, String email, int tpno) {
+	public User(String nic, String name, String address, String email, int tpno) {
 		this.name = name;
 		this.nic = nic;
 		this.address = address;
