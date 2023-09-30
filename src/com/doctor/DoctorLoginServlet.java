@@ -25,7 +25,7 @@ public class DoctorLoginServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		response.setContentType("text/html");
 		
-		String userId = request.getParameter("userId");
+		int userId = Integer.parseInt(request.getParameter("userId"));
 		String password = request.getParameter("password");
 		
 		boolean isTrue = DoctorLoginDBUtil.validate(userId, password);

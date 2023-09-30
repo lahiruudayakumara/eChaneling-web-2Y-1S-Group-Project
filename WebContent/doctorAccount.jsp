@@ -14,7 +14,7 @@
 	<c:forEach var="doctor" items="${spDocDetails}">
 		${doctor.userId}
 		${doctor.name}
-		${doctor.gmail}
+		${doctor.email}
 	</c:forEach>
 </body>
 </html>

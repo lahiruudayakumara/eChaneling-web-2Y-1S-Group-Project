@@ -2,18 +2,28 @@ package com.doctor;
 
 public class Doctor {
 	protected String name; 
-	protected String gmail;
+	protected String email;
+	protected String phoneNum;
 	
-	public Doctor(String name, String gmail) {
+	public Doctor(String name, String email, String phoneNum) {
 		this.name = name;
-		this.gmail = gmail;
+		this.email = email;
+		this.phoneNum = phoneNum;
 	}
+
 
 	public String getName() {
 		return name;
 	}
 
-	public String getGmail() {
-		return gmail;
+
+	public String getEmail() {
+		return email;
 	}
+
+
+	public String getPhoneNum() {
+		return phoneNum;
+	}
+
 }

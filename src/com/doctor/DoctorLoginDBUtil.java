@@ -12,7 +12,7 @@ public class DoctorLoginDBUtil {
 	private static Statement stmt = null;
 	private static ResultSet result;
 	
-	public static List<specalizedDoctor> getDoctor(String userId){
+	public static List<specalizedDoctor> getDoctor(int userId){
 		ArrayList<specalizedDoctor> specalizedDoctor = new ArrayList<>();
 		
 		try {
@@ -20,16 +20,19 @@ public class DoctorLoginDBUtil {
 			con = DBConnect.getConnection();
 			stmt = con.createStatement();
 			
-			String sql = " select * from doctor where userId='"+ userId +"'";
+			String sql = " select * from doctor where id='"+ userId +"'";
 			result = stmt.executeQuery(sql);
 			
 			while(result.next()) {
-				String id = result.getString(1);
-				String name = result.getString(2);
-				String gmail = result.getString(3);
-				String password = result.getString(4);
+				int id = result.getInt(1);
+				String fullname = result.getString(2);
+				String email = result.getString(3);
+				String phoneNo = result.getString(4);;
+				String password = result.getString(5);
+				String Specialist = result.getString(6);
+				String work = result.getString(7);
 				
-				specalizedDoctor spDoc = new specalizedDoctor(name, gmail, id, password);
+				specalizedDoctor spDoc = new specalizedDoctor(fullname, email, phoneNo, id, password, Specialist, work);
 				
 				specalizedDoctor.add(spDoc);
 			}
@@ -42,14 +45,14 @@ public class DoctorLoginDBUtil {
 		return specalizedDoctor;
 	}
 	
-	public static boolean validate(String userId, String password) {
+	public static boolean validate(int userId, String password) {
 		
 		try {
 			
 			con = DBConnect.getConnection();
 			stmt = con.createStatement();
 			
-			String sql = "SELECT * FROM doctor WHERE userId='"+ userId +"' AND password='"+ password +"' ";
+			String sql = "select * from doctor where id='"+ userId +"' AND password='"+ password +"' ";
 
 			
 			result = stmt.executeQuery(sql);

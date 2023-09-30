@@ -9,7 +9,7 @@
 <body>
 	
 	<form action="doctorLogin" method="post">
-		<input type="text" name="userId" placeholder="User Id">
+		<input type="number" name="userId" placeholder="User Id">
 		<input type="text" name="password" placeholder="Password">
 		<input type="submit" name="submit" value="login">
 	</form>
