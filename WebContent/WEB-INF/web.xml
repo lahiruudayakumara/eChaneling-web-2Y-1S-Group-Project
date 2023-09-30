@@ -24,4 +24,12 @@
     <servlet-name>docCreateSchedule</servlet-name>
     <url-pattern>/addSchedule</url-pattern>
   </servlet-mapping>
+  <servlet>
+  		<servlet-name>docLogin</servlet-name>
+  		<servlet-class>com.doctor.DoctorLoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  		<servlet-name>docLogin</servlet-name>
+  		<url-pattern>/doctorLogin</url-pattern>
+  </servlet-mapping>
 </web-app>
