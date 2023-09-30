@@ -20,7 +20,7 @@ public class DoctorLoginDBUtil {
 			con = DBConnect.getConnection();
 			stmt = con.createStatement();
 			
-			String sql = " select * doctor where userId='"+ userId +"'";
+			String sql = " select * from doctor where userId='"+ userId +"'";
 			result = stmt.executeQuery(sql);
 			
 			while(result.next()) {
@@ -35,6 +35,7 @@ public class DoctorLoginDBUtil {
 			}
 		}
 		catch(Exception e) {
+			System.out.println("unsuccess !!!");
 			e.printStackTrace();
 		}
 		
@@ -62,8 +63,8 @@ public class DoctorLoginDBUtil {
 			
 		}
 		catch(Exception e){
-			e.printStackTrace();
 			System.out.println("unsuccess !!!");
+			e.printStackTrace();
 		}
 		return isSuccess;
 		

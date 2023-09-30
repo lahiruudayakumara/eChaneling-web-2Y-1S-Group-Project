@@ -17,12 +17,4 @@ public class specalizedDoctor extends Doctor{
 	public String getDocPassword() {
 		return docPassword;
 	}
-	
-	public String getName() {
-		return name;
-	}
-
-	public String getGmail() {
-		return gmail;
-	}
 }
