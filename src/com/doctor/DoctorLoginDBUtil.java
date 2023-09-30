@@ -1,7 +1,5 @@
 package com.doctor;
 
-import java.io.IOException;
-
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -50,7 +48,8 @@ public class DoctorLoginDBUtil {
 			con = DBConnect.getConnection();
 			stmt = con.createStatement();
 			
-			String sql = "select * from doctor where userId='"+ userId +"' and password='"+ password +"' ";
+			String sql = "SELECT * FROM doctor WHERE userId='"+ userId +"' AND password='"+ password +"' ";
+
 			
 			result = stmt.executeQuery(sql);
 			
@@ -64,6 +63,7 @@ public class DoctorLoginDBUtil {
 		}
 		catch(Exception e){
 			e.printStackTrace();
+			System.out.println("unsuccess !!!");
 		}
 		return isSuccess;
 		
