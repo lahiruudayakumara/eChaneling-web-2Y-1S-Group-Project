@@ -6,15 +6,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-Channelling</title>
-    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="css/home.css">
     
 </head>
-<body>
+<body style="background-image: url('img/white-concrete-wall.jpg');
+background-size: cover;
+background-repeat: no-repeat;">
     <header>
         <h1>Welcome to E-Channelling</h1>
     </header>
 
-    <div class="content1">
+    <div class="content1" style="background-image: url('img/Writing medical doctor Over blue cardio background.jpg');
+    background-size: cover;">
         <div class="content2">
             <section class="search-section">
                 <h2>FIND A DOCTOR</h2>
@@ -57,7 +60,7 @@
         <!-- Box 1 -->
         <div class="box">
             <a href="page2.html">
-                <img src="/img/delivery.png" alt="Image 1">
+                <img src="img/delivery.png" alt="Image 1">
                 <h3>Order Medicine</h3>
             </a>
         </div>
@@ -66,7 +69,7 @@
         <!-- Box 2 -->
         <div class="box">
             <a href="page3.html">
-                <img src="/img/refund.png" alt="Image 2">
+                <img src="img/refund.png" alt="Image 2">
                 <h3> Claim Refund</h3>
             </a>
         </div>
@@ -74,7 +77,7 @@
         <!-- Box 3 -->
         <div class="box">
             <a href="page1.html">
-                <img src="/img/privacyPolicy.png" alt="Image 3">
+                <img src="img/privacyPolicy.png" alt="Image 3">
                 <h3>Privacy Policy</h3>
             </a>
         </div>
@@ -82,7 +85,7 @@
         <!-- Box 4 -->
         <div class="box">
             <a href="page4.html">
-                <img src="/img/terms-and-conditions.png" alt="Image 4">
+                <img src="img/terms-and-conditions.png" alt="Image 4">
                 <h3>Terms & Conditions</h3>
             </a>
         </div>
@@ -91,27 +94,27 @@
     <div class="content4">
         <div class="slideshow-container">
             <div class="slide fade">
-                <img src="/img/Slide1.png" alt="Slide 1">
+                <img src="img/Slide1.png" alt="Slide 1">
             </div>
             <div class="slide fade">
-                <img src="/img/Slide2.png" alt="Slide 2">
+                <img src="img/Slide2.png" alt="Slide 2">
             </div>
             <div class="slide fade">
-                <img src="/img/Slide3.png" alt="Slide 3">
+                <img src="img/Slide3.png" alt="Slide 3">
             </div>
             <div class="slide fade">
-                <img src="/img/slide4.png" alt="Slide 4">
+                <img src="img/slide4.png" alt="Slide 4">
             </div>
             <div class="slide fade">
-                <img src="/img/slide5.png" alt="Slide 5">
+                <img src="img/slide5.png" alt="Slide 5">
             </div>
             <div class="slide fade">
-                <img src="/img/slide6.png" alt="Slide 6">
+                <img src="img/slide6.png" alt="Slide 6">
             </div>
         </div>
     </div>
 
-    <script src="/js/HomeSlideShow.js"></script>
+    <script src="js/HomeSlideShow.js"></script>
 </div>
     
     
