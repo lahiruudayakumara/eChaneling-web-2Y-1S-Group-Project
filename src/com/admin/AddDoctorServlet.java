@@ -18,13 +18,17 @@ public class AddDoctorServlet extends HttpServlet {
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-		String name = request.getParameter("docName");
-		String mobile = request.getParameter("docMobile");
+		int id = 0;
+		String name = request.getParameter("fName");
+		String email = request.getParameter("email");
+		String mobile = request.getParameter("mobile");
+		String password = request.getParameter("configPassword");
+		String spec = request.getParameter("spec");
+		String work = request.getParameter("work");
 		
-		boolean isTrue;
+		boolean isTrue;;
 		
-		isTrue = DoctorDBUtil.addDoctor(name, mobile);
+		isTrue = DoctorDBUtil.addDoctor(id, name,email, mobile, password, spec, work);
 		
 		if(isTrue == true) {
 			RequestDispatcher dis = request.getRequestDispatcher("sucess.jsp");
@@ -35,5 +39,7 @@ public class AddDoctorServlet extends HttpServlet {
 		}
 		
 	}
+	
+
 
 }
