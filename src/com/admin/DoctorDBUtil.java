@@ -145,3 +145,4 @@ public class DoctorDBUtil {
 		return isSucess;
 	}	
 }
+//lahiru
