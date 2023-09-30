@@ -22,7 +22,7 @@
 				</div>
 				<ul>
 					<li><a href="#">Home</a>
-					<li><a href="#">Logout</a>
+					<li><a href="admin_logout">Logout</a>
 				</ul>
 			</div>
 		</div>
@@ -50,54 +50,95 @@
 	
 		<div class="right_section">
 			<div class="display_tab">
+			
+				<c:forEach var="view" items="${countView}">
 				<div class="display_box">
 					<h4 align="left">Performance</h4>
 					<i class="fa fa-tachometer"></i>
-					 <p>100%</p>
+					 <p>${view.performence}%</p>
 				</div>
 			
 				<div class="display_box">
 					<h4 align="left">Doctors</h4>
 					<i class="fa fa-user-md" aria-hidden="true"></i>
-					<p>15</p>
+					<p>${view.doctor}</p>
 				</div>
 				
 				<div class="display_box">
 					<h4 align="left">Registered User</h4>
 					<i class="fa fa-user" aria-hidden="true"></i>
-					<p>150</p>
+					<p>${view.regUser}</p>
 				 </div>
 				 
 				<div class="display_box">
 					<h4 align="left">Appoiment</h4>
 					<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-					<p>15</p>
+					<p>${view.appointment}</p>
 				</div>
 				
 				<div class="display_box">
 					<h4 align="left">Pending Approvel</h4>
 					<i class="fa fa-exclamation-circle" aria-hidden="true"></i>
-					<p>15</p>
+					<p>${view.pendingApprovel}</p>
 				</div>
+				</c:forEach>
 			</div>
+			
 			
 			<div style="margin-top: 10px;">
 				<h4 style="padding-left: 10px;  background-color: #f1c200;">Admin Option</h4>
-				<div style=" margin-top: 10px;">
-					<button>Add Doctor</button>
-					<button>Edit Doctor</button>
-					<button>Remove Doctor</button>
-					<button>Generate Report</button>
+				<div style=" display: flex; margin-top: 10px;">
+					<div style="width: 70%; padding:5px;">
+						<a href="add_doctor.jsp">
+							<div style="width:95%; align-item:center; padding:10px; height:30px; background-color: #f1c200; border-radius: 5px; margin-bottom:5px;" >
+								<p>Add Doctor</p>
+							</div>
+						</a>
+						
+						<a href="doctorinfo">
+							<div style="width:95%; align-item:center; padding:10px; height:30px; background-color: #f1c200; border-radius: 5px; margin-bottom:5px;" >
+								<p>Doctors List</p>
+							</div>
+						</a>
+						
+						<a href="#">
+							<div style="width:95%; align-item:center; padding:10px; height:30px; background-color: #f1c200; border-radius: 5px; margin-bottom:5px;" >
+								<p>Appoiment Detais</p>
+							</div>
+						</a>
+						
+						<a href="#">
+							<div style="width:95%; align-item:center; padding:10px; height:30px; background-color: #f1c200; border-radius: 5px; margin-bottom:5px;" >
+								<p>Pending for Approvel</p>
+							</div>
+						</a>
+						
+					</div>
+					
+					<div style="width: 30%; height: 340px;  background-color: gray; padding:5px;">
+					</div>
 				</div>
+				
 			</div>
 		</div>
 	</div>
 	
 	<div class="footer">
 		<div class="footer_details">
-			<p>Develop by NexTech</p>
+			<p>Develop by <a href="https://github.com/lahiruudayakumara/eChaneling-web-2Y-1S-Group-Project#readme">NexTech</a></p>
 		</div>
 	</div>
 	
 </body>
+<script>
+document.getElementById("submitLink").addEventListener("click", function(e) {
+    e.preventDefault(); // Prevent the default behavior of following the link
+    var form = document.createElement("form");
+    form.method = "post";
+    form.action = "doctorinfo";
+
+    document.body.appendChild(form);
+    form.submit();
+});
+</script>
 </html>
