@@ -6,9 +6,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Payment Gateway</title>
-    <link rel="stylesheet" href="/css/payment.css">
+    <link rel="stylesheet" href="css/payment.css">
 </head>
-<body>
+<body style="background-image: url('img/globe-technology-business-with-gradient-wallpaper.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;">
 
     <header>
         <h1>Welcome to E-Channelling</h1>
@@ -22,11 +24,11 @@
                 <label>Select Payment Method</label><br>
                 <div class="payment-method">
                     <input type="radio" id="visa" name="payment-method" value="visa" required>
-                    <label for="visa"><img src="/img/png-transparent-mastercard-visa-credit-card-american-express-company-mastercard-blue-company-text.png" alt="Visa"></label>
+                    <label for="visa"><img src="img/png-transparent-mastercard-visa-credit-card-american-express-company-mastercard-blue-company-text.png" alt="Visa"></label>
                 </div>
                 <div class="payment-method">
                     <input type="radio" id="mastercard" name="payment-method" value="mastercard" required>
-                    <label for="mastercard"><img src="/img/png-transparent-logo-mastercard-font-solar-home-text-orange-logo.png" alt="Mastercard"></label>
+                    <label for="mastercard"><img src="img/png-transparent-logo-mastercard-font-solar-home-text-orange-logo.png" alt="Mastercard"></label>
                 </div>
             </div>
             
