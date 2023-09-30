@@ -33,6 +33,7 @@ public class AddScheduleServlet extends HttpServlet {
 		if(isTrue == true) {
 			RequestDispatcher dis1 = request.getRequestDispatcher("success.jsp");
 			dis1.forward(request, response);
+			
 		} else {
 			RequestDispatcher dis2 = request.getRequestDispatcher("unsuccess.jsp");
 			dis2.forward(request, response);

@@ -19,7 +19,7 @@ public class scheduleDBUtil {
 			Statement statement = con.createStatement();
 
 			String sql = "insert into shedule values (0,'"+ docName +"', '"+ docRegNum +"', '"+ date +"', '"+ startTime +"', '"+ endTime +"', '"+ location +"')";
-
+			
 			int result = statement.executeUpdate(sql);
 
 			if(result > 0) {
