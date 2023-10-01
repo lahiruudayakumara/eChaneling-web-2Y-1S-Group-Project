@@ -35,12 +35,12 @@ public class DoctorDBUtil {
 		
 	}
 	
-	public static boolean updatedoctor(String id, String fname ) {
+	public static boolean updatedoctor(int id, String fname, String email, String mobile, String password, String spec, String work ) {
 				
 		try {
 			con = DBConnect.getConnection();
 			stmt = con.createStatement();
-			String sql = "update doctor set name='"+id+"', name='"+fname+"' where id='"+id+"'";
+			String sql = "update doctor set fullname='"+fname+"' email='"+email+"' phoneNo='"+mobile+"' password='"+password+"' Specialist='"+spec+"' where id='"+id+"'";
 			int rs = stmt.executeUpdate(sql);
 			
 			if(rs> 0) {

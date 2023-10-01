@@ -1,6 +1,7 @@
 package com.admin;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -36,21 +37,39 @@ public class UpdateDoctorServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		String id = request.getParameter("docId");
-		String name = request.getParameter("docName");
-		
 		boolean isTrue;
-		
-		isTrue = DoctorDBUtil.updatedoctor(id, name);
-		
+
+		PrintWriter out = response.getWriter();
+		response.setContentType("text/html");
+
+		String id = request.getParameter("docId");
+		String name = request.getParameter("fName");
+		String email = request.getParameter("email");
+		String mobile = request.getParameter("mobile");
+		String spec= request.getParameter("spec");
+		String work = request.getParameter("work");
+		String choose = request.getParameter("choose");
+		String currentPass = request.getParameter("currentPassword");
+		String confirmPass = request.getParameter("confirmPassword");
+
+		int convertDid = Integer.parseInt(id);
+
+		if(choose == "true"){
+			isTrue = DoctorDBUtil.updatedoctor(convertDid, name, email, mobile, confirmPass, spec, work);
+		} else {
+			isTrue = DoctorDBUtil.updatedoctor(convertDid, name, email, mobile, currentPass, spec, work);
+		}
+				
 		if(isTrue == true) {
 			List<Doctor> docDetails = DoctorDBUtil.getDoctorDetails();
 			request.setAttribute("docDetails", docDetails);
 			RequestDispatcher dis = request.getRequestDispatcher("doctorProfile.jsp");
 			dis.forward(request, response);
 		} else {
-			RequestDispatcher dis2 = request.getRequestDispatcher("sucess.jsp");
-			dis2.forward(request, response);
+			out.println("<script type='text/javascript'>");
+			out.println("alert('Your username and password is incorrect');");
+			out.println("location = 'admin_login.jsp'");
+			out.println("</script>");
 		}
 	}
 

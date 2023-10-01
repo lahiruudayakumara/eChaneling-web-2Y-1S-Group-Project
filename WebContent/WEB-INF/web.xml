@@ -4,39 +4,73 @@
     <servlet-name>login</servlet-name>
     <servlet-class>com.admin.adminLoginServlet</servlet-class>
   </servlet>
-  
   <servlet-mapping>
     <servlet-name>login</servlet-name>
     <url-pattern>/log</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>addDoctor</servlet-name>
     <servlet-class>com.admin.AddDoctorServlet</servlet-class>
   </servlet>
-  
   <servlet-mapping>
     <servlet-name>addDoctor</servlet-name>
     <url-pattern>/add</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>docCreateSchedule</servlet-name>
     <servlet-class>com.doctor.AddScheduleServlet</servlet-class>
   </servlet>
-  
   <servlet-mapping>
     <servlet-name>docCreateSchedule</servlet-name>
     <url-pattern>/createSchedule</url-pattern>
   </servlet-mapping>
-  
-    <servlet>
+  <servlet>
     <servlet-name>updateDoctor</servlet-name>
     <servlet-class>com.admin.UpdateDoctorServlet</servlet-class>
   </servlet>
-  
   <servlet-mapping>
     <servlet-name>updateDoctor</servlet-name>
     <url-pattern>/updateDoctor</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>doctorinformation</servlet-name>
+    <servlet-class>com.admin.DoctorServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>doctorinformation</servlet-name>
+    <url-pattern>/doctorinfo</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>deletedoctor</servlet-name>
+    <servlet-class>com.admin.DeleteDoctorServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>deletedoctor</servlet-name>
+    <url-pattern>/docdelete</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>SessionCheckServlet</servlet-name>
+    <servlet-class>your.package.name.SessionCheckServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SessionCheckServlet</servlet-name>
+    <url-pattern>/sessionCheck</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>adminSessionDestory</servlet-name>
+    <servlet-class>com.admin.AdminLogOutServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>adminSessionDestory</servlet-name>
+    <url-pattern>/admin_logout</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+    <servlet-name>doctorInfo</servlet-name>
+    <servlet-class>com.admin.DoctorInfo</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>doctorInfo</servlet-name>
+    <url-pattern>/doctor_Info</url-pattern>
   </servlet-mapping>
 </web-app>

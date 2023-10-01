@@ -18,7 +18,7 @@
 		String pass = request.getParameter("pass");
 	%>
 	
-	<form action="#" method="post">
+	<form action="updateDoctor" method="post">
 		<input type="hidden" name="" value="<%= dId %>" readonly/></br>
 		<label>Full Name</label>
 		<input type="text" name="fName" value="<%= fName %>" /></br>
