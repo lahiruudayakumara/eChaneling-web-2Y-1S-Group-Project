@@ -29,7 +29,7 @@ header {
     margin: 20PX ;
     padding: 20px;  
     opacity: 0.8;
-    border-radius: 10px;
+    border-radius: 10px;          
 }
 .content2 {
     max-width: 1000px;
@@ -38,7 +38,7 @@ header {
     background-color: rgba(255, 255, 255, 0.816);
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    opacity: 100%;
+    opacity: 100%; 
 }
 
 h2 {
@@ -51,6 +51,7 @@ h2 {
     text-align: center;
     border: 3px solid #ccc;
     border-radius: 10px;
+
 }
 
 #doctor-search-form {
@@ -175,10 +176,4 @@ button:hover {
     }
 }
 
-/* Style the footer */
-footer {
-    text-align: center;
-    padding: 10px 0;
-    background-color: #007BFF;
-    color: #fff;
-}
+
