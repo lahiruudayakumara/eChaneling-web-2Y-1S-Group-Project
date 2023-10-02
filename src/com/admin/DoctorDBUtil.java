@@ -40,7 +40,7 @@ public class DoctorDBUtil {
 		try {
 			con = DBConnect.getConnection();
 			stmt = con.createStatement();
-			String sql = "update doctor set fullname='"+fname+"' email='"+email+"' phoneNo='"+mobile+"' password='"+password+"' Specialist='"+spec+"' where id='"+id+"'";
+			String sql = "update doctor set fullname='"+fname+"', email='"+email+"', phoneNo='"+mobile+"', password='"+password+"', Specialist='"+spec+"', work='"+work+"' where id='"+id+"'";
 			int rs = stmt.executeUpdate(sql);
 			
 			if(rs> 0) {
@@ -145,4 +145,3 @@ public class DoctorDBUtil {
 		return isSucess;
 	}	
 }
-//lahiru
