@@ -9,7 +9,7 @@ import java.util.List;
 public class DoctorLoginDBUtil {
 	private static boolean isSuccess;
 	private static Connection con = null;
-	private static Statement stmt = null;
+	private static Statement statement = null;
 	private static ResultSet result;
 	
 	public static List<specalizedDoctor> getDoctor(String docEmail){
@@ -18,10 +18,10 @@ public class DoctorLoginDBUtil {
 		try {
 			
 			con = DBConnect.getConnection();
-			stmt = con.createStatement();
+			statement = con.createStatement();
 			
 			String sql = " select * from doctor where email='"+ docEmail +"'";
-			result = stmt.executeQuery(sql);
+			result = statement.executeQuery(sql);
 			
 			while(result.next()) {
 				int id = result.getInt(1);
@@ -50,12 +50,12 @@ public class DoctorLoginDBUtil {
 		try {
 			
 			con = DBConnect.getConnection();
-			stmt = con.createStatement();
+			statement = con.createStatement();
 			
 			String sql = "select * from doctor where email='"+ docEmail +"' AND password='"+ password +"' ";
 
 			
-			result = stmt.executeQuery(sql);
+			result = statement.executeQuery(sql);
 			
 			if(result.next()) {
 				isSuccess = true;

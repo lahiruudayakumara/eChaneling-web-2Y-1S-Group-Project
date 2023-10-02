@@ -16,5 +16,6 @@
 		${doctor.name}
 		${doctor.email}
 	</c:forEach>
+	
 </body>
 </html>
