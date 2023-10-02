@@ -37,8 +37,7 @@ class Person {
 	}
 	
 	public String displayInfo() {
-		String d1;
-		return d1 ="Name : "+ fullName + "</br>Email: " + email+ "</br>Tel : " +phoneNo+ "</br>";
+		return "Name : "+ fullName + "</br>Email: " + email+ "</br>Tel : " +phoneNo+ "</br>";
 	}
 	
 }
