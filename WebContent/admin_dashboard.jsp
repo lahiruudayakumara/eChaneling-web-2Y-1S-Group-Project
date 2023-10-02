@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Admin Dashboard</title>
-<link rel="stylesheet" href="css/admin.css" />
+<link rel="stylesheet" href="./css/admin.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,16 +19,16 @@
 		<div class="header">
 			<div class="nav">
 				<div id="logo">
+					<h3>eChannelling - Admin Dashboard</h3>
 				</div>
 				<ul>
-					<li><a href="#">Home</a>
 					<li><a href="admin_logout">Logout</a>
 				</ul>
 			</div>
 		</div>
 	</header>
 	
-	<div class="main">
+	<div class="hero">
 		<div class="left_section">
 			<div class="banner">
 				<img src="img/logo.jpg" width="240px">
@@ -88,34 +88,35 @@
 			<div style="margin-top: 10px;">
 				<h4 style="padding-left: 10px;  background-color: #f1c200;">Admin Option</h4>
 				<div style=" display: flex; margin-top: 10px;">
-					<div style="width: 70%; padding:5px;">
+					<div class="left_side">
 						<a href="add_doctor.jsp">
-							<div style="width:95%; align-item:center; padding:10px; height:30px; background-color: #f1c200; border-radius: 5px; margin-bottom:5px;" >
+							<div class="left_item" >
 								<p>Add Doctor</p>
 							</div>
 						</a>
 						
 						<a href="doctorinfo">
-							<div style="width:95%; align-item:center; padding:10px; height:30px; background-color: #f1c200; border-radius: 5px; margin-bottom:5px;" >
+							<div class="left_item" >
 								<p>Doctors List</p>
 							</div>
 						</a>
 						
 						<a href="#">
-							<div style="width:95%; align-item:center; padding:10px; height:30px; background-color: #f1c200; border-radius: 5px; margin-bottom:5px;" >
+							<div class="left_item" >
 								<p>Appoiment Detais</p>
 							</div>
 						</a>
 						
 						<a href="#">
-							<div style="width:95%; align-item:center; padding:10px; height:30px; background-color: #f1c200; border-radius: 5px; margin-bottom:5px;" >
+							<div class="left_item">
 								<p>Pending for Approvel</p>
 							</div>
 						</a>
 						
 					</div>
 					
-					<div style="width: 30%; height: 340px;  background-color: gray; padding:5px;">
+					<div class="rigt_side">
+						<img alt="" src="./img/rg.png" width="305px">
 					</div>
 				</div>
 				
@@ -125,7 +126,7 @@
 	
 	<div class="footer">
 		<div class="footer_details">
-			<p>Develop by <a href="https://github.com/lahiruudayakumara/eChaneling-web-2Y-1S-Group-Project#readme">NexTech</a></p>
+			<p>Develop by <a href="https://github.com/lahiruudayakumara/eChaneling-web-2Y-1S-Group-Project#readme">LAHIRU</a></p>
 		</div>
 	</div>
 	
