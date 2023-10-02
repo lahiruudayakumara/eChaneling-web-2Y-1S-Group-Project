@@ -29,15 +29,13 @@ public class Doctor extends Person implements MedicalProfessional {
 	
 	@Override
 	public String displayInfo() {
-		String d;
 		super.displayInfo();
-		return d = ""+super.displayInfo() + "Specialization : " +specialization+ "</br>Work : " +work+ "";
+		return ""+super.displayInfo() + "Specialization : " +specialization+ "</br>Work : " +work+ "";
 	}
 	
 	@Override
 	public String displayName(String fullName) {
-		String d3;
-		return d3 = "Dr. " + getFullName() + " is Specialization " + getSpecialization() + ".";
+		return "Dr. " + getFullName() + " is Specialization " + getSpecialization() + ".";
 	}
 	
 }
