@@ -4,10 +4,12 @@
     <servlet-name>login</servlet-name>
     <servlet-class>com.admin.adminLoginServlet</servlet-class>
   </servlet>
+  
   <servlet-mapping>
     <servlet-name>login</servlet-name>
     <url-pattern>/log</url-pattern>
   </servlet-mapping>
+  
   <servlet>
     <servlet-name>addDoctor</servlet-name>
     <servlet-class>com.admin.AddDoctorServlet</servlet-class>
