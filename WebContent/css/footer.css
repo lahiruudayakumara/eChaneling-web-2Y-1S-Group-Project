@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('http://fonts.googleapis.com/css?family=Open+Sans:400,700');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*footer*/
+
+.fcontainer{
+    max-width: 100%;
+    margin: auto;
+    position: relative;
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    max-width:1200px;
+    margin:0 auto;
+}
+
+ul{
+    list-style: none;
+}
+
+.footer{
+    background-color:#007BFF;
+    padding: 70px;
+    position:relative;
+    min-width: 100%;
+    padding-bottom:20px;
+}
+
+.footer-col{
+    width: 25%;
+    padding: 0 15px;
+}
+
+.footer-col h4{
+    font-size: 18px;
+    color: #ffffff;
+    text-transform: capitalize;
+    margin-bottom: 35px;
+    font-weight: 500;
+    position:relative;
+    text-align: left;
+}
+
+.footer-col h4::before{
+    content:'';
+    position:absolute;
+    left: 0;
+    bottom: -10px;
+    background-color:#000080;
+    height: 2.5px;
+    box-sizing:border-box;
+    width: 50px;
+}
+
+.footer-col ul li:not(:last-child){
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a{
+    padding: 0;
+    font-size: 16px;
+    text-transform: capitalize;
+    text-decoration: none;
+    font-weight: 300;
+    color:#ffffff;
+    display:block;
+    transition: all 0.3s ease;
+    text-align:left;
+}
+
+.footer-col ul li a:hover{
+    color: #000080;
+    padding-left: 8px;
+}
+
+.footer-col .social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 0 10px 10px 0;
+    text-decoration: none;
+    color: #ffffff;
+    border-radius: 50%;
+    transition: all 0.5s ease;
+}
+
+.footer-col .social-links a:hover{
+    color: #24262b;
+    background-color: #ffffff;
+}
+
+.payment-links{
+	text-align:left;
+}
+
+.social-links{
+	text-align:left;
+}
+
+
+.footer-col .payment-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 0 10px 10px 0;
+    text-decoration: none;
+    color: #ffffff;
+    border-radius: 50%;
+    transition: all 0.5s ease;
+
+}
+
+.footer-col .payment-links a:hover{
+    color: #24262b;
+    background-color: #ffffff;
+}
+
+.copyright{
+    text-align: center;
+    color: #000080;
+    margin-top:20px;
+    margin-bottom:0;
+}
+
+@media(max-width:700px){
+    .footer-col {
+        width: 50%;
+        margin-bottom: 30px;
+    }
+}
+@media(max-width:350px){
+    .footer-col {
+        width: 100% 
+    }
+}

@@ -12,20 +12,21 @@
   <body>
     <div class="container">
       <h1 class="form-title">Registration</h1>
-      <form action="#">
+      <form action="reguser" method="post">
         <div class="main-user-info">
           <div class="user-input-box">
+          
             <label for="fullName">Full Name</label>
             <input type="text"
                     id="fullName"
-                    name="fullName"
+                    name="fName"
                     placeholder="Enter Full Name"/>
           </div>
           <div class="user-input-box">
             <label for="NIC">National identity card</label>
             <input type="text"
                     id="Nic"
-                    name="Nic"
+                    name="nic"
                     placeholder="Enter Nic Numuber"required/>
           </div>
           <div class="user-input-box">
@@ -42,38 +43,47 @@
                     name="phoneNumber"
                     placeholder="Enter Phone Number"/>
           </div>
+          
+          <div class="user-input-box">
+            <label for="address">User address</label>
+            <input type="text"
+                    id="address"
+                    name="address"
+                    placeholder="User address"/>
+               </div>  
+               
+            <div class="user-input-box">
+            	<label for="username">User name</label>
+            	<input type="text"
+                    id="username"
+                    name="username"
+                    placeholder="User name"/>
+         	</div>
+           
+                    
 
           
           <div class="user-input-box">
             <label for="password">Password</label>
             <input type="password"
                     id="password"
+                    name="pass"
+                    placeholder="Enter Password"/>
+                              
+          </div>
+          
+             <div class="user-input-box">
+            <label for="password">Conform Password</label>
+            <input type="password"
+                    id="password"
                     name="password"
                     placeholder="Enter Password"/>
-            
                     
-          </div>
-          <div class="user-input-box">
-            <label for="confirmPassword">Confirm Password</label>
-            <input type="password"
-                    id="confirmPassword"
-                    name="confirmPassword"
-                    placeholder="Confirm Password"/>
-          </div>
-        </div>
-        <div class="gender-details-box">
-          <span class="gender-title">Gender</span>
-          <div class="gender-category">
-            <input type="radio" name="gender" id="male">
-            <label for="male">Male</label>
-            <input type="radio" name="gender" id="female">
-            <label for="female">Female</label>
-            <input type="radio" name="gender" id="other">
-            <label for="other">Other</label>
-          </div>
+              </div>
+         
         </div>
         <div class="form-submit-btn">
-          <input type="submit" value="Register">
+          <input type="submit" name="submit" value="Register">
         </div>
       </form>
     </div>
