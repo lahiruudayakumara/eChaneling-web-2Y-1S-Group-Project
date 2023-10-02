@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+body, h1, h2, form, input, button {
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    font-size: inherit;
+    font-family: 'Poppins', sans-serif;
+    background-image: url('img/white-concrete-wall.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #333;
+}
+
+header {
+    background-color: #007BFF;
+    color: #fff;
+    text-align: center;
+    padding: 30px 0;
+}
+
+.content1{
+    background-image: url('/img/Writing medical doctor Over blue cardio background.jpg');
+    background-size: cover;
+    max-width: 100%;
+    margin: 20PX ;
+    padding: 20px;  
+    opacity: 0.8;
+    border-radius: 10px;          
+}
+.content2 {
+    max-width: 1000px;
+    margin: 150px auto ;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.816);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    opacity: 100%; 
+}
+
+h2 {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+/* Style the search form */
+.search-section {
+    text-align: center;
+    border: 3px solid #ccc;
+    border-radius: 10px;
+
+}
+
+#doctor-search-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+input{
+    padding: 10px;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+select{
+    padding: 10px;
+    width: 221px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px 20px;
+    width: 215px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.content3{
+    margin: 0;
+    padding: 0;
+}
+
+.quick-access{
+    margin: 40px 20px 20px 20px;
+}
+
+.quick-access h2{
+    font-size: 33px;
+    text-align: center;
+    color: #0056b3;;
+
+}
+
+/*flex-item*/
+
+.box-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.box {
+    display:flex;
+    flex-wrap: wrap;
+    border: 3px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    margin: 5px;
+    border-radius: 10px;
+    
+}
+.box img {
+    max-width: 50%;
+    height: auto;
+}
+.box a{
+    text-decoration: none;
+}
+.box :hover{
+    transform: scale(1.06);
+    
+
+}
+
+
+/*Slide Show*/
+
+.content4{
+    margin: 20px 20px 40px 20px;
+}
+
+.slideshow-container {
+    position: relative;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.slide {
+    display: none;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 2s;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0.3;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+

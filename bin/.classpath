@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path=""/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry exported="true" kind="lib" path="D:/Downloaded/JAR Files-20230826T191645Z-001/JAR Files/javax.servlet-3.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="D:/Downloaded/JAR Files-20230826T191645Z-001/JAR Files/mysql-connector-java-5.1.48-bin.jar"/>
+	<classpathentry exported="true" kind="lib" path="D:/Downloaded/JAR Files-20230826T191645Z-001/JAR Files/servlet-api.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
