@@ -1,0 +1,41 @@
+
+
+body {
+	display: flex;
+	flex-direction: column;
+    font-family: Arial, sans-serif;
+	background-image: url("../img/bg1.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	min-height: 100vh;
+}
+		
+        .user-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 150px;
+        }
+
+        .user-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #333;
+            margin-bottom: 10px;
+        }
+
+        .user-details {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        
+
+
+        
+          
+          
+    
+
