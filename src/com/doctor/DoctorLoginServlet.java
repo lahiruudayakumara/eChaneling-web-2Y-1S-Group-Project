@@ -25,13 +25,13 @@ public class DoctorLoginServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		response.setContentType("text/html");
 		
-		int userId = Integer.parseInt(request.getParameter("userId"));
+		String email = request.getParameter("email");
 		String password = request.getParameter("password");
 		
-		boolean isTrue = DoctorLoginDBUtil.validate(userId, password);
+		boolean isTrue = DoctorLoginDBUtil.validate(email, password);
 		
 		if(isTrue == true) {
-			List<specalizedDoctor> spDocDetails = DoctorLoginDBUtil.getDoctor(userId);
+			List<specalizedDoctor> spDocDetails = DoctorLoginDBUtil.getDoctor(email);
 			request.setAttribute("spDocDetails", spDocDetails);
 			
 			RequestDispatcher dis = request.getRequestDispatcher("doctorAccount.jsp");

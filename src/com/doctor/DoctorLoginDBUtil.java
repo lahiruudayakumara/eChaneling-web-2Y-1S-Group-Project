@@ -12,7 +12,7 @@ public class DoctorLoginDBUtil {
 	private static Statement stmt = null;
 	private static ResultSet result;
 	
-	public static List<specalizedDoctor> getDoctor(int userId){
+	public static List<specalizedDoctor> getDoctor(String docEmail){
 		ArrayList<specalizedDoctor> specalizedDoctor = new ArrayList<>();
 		
 		try {
@@ -20,7 +20,7 @@ public class DoctorLoginDBUtil {
 			con = DBConnect.getConnection();
 			stmt = con.createStatement();
 			
-			String sql = " select * from doctor where id='"+ userId +"'";
+			String sql = " select * from doctor where email='"+ docEmail +"'";
 			result = stmt.executeQuery(sql);
 			
 			while(result.next()) {
@@ -32,7 +32,7 @@ public class DoctorLoginDBUtil {
 				String Specialist = result.getString(6);
 				String work = result.getString(7);
 				
-				specalizedDoctor spDoc = new specalizedDoctor(fullname, email, phoneNo, id, password, Specialist, work);
+				specalizedDoctor spDoc = new specalizedDoctor(fullname, email, phoneNo, work, id, password, Specialist);
 				
 				specalizedDoctor.add(spDoc);
 			}
@@ -45,14 +45,14 @@ public class DoctorLoginDBUtil {
 		return specalizedDoctor;
 	}
 	
-	public static boolean validate(int userId, String password) {
+	public static boolean validate(String docEmail, String password) {
 		
 		try {
 			
 			con = DBConnect.getConnection();
 			stmt = con.createStatement();
 			
-			String sql = "select * from doctor where id='"+ userId +"' AND password='"+ password +"' ";
+			String sql = "select * from doctor where email='"+ docEmail +"' AND password='"+ password +"' ";
 
 			
 			result = stmt.executeQuery(sql);

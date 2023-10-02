@@ -4,15 +4,13 @@ public class specalizedDoctor extends Doctor{
 	private int userId;
 	private String docPassword;
 	private String specialization;
-	private String work;
 	
-	public specalizedDoctor(String name, String email, String phoneNum, int userId, String docPassword,
-			String specialization, String work) {
-		super(name, email, phoneNum);
+	public specalizedDoctor(String name, String email, String phoneNum, String work, int userId, String docPassword,
+			String specialization) {
+		super(name, email, phoneNum, work);
 		this.userId = userId;
 		this.docPassword = docPassword;
 		this.specialization = specialization;
-		this.work = work;
 	}
 
 	public int getUserId() {
@@ -27,7 +25,4 @@ public class specalizedDoctor extends Doctor{
 		return specialization;
 	}
 
-	public String getWork() {
-		return work;
-	}
 }
