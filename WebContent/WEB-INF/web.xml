@@ -93,8 +93,7 @@
     <servlet-name>doctorInfo</servlet-name>
     <url-pattern>/doctor_Info</url-pattern>
   </servlet-mapping>
-</web-app>
-=======
+<servlet>
     <servlet-name>registerloging</servlet-name>
     <servlet-class>com.user.RegisterLoginServlet</servlet-class>
   </servlet>

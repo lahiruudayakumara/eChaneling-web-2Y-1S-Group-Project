@@ -2,7 +2,6 @@
     <wb-module deploy-name="echannelling">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
-        <wb-resource deploy-path="/WEB-INF/classes" source-path="/"/>
         <property name="context-root" value="echannelling"/>
         <property name="java-output-path" value="/echannelling/build/classes"/>
     </wb-module>
