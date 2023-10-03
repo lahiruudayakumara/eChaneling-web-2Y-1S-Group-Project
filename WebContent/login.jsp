@@ -41,7 +41,7 @@ session.setAttribute("username", username);
         
             <h1>A fit body, a calm mind,   <br><span>a house full of</span> <br>love. ...</h1>
             
-            <p> <a href="#">Back to Home</a></p>
+            <p> <a href="home.jsp">Back to Home</a></p>
             
 
                 
