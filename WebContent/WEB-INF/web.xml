@@ -10,20 +10,19 @@
   </servlet-mapping>
  
 
-    <servlet>
+  <servlet>
     <servlet-name>registerUser</servlet-name>
     <servlet-class>com.user.RegisteruserServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>registerUser</servlet-name>
     <url-pattern>/reguser</url-pattern>
-    </servlet-mapping>
+  </servlet-mapping>
 
   <servlet>
     <servlet-name>addDoctor</servlet-name>
     <servlet-class>com.admin.AddDoctorServlet</servlet-class>
   </servlet>
-  
   <servlet-mapping>
     <servlet-name>addDoctor</servlet-name>
     <url-pattern>/add</url-pattern>
@@ -33,21 +32,74 @@
     <servlet-name>docCreateSchedule</servlet-name>
     <servlet-class>com.doctor.AddScheduleServlet</servlet-class>
   </servlet>
-  
   <servlet-mapping>
     <servlet-name>docCreateSchedule</servlet-name>
-    <url-pattern>/createSchedule</url-pattern>
+    <url-pattern>/addSchedule</url-pattern>
   </servlet-mapping>
   
-    <servlet>
+  <servlet>
+  		<servlet-name>docLogin</servlet-name>
+  		<servlet-class>com.doctor.DoctorLoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  		<servlet-name>docLogin</servlet-name>
+  		<url-pattern>/doctorLogin</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
     <servlet-name>updateDoctor</servlet-name>
     <servlet-class>com.admin.UpdateDoctorServlet</servlet-class>
   </servlet>
-  
   <servlet-mapping>
     <servlet-name>updateDoctor</servlet-name>
     <url-pattern>/updateDoctor</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>doctorinformation</servlet-name>
+    <servlet-class>com.admin.DoctorServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>doctorinformation</servlet-name>
+    <url-pattern>/doctorinfo</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>deletedoctor</servlet-name>
+    <servlet-class>com.admin.DeleteDoctorServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>deletedoctor</servlet-name>
+    <url-pattern>/docdelete</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>SessionCheckServlet</servlet-name>
+    <servlet-class>your.package.name.SessionCheckServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SessionCheckServlet</servlet-name>
+    <url-pattern>/sessionCheck</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>adminSessionDestory</servlet-name>
+    <servlet-class>com.admin.AdminLogOutServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>adminSessionDestory</servlet-name>
+    <url-pattern>/admin_logout</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+    <servlet-name>doctorInfo</servlet-name>
+    <servlet-class>com.admin.DoctorInfo</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>doctorInfo</servlet-name>
+    <url-pattern>/doctor_Info</url-pattern>
+  </servlet-mapping>
+
   <servlet>
     <servlet-name>registerloging</servlet-name>
     <servlet-class>com.user.RegisterLoginServlet</servlet-class>
@@ -56,6 +108,7 @@
     <servlet-name>registerloging</servlet-name>
     <url-pattern>/regloging</url-pattern>
   </servlet-mapping>
+  
   <servlet>
     <servlet-name>registerdelete</servlet-name>
     <servlet-class>com.user.DeleteUserServlet</servlet-class>
@@ -64,6 +117,7 @@
     <servlet-name>registerdelete</servlet-name>
     <url-pattern>/userDelete</url-pattern>
   </servlet-mapping>
+  
   <servlet>
     <servlet-name>registerRetrive</servlet-name>
     <servlet-class>com.user.UserServlet</servlet-class>
@@ -72,6 +126,7 @@
     <servlet-name>registerRetrive</servlet-name>
     <url-pattern>/userRetrive</url-pattern>
   </servlet-mapping>
+  
   <servlet>
     <servlet-name>registerupdate</servlet-name>
     <servlet-class>com.user.UserUpadate</servlet-class>
@@ -85,6 +140,7 @@
     <servlet-name>pwUpdate</servlet-name>
     <servlet-class>com.user.UpdatePWServlet</servlet-class>
   </servlet>
+  
   <servlet-mapping>
     <servlet-name>pwUpdate</servlet-name>
     <url-pattern>/passwordUpdate</url-pattern>

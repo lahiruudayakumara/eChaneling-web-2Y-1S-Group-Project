@@ -1,6 +1,6 @@
 package com.admin;
 
-public class Doctor extends Person {
+public class Doctor extends Person implements MedicalProfessional {
 	
 	private String specialization;
 	private String work;
@@ -25,6 +25,17 @@ public class Doctor extends Person {
 
 	public String getWork() {
 		return work;
-	}	
+	}
+	
+	@Override
+	public String displayInfo() {
+		super.displayInfo();
+		return ""+super.displayInfo() + "Specialization : " +specialization+ "</br>Work : " +work+ "";
+	}
+	
+	@Override
+	public String displayName(String fullName) {
+		return "Dr. " + getFullName() + " is Specialization " + getSpecialization() + ".";
+	}
 	
 }

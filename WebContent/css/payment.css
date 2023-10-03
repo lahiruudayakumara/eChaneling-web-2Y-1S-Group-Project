@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+body, h1, h2, form, input, button {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: inherit;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #007BFF;
+    color: #fff;
+    text-align: center;
+    padding: 30px 0;
+}
+
+.container h1{
+    font-size:larger;
+    margin-bottom: 20px;
+    opacity: 0.5;
+}
+
+.container {
+    max-width: 400px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Style for payment method icons and radio buttons */
+.payment-methods {
+    margin-top: 20px;
+}
+
+.payment-method {
+    display: inline-block;
+    margin-right: 30px;
+}
+
+.payment-method input[type="radio"] {
+    display: none;
+}
+
+.payment-method label img {
+    margin-top: 8px;
+    width: 50px; /* Adjust the width as needed */
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+.payment-method input[type="radio"]:checked + label img {
+    border-color: #007BFF; /* Highlight the selected payment method */
+}
+
+input {
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+button {
+    margin-top: 20px;
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+a{
+    text-decoration: none;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+

@@ -6,6 +6,7 @@
 <head>
     <title>loginpage</title>
     <link rel="stylesheet" href="css/loging.css">
+    <link rel="stylesheet" href="css/navi.css">
 </head>
 <body>
 
@@ -20,12 +21,12 @@ session.setAttribute("username", username);
 
             <div class="menu">
                 <ul>
-                    <li><a href="register.jsp">adoooo</a></li>
-                    <li><a href="#">adoooo</a></li>
+                    <li><a href="home.jsp">HOME</a></li>
+                    <li><a href="about_us.jsp">ABOUTUS</a></li>
                     <li><a href="#">adooo</a></li>
                     <li><a href="#">adooo</a></li>
                     <li><a href="#">adoooo</a></li>
-                    <li><a href="#">adoooo</a></li>
+                   
                     
                 </ul>
             </div>

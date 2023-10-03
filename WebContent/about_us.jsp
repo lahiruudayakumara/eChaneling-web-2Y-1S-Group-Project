@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us</title>
     <link rel="stylesheet" href="css/about us.css">
+
       <link rel="stylesheet" href="css/footer.css">
        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> 
 
@@ -15,7 +16,6 @@
     
        
 <body>
-
 
       <div class="aboutus"> 
         <div class="abcontainer">
@@ -76,10 +76,6 @@
       </div>
         
 
- 
-
-     
-    
 
  <footer class="footer">
         <div class="fcontainer">
@@ -126,5 +122,10 @@
         <div class="copyright"> <p>&copy; 2023 E-Channelling</p><br></div>
     </footer>
     </body>
+
+
+      
+    
+</body>
 
 </html>
