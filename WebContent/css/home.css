@@ -93,6 +93,7 @@ button:hover {
 .content3{
     margin: 0;
     padding: 0;
+
 }
 
 .quick-access{
@@ -126,6 +127,7 @@ button:hover {
     border-radius: 10px;
     
 }
+
 .box img {
     max-width: 50%;
     height: auto;
@@ -176,4 +178,8 @@ button:hover {
     }
 }
 
-
+@media(max-width:750px){
+    .box a{
+        font-size:smaller; 
+    }
+}

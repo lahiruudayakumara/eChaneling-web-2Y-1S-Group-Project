@@ -136,6 +136,15 @@ ul{
     margin-bottom:0;
 }
 
+.copyright  a{
+    text-decoration: none;
+    color: #000080;
+}
+
+.copyright p a:hover{
+    color:#ffffff;
+}
+
 @media(max-width:700px){
     .footer-col {
         width: 50%;
