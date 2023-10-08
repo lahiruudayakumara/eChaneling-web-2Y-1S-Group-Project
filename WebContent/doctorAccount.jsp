@@ -15,6 +15,9 @@
 		${doctor.userId}
 		${doctor.name}
 		${doctor.email}
+		${doctor.phoneNum}
+		${doctor.work}
+		${doctor.specialization}
 	</c:forEach>
 	
 </body>

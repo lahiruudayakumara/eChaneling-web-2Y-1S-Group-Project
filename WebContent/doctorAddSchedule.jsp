@@ -31,6 +31,10 @@
 		<label for="location"> Location </label>
 		<input type="text" name="location" id="location" placeholder="Asiri hospital" required>
 		<br>
+		
+		<label for="specialization"> specialization </label>
+		<input type="text" name="specialization" id="specialization" placeholder="eye" required>
+		<br>
 
 		<input type="submit" name="submit" value="Create">	
 	</form>

@@ -10,7 +10,7 @@
 	
 	<form action="doctorLogin" method="post">
 		<input type="email" name="email" placeholder="dushan123@gmail.com">
-		<input type="text" name="password" placeholder="Password">
+		<input type="password" name="password" placeholder="Password">
 		<input type="submit" name="submit" value="login">
 	</form>
 	
