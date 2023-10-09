@@ -20,5 +20,11 @@
 		${doctor.specialization}
 	</c:forEach>
 	
+	<br>
+	
+	<form action="ReadScheduleServlet" method="post">
+			<input type="submit" name="view" value="view">
+	</form>
+	
 </body>
 </html>
