@@ -23,7 +23,7 @@
 	<br>
 	
 	<form action="ReadScheduleServlet" method="post">
-			<input type="submit" name="view" value="view">
+			<input type="submit" name="view" value="view schedules">
 	</form>
 	
 </body>
