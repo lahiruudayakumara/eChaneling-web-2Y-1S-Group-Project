@@ -25,7 +25,7 @@ background-repeat: no-repeat;">
         <div class="content2">
             <section class="search-section">
                 <h2>FIND A DOCTOR</h2>
-                <form id="doctor-search-form" method="post" action="#">
+                <form id="doctor-search-form" method="post" action="appointments">
                     <input type="text" name="doctor-name" placeholder="Doctor's Name">
                     <select name="specialization">
                         <option value="" disabled selected>Select a specialization</option> 
@@ -48,7 +48,7 @@ background-repeat: no-repeat;">
                         <option value="Nawaloka">Nawaloka Hospital</option>
                         <option value="Ninewhales">Ninewhales Hospital</option>
                     </select>
-                    <input type="date" name="date" placeholder="Select a date">
+                    <input type="date" name="date">
                     <button type="submit">Search</button>
                 </form>
             </section>

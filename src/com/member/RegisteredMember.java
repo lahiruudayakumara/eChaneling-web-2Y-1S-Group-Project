@@ -6,12 +6,14 @@ public abstract class RegisteredMember {
 	protected String NIC;
 	protected String phone;
 	protected String email;
+	protected String area;
 	
-	public RegisteredMember(String name, String NIC, String phone, String email) {
+	public RegisteredMember(String name, String NIC, String phone, String email, String area) {
 		this.name = name;
 		this.NIC = NIC;
 		this.phone = phone;
 		this.email = email;
+		this.area = area;
 	}
 	
 	public String getName() {
@@ -26,8 +28,15 @@ public abstract class RegisteredMember {
 	public String getEmail() {
 		return email;
 	}
+	public String getArea() {
+		return area;
+	}
+
+	abstract public void bookAppointment();
 	
-	abstract public void setAppointment();
+	public void viewAppointments() {
+		
+	}
 	
 }
 

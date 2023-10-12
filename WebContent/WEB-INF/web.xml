@@ -8,42 +8,34 @@
     <servlet-name>login</servlet-name>
     <url-pattern>/log</url-pattern>
   </servlet-mapping>
- 
-
-    <servlet>
+  <servlet>
     <servlet-name>registerUser</servlet-name>
     <servlet-class>com.user.RegisteruserServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>registerUser</servlet-name>
     <url-pattern>/reguser</url-pattern>
-    </servlet-mapping>
-
+  </servlet-mapping>
   <servlet>
     <servlet-name>addDoctor</servlet-name>
     <servlet-class>com.admin.AddDoctorServlet</servlet-class>
   </servlet>
-  
   <servlet-mapping>
     <servlet-name>addDoctor</servlet-name>
     <url-pattern>/add</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>docCreateSchedule</servlet-name>
     <servlet-class>com.doctor.AddScheduleServlet</servlet-class>
   </servlet>
-  
   <servlet-mapping>
     <servlet-name>docCreateSchedule</servlet-name>
     <url-pattern>/createSchedule</url-pattern>
   </servlet-mapping>
-  
-    <servlet>
+  <servlet>
     <servlet-name>updateDoctor</servlet-name>
     <servlet-class>com.admin.UpdateDoctorServlet</servlet-class>
   </servlet>
-  
   <servlet-mapping>
     <servlet-name>updateDoctor</servlet-name>
     <url-pattern>/updateDoctor</url-pattern>
@@ -80,7 +72,6 @@
     <servlet-name>registerupdate</servlet-name>
     <url-pattern>/userUpdate</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>pwUpdate</servlet-name>
     <servlet-class>com.user.UpdatePWServlet</servlet-class>
@@ -88,5 +79,13 @@
   <servlet-mapping>
     <servlet-name>pwUpdate</servlet-name>
     <url-pattern>/passwordUpdate</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>SearchAppointment</servlet-name>
+    <servlet-class>com.member.SearchAppointmentServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SearchAppointment</servlet-name>
+    <url-pattern>/appointments</url-pattern>
   </servlet-mapping>
 </web-app>
