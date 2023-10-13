@@ -73,7 +73,7 @@
           </div>
           
              <div class="user-input-box">
-            <label for="password">Conform Password</label>
+            <label for="password">Confirm Password</label>
             <input type="password"
                     id="password"
                     name="password"
