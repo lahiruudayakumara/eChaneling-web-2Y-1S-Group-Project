@@ -40,8 +40,7 @@ public class adminLoginServlet extends HttpServlet {
         		userName = (String) session.getAttribute("adminUserName");
             	password = (String) session.getAttribute("adminPassword"); 
         	}     	      	
-        } 
-		
+        }         
         //To check if userName input are available
 		if(request.getParameter("uName") != null) {
 			userName = request.getParameter("uName");
@@ -55,7 +54,7 @@ public class adminLoginServlet extends HttpServlet {
 		} else {
 			passInput = false;
 		}
-		
+				
 		isTrue = AdminDBUtil.validate(userName, password);
 		
 		if(isTrue == true) {
@@ -72,12 +71,12 @@ public class adminLoginServlet extends HttpServlet {
 			dis.forward(request, response);
 			
 		} else if(nameInput == false && passInput == false) {
-			out.println("<script type='text/javascript'>");
-			out.println("alert('Your username and password is incorrect');");
-			out.println("location = 'admin_login.jsp'");
-			out.println("</script>");
-		} else {
 			response.sendRedirect("admin_login.jsp");
+		} else {
+			out.println("<script type='text/javascript'>");
+			out.println("Incorrect Username or Password');");
+			out.println("location = 'admin_login.jsp'");
+			out.println("</script>");		
 		}
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
