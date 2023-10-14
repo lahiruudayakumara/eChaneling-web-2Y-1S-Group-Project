@@ -76,7 +76,6 @@ public class DoctorDBUtil {
 				String work = rs.getString(7);
 				
 				Doctor d = new Doctor(id, fName, email, mobile, passU, spec, work);
-				d.displayInfo();
 				
 				doc.add(d);
 			}
