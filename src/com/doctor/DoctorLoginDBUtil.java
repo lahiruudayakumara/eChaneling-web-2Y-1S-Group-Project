@@ -12,8 +12,8 @@ public class DoctorLoginDBUtil {
 	private static Statement statement = null;
 	private static ResultSet result;
 	
-	public static List<specalizedDoctor> getDoctor(String docEmail){
-		ArrayList<specalizedDoctor> specalizedDoctor = new ArrayList<>();
+	public static List<SpecalizedDoctor> getDoctor(String docEmail){
+		ArrayList<SpecalizedDoctor> specalizedDoctor = new ArrayList<>();
 		
 		try {
 			
@@ -32,7 +32,7 @@ public class DoctorLoginDBUtil {
 				String Specialist = result.getString(6);
 				String work = result.getString(7);
 				
-				specalizedDoctor spDoc = new specalizedDoctor(fullname, email, phoneNo, work, id, password, Specialist);
+				SpecalizedDoctor spDoc = new SpecalizedDoctor(fullname, email, phoneNo, work, id, password, Specialist);
 				
 				specalizedDoctor.add(spDoc);
 			}
