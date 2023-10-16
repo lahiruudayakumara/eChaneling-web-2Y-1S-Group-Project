@@ -34,8 +34,18 @@ public class RegisterLoginServlet extends HttpServlet {
 		
 		isTrue = RegisteruserDBUtil.validate(userName, password);
 		
+		HttpSession session = request.getSession(false);
+				
+		if (session != null) {
+        	if(session.getAttribute("UserName") != null && session.getAttribute("Upassword") !=null) {
+        		userName = (String) session.getAttribute("UserName");
+            	password = (String) session.getAttribute("Upassword"); 
+        	}     	      	
+        } 
+		
 		if(isTrue == true) {
-			HttpSession session = request.getSession();
+			session.setAttribute("UserName", userName);
+			session.setAttribute("Upassword", password);
 			List<User> userDetails =  RegisteruserDBUtil.getUserDetails(userName);
 			session.setAttribute("usernic", userName);
 			request.setAttribute("userDetails", userDetails);
