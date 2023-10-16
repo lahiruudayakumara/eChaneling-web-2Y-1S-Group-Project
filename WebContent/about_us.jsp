@@ -8,6 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us</title>
     <link rel="stylesheet" href="css/about us.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> 
+    
 
     
     
@@ -18,9 +21,11 @@
             <div class="abimg">
                <img src="img/logo.jpg">
                <h2 >ABOUT US</h2>
+               
+               <div>
                <p >Welcome to<span> E-Channeling</span>, your trusted online destination for convenient
                  and efficient healthcare access. We understand the importance of timely and hassle-free medical appointments, and we're dedicated to making 
-                 your healthcare journey as seamless as possible.</p>
+                 your healthcare journey as seamless as possible.</p></div>
                      
             </div>
 
@@ -77,4 +82,50 @@
       
     
 </body>
+<footer class="footer">
+        <div class="fcontainer">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Privacy Policies</a></li>
+                        <li><a href="#">T & C</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>               
+                <div class="footer-col">
+                    <h4>Get Help</h4>
+                    <ul>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Live Chat</a></li>
+                        <li><a href="#">Refund</a></li>
+                    </ul>
+                </div>               
+ 
+                <div class="footer-col">
+                    <h4>Payment</h4>
+                    <div class="payment-links">
+                        <a href="#"><i class="fab fa-cc-visa"></i></a>
+                        <a href="#"><i class="fab fa-cc-mastercard"></i></a>
+                        <a href="#"><i class="fab fa-cc-amex"></i></a>
+                        <a href="#"><i class="fab fa-cc-paypal"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>follow us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+                <div class="copyright"> <p>&copy; 2023 E-Channelling</p>
+            <p><a href="4member.html"> By NexTech Visionaries</a></p>
+        </div>
+    </footer>
 </html>
