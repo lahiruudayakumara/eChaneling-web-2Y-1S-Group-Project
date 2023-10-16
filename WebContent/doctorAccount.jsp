@@ -15,6 +15,16 @@
 		${doctor.userId}
 		${doctor.name}
 		${doctor.email}
+		${doctor.phoneNum}
+		${doctor.work}
+		${doctor.specialization}
 	</c:forEach>
+	
+	<br>
+	
+	<form action="ReadScheduleServlet" method="post">
+			<input type="submit" name="view" value="view schedules">
+	</form>
+	
 </body>
 </html>

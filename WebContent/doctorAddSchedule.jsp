@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Create a schedule</title>
 </head>
 <body>
 <form action="addSchedule" method="post">
@@ -30,6 +30,10 @@
 
 		<label for="location"> Location </label>
 		<input type="text" name="location" id="location" placeholder="Asiri hospital" required>
+		<br>
+		
+		<label for="specialization"> specialization </label>
+		<input type="text" name="specialization" id="specialization" placeholder="eye" required>
 		<br>
 
 		<input type="submit" name="submit" value="Create">	
