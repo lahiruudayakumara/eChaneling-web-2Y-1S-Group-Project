@@ -12,7 +12,10 @@
     <title>User Info Page</title>
     <link rel="stylesheet" href="css/user_info.css">
     <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> 
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+     <link rel="stylesheet" href="H&F.css">
+    <link rel="stylesheet" type="text/css "href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> 
+        <link rel="stylesheet" href="css/header.css">
     
 
     <style>
@@ -97,6 +100,40 @@
 </head>
 
 <body>
+<header class="header">
+        <div class="hcontainer">
+            <nav class="navbar">
+               <div class="logo"><a href="#"><img src="img/logo.jpg" alt="logo"></a></div>
+               <ul class="nav-links">
+                    <li><a href="#">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Services</a>
+                        <div class="dropdown-content">
+                            <a href="#">Veterinary</a>
+                            <a href="#">Grooming</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Products</a>
+                        <div class="dropdown-content">
+                            <a href="#">Foods</a>
+                            <a href="#">Medicine</a>
+                            <a href="#">Accessories</a>
+                            <a href="#">Toys</a>
+                        </div>
+                    </li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+                <div class="nav-buttons">
+                    <a href="register.jsp" class="sbutton">Sign Up</a>
+                    <a href="login.jsp" class="sbutton">Sign In</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+    
 
     <div class="user-info">
         <div class="blur-overlay"></div>
@@ -140,6 +177,11 @@
             <a href="${userupdate }" class="Settings"><center>Account Settings</center></a>
             <a href="yohan gona" class="Settings"><center>My appointment</center></a>
             </div>
+           <div class="logout-button" style="text-align: center; margin-top: 20px;">
+    <a href="logout.jsp" onclick="return confirm('Are you sure you want to logout?');" style="display: inline-block; padding: 10px 20px; background-color: red; color: #fff; text-decoration: none; border: none; border-radius: 5px; font-weight: bold; cursor: pointer;">Logout</a>
+</div>
+
+	
             </center>
             
             
@@ -187,7 +229,9 @@
         </div>
                 <div class="copyright"> <p>&copy; 2023 E-Channelling</p>
             <p><a href="4member.html"> By NexTech Visionaries</a></p>
+            
         </div>
+        
     </footer>    
 
 </html>

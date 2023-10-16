@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+html,body{
+    line-height: 1.5;
+    font-family:'Poppins', sans-serif;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* header */
+
+.header {
+    background-color: #1185ee;
+    padding: 0px 100px;
+    margin: 0;
+    min-width: 100%;
+    max-width: 100%;
+    height: auto;
+    position: relative;
+    cursor: pointer;
+}
+
+@media(max-width: 900px){
+    .header{
+        padding: 0 0;
+    }
+}
+
+.hcontainer {
+    max-width: 100%;
+    min-width: 100%;
+    height: auto;
+    margin: auto;
+    position:relative; 
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18;
+    font-weight:500;
+}
+.logo img{
+    width: 255px;
+    height:100px
+}
+
+.nav-links li {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.nav-links li a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.nav-links li a:hover {
+    color: #24262b;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #1185ee;
+    min-width: 100px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 8px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.nav-buttons {
+    display: inline-flex;
+    align-items: center;
+    margin: left;
+}
+
+.sbutton {
+    display: inline-flex;
+    padding: 10px 10px;
+    background-color: #fff;
+    color: #1185ee;
+    text-decoration: none;
+    border-radius: 5px;
+    border-color: #24262b;
+    margin-left: 10px;
+    transition: all 0.75s ease;
+}
+
+.sbutton:hover {
+    color:#ffffff;
+    background-color:#00ff00;
+    
+  }
+
+  @media(max-width: 900px){
+    .sbutton{
+       padding: 6.25px 6.25px;
+       border-radius: 30px;
+    }
+}
