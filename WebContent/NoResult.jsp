@@ -3,70 +3,67 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-    <title>Appointments</title>
-	<link rel="stylesheet" href="css/AvailableAppointment.css">
-	<link rel="stylesheet" href="css/header.css">
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <title>Error Page</title>
+    <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> 
-<style> 
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        @import url('http://fonts.googleapis.com/css?family=Open+Sans:400,700');
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-image: url('img/white-concrete-wall.jpg');
+            background-size: cover;
+        }
 
-.topic p{
-margin: 35px 70px 30px 85px;
-font-size: 25px;
-    font-weight: 600;
-}
+        .error-cont1{
+            margin: 40px 80px 80px 80px;
+            padding: 20px;
+            color: #333;
+        }
 
-.cards{
-border: 1px solid #ccc;
-padding: 15px;
-margin: 10px;
-width: 320px;
-height:280px;
-background-color: rgba(30, 224, 224, 0.1);
-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-transition: 0.3s;
-display: inline-block;
-vertical-align: top;
-border-radius: 15px;
-font-size:16px;
-border: 2px solid #3498db;
-}
- 	 
-.cards:hover {
- box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
- }
+        .error-container{
+            margin: auto;
+            margin-top:20px;
+            padding: 30px;
+            max-width: 800px;
+            background-color: rgb(0, 123, 255, 0.3);
+            border: 2px solid #007bff;
+            border-radius: 10px;  
+        }
 
-.card-container{
-margin: 0px 70px 70px 70px;
-}
-.cards button{
-  margin-top:10px;
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: rgb(0, 123, 255, 0.7);; /* Background color */
-  color: #fff; /* Text color */
-  border: none;
-  border-radius: 10px;
-  text-align: center;
-  text-decoration: none;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
+        .error-message {
+            color: red;
+        }
 
-.cards button:hover{
-background-color: #2980b9;
-}
- 
- </style>
- 
+        .back-to-home{
+            margin: auto;
+            margin-top: 50px;
+            text-align: center;
+        }
+        .back-to-home button{
+            padding: 10px;
+            background-color: rgb(0, 123, 255, 0.5);
+            cursor: pointer;
+            border: 2px solid #007bff;;
+            border-radius: 10px;
+            width: 150px;
+            color: #333;
+            font-size: medium;
+        }
+
+        .back-to-home button:hover{
+            background-color: #007bff;
+           scale: 1.05;
+        }
+
+
+    </style>
 </head>
-<body style="background-image: url('img/white-concrete-wall.jpg');
-background-size: cover;
-background-repeat: no-repeat;">
-
-    <header class="header">
+<body>
+	
+	<header class="header">
         <div class="hcontainer">
             <nav class="navbar">
                <div class="logo"><a href="#"><img src="img/logo.jpg" alt="logo"></a></div>
@@ -90,25 +87,22 @@ background-repeat: no-repeat;">
             </nav>
         </div>
     </header>
-    
-    <dev class=topic><p>Search Results</p></dev>
-    
-<div class=card-container>
-<c:forEach var="app" items="${appDetails}">
-    
-     <div class="cards">
-        <h2>Dr.${app.doctorName}</h2>
-        <p>Appointment ID: ${app.appointmentID}</p>
-        <p>Specialization: ${app.specialization}</p>
-        <p>Hospital: ${app.hospitalName}</p>
-        <p>Date: ${app.date}</p>
-        <p>Time: ${app.time}</p>
-        <button type="submit">Channel</button>
+    <div class="error-cont1">
+    <h2>Search Results</h2>
+        <div class="error-container">
+            <div class="error-message">
+                <h1>Oops!</h1>
+                <% String error = (String) request.getAttribute("error"); %>
+                <p><%= error %></p>
+            </div>
+        </div>
+        <div class="back-to-home">
+            <a href="#"><button>Back to Home</button></a>
+        </div>    
     </div>
-
-</c:forEach>
-</div>
-<footer class="footer">
+    </div>
+    
+    <footer class="footer">
         <div class="fcontainer">
             <div class="row">
                 <div class="footer-col">
@@ -154,6 +148,6 @@ background-repeat: no-repeat;">
             <p><a href="#"> By NexTech Visionaries</a></p>
         </div>
     </footer>
-
+    
 </body>
 </html>

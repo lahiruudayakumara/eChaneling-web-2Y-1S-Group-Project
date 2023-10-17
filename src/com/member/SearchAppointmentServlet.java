@@ -31,16 +31,20 @@ public class SearchAppointmentServlet extends HttpServlet {
 		
 		try {
 		List<Appointments> appDetails = AppointmentsDBUtil.searchAppointment(doctorName, specialization, hospitalName, date);
+		if (!appDetails.isEmpty()) {
 		request.setAttribute("appDetails",appDetails);
 		RequestDispatcher dis = request.getRequestDispatcher("AvailableAppoinments.jsp");
-		dis.forward(request, response);
+		dis.forward(request, response);}
+		else{
+            // No results found; set an error message and forward to an error JSP
+            request.setAttribute("error", "No appointments found matching the criteria.");
+            RequestDispatcher errorDispatcher = request.getRequestDispatcher("NoResult.jsp");
+            errorDispatcher.forward(request, response);
+        } 
 		}
 		catch (Exception e) {
 			e.printStackTrace();
 		}
-		
-		
-		
 		
 		
 	}

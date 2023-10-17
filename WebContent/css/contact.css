@@ -11,7 +11,7 @@ body, h1, h2, p, ul, li, form {
 header {
     background-color: #007BFF;
     color: #fff;
-    text-align: center;
+    text-align:center;
     padding: 20px;
 }
 

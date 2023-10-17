@@ -92,12 +92,14 @@ public class AppointmentsDBUtil {
 			while(rs.next()) {
 				int appID = rs.getInt(1);
 				String docName = rs.getString(2);
+				String docRegNum = rs.getString(3);
 				String spec = rs.getString(4);
 				String hosName = rs.getString(5);
 				String dt = rs.getString(6);
 				String time = rs.getString(7);
+				double docCharge = rs.getDouble(9);
 				
-				Appointments appointment = new Appointments(appID,docName,spec,hosName,dt,time);
+				Appointments appointment = new Appointments(appID,docName,spec,docRegNum,hosName,dt,time,docCharge);
 				app.add(appointment);
 			}
 			

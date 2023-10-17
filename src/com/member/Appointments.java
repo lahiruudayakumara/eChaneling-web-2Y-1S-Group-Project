@@ -16,20 +16,18 @@ public class Appointments {
 	private String hospitalName;
 	private String date;
 	private String time;
+	private double doctorCharge;
 
 	//Constructs an Appointments object with the specified appointment details.
-	public Appointments(int appointmentID, String doctorName, String specialization, String hospitalName, String date, String time) {
+	public Appointments(int appointmentID, String doctorName, String docRegNum, String specialization, String hospitalName, String date, String time, double doctorCharge) {
 		this.appointmentID = appointmentID;
 		this.doctorName = doctorName;
+		this.doctorRegNum = docRegNum;
 		this.specialization = specialization;
 		this.hospitalName = hospitalName;
 		this.date = date;
 		this.time = time;
-	}
-	
-	//Sets the registration number of the doctor associated with the appointment.
-	public void setDoctorRegNum (String docRegNum){
-		this.doctorRegNum = docRegNum;
+		this.doctorCharge = doctorCharge;
 	}
 	
 	//Retrieves the unique identifier of the appointment.
@@ -66,5 +64,9 @@ public class Appointments {
 	public String getTime() {
 		return time;
 	}
-
+	
+	//Retrieves the doctors's charge of the appointment.
+		public double getDoctorCharge() {
+			return doctorCharge;
+		}
 }
