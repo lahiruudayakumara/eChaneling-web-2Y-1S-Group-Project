@@ -88,4 +88,14 @@
     <servlet-name>SearchAppointment</servlet-name>
     <url-pattern>/appointments</url-pattern>
   </servlet-mapping>
+  <servlet>
+  	<servlet-name>DropMessage</servlet-name>
+  	<servlet-class>com.member.ContactMessageServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>DropMessage</servlet-name>
+  	<url-pattern>/drop</url-pattern>
+  </servlet-mapping>
+  
+  
 </web-app>
