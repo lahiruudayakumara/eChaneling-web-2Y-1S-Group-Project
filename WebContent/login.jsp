@@ -19,24 +19,7 @@ session.setAttribute("username", username);
     
         <p><a href="home.jsp" style="display: inline-block; padding: 10px 20px; background-color: #0074cc; color: #fff; text-decoration: none; border: none; border-radius: 5px; font-weight: bold; text-align: center; cursor: pointer;">Back to Home</a></p>
 
-<<<<<<< Updated upstream
-=======
-            <div class="menu">
-                <ul>
-                    <li><a href="register.jsp">adoooo</a></li>
-                    <li><a href="#">adoooo</a></li>
-                    <li><a href="#">adooo</a></li>
-                    <li><a href="#">adooo</a></li>
-                    <li><a href="#">adoooo</a></li>
-                    <li><a href="#">adoooo</a></li>
-                    
-                </ul>
-            </div>
 
-            
-
-        </div> 
->>>>>>> Stashed changes
         <div class="content">
         
             <h1>A fit body, a calm mind,   <br><span>a house full of</span> <br>love. ...</h1>

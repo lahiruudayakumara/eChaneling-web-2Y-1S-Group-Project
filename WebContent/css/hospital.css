@@ -1,0 +1,131 @@
+/* Reset some default styles for better consistency */
+body, h1, h2, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Apply a background color and a font family */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+}
+
+/* Center the header text and add a background color */
+header {
+    text-align: center;
+    background-color: #00ff40;
+    color: white;
+    padding: 10px 0;
+}
+
+/* Style the hospital containers */
+.hospital-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.left-container, .right-container {
+    width: 48%;
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Add a subtle hover effect on hospital containers */
+.left-container:hover, .right-container:hover {
+    transform: scale(1.02);
+}
+
+/* Hospital section styles */
+.hospital {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Style the image slider */
+.image-slider {
+    width: 100%;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+}
+
+.slide {
+    display: none;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 1s ease;
+}
+
+.slide:first-child {
+    display: block;
+}
+
+.image-slider img {
+    width: 100%;
+    height: 100%;
+}
+
+/* Previous and Next buttons for the image slider */
+.image-slider .prev, .image-slider .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    z-index: 1;
+}
+
+.image-slider .prev {
+    left: 0;
+}
+
+.image-slider .next {
+    right: 0;
+}
+
+/* Hospital name styles */
+h2 {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+/* Address and phone styles */
+p {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+/* Services list styles */
+ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+li {
+    font-size: 14px;
+    margin: 5px 0;
+}
+@media (max-width: 768px) {
+    .hospital-container {
+        flex-direction: column; /* Stack hospitals vertically on smaller screens */
+    }
+
+    .left-container, .right-container {
+        width: 100%; /* Take up full width on smaller screens */
+    }
+}
+
+/* Media query for screens smaller than 576px */
+@media (max-width: 576px) {
+    .hospital {
+        margin-bottom: 10px; /* Reduce spacing between hospitals */
+    }
+}

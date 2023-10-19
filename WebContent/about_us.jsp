@@ -13,18 +13,17 @@
       <link rel="stylesheet" type="text/css "href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> 
     
-</head>
 <header class="header">
         <div class="hcontainer">
             <nav class="navbar">
                <div class="logo"><a href="#"><img src="img/logo.jpg" alt="logo"></a></div>
                <ul class="nav-links">
-                    <li><a href="#">Home</a></li>
+                    <li><a href="home.jsp">Home</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropbtn">Services</a>
                         <div class="dropdown-content">
-                            <a href="#">Veterinary</a>
-                            <a href="#">Grooming</a>
+                            <a href="Hospital.jsp">Hospital</a>
+                            <a href="#">Doctors</a>
                         </div>
                     </li>
                     <li class="dropdown">
@@ -36,9 +35,9 @@
                             <a href="#">Toys</a>
                         </div>
                     </li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="about_us.jsp">About us</a></li>
+                    <li><a href="contact.jsp">Contact </a></li>
+                    <li><a href="user_info.jsp">User Info</a></li>
                 </ul>
                 <div class="nav-buttons">
                     <a href="register.jsp" class="sbutton">Sign Up</a>
@@ -47,6 +46,7 @@
             </nav>
         </div>
     </header>
+ 
     
     
        
