@@ -17,7 +17,7 @@ session.setAttribute("username", username);
 
     <div class="main">
     
-        <p><a href="home.jsp" style="display: inline-block; padding: 10px 20px; background-color: #0074cc; color: #fff; text-decoration: none; border: none; border-radius: 10px; font-weight: bold; text-align: center; cursor: pointer;">Back to Home</a></p>
+        <p><a href="home.jsp" style="display: inline-block; padding: 10px 20px; background-color: #0074cc; color: #fff; text-decoration: none; border: none; border-radius: 5px; font-weight: bold; text-align: center; cursor: pointer;">Back to Home</a></p>
 
 
         <div class="content">
