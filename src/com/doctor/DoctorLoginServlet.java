@@ -10,6 +10,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class DoctorLogin
@@ -31,6 +32,10 @@ public class DoctorLoginServlet extends HttpServlet {
 		boolean isTrue = DoctorLoginDBUtil.validate(email, password);
 		
 		if(isTrue == true) {
+			HttpSession session = request.getSession(); 
+			session.setAttribute("email", email);
+			session.setAttribute("password", password);
+			
 			List<SpecalizedDoctor> spDocDetails = DoctorLoginDBUtil.getDoctor(email);
 			request.setAttribute("spDocDetails", spDocDetails);
 			
