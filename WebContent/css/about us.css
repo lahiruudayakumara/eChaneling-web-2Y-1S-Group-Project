@@ -1,0 +1,98 @@
+
+
+
+
+
+
+
+/*about us*/
+
+.abimg img{
+    width:100%;
+    height: 500px;
+
+}
+
+.abimg h2{
+    text-align: center;
+    font-size: 50px;
+    font-family: fantasy;
+    color: rgb(17, 222, 17);
+}
+
+.abimg p{   
+    text-align: center;
+    margin: -25px 150px 75px 150px;
+    font-size: 22px;
+    font-weight:500;
+}
+
+@media(max-width: 700px){
+    .abimg p{
+       margin: 30px;
+       font-size: 18px;
+       text-align: justify;
+    }
+}
+
+.abimg p span{   
+    font-size: 25px;
+    color: rgb(2, 59, 2);
+    font-weight: bold;
+
+}
+
+.endcontainer{
+    display: flex;
+    background-color:rgb(255, 255, 255); 
+
+
+}
+
+.leftsection{
+    flex-basis: 33.33%;
+}
+.leftsection img{
+    max-width: 100%;
+    height: auto;
+}
+
+.middlesection{
+    flex-basis: 33.33%;
+    background-color:rgb(14, 131, 240); 
+}
+
+.rightsection{
+    flex-basis:33.33%;
+    background-color:#05b805;
+}
+
+.Mcontainer{
+    margin: 200px 50px 100px 50px;
+    color: #fff;
+    
+}
+.Rcontainer{
+    margin: 200px 50px 100px 50px;
+    color: #fff;
+}
+.Mcontainer h3{
+    font-size: 25px;
+}
+.Mcontainer p{
+    font-size: 20px;
+    font-family: 'Roboto', 'Lato', 'Open Sans', sans-serif;
+
+}
+.Rcontainer h3{
+    font-size: 25px;
+}
+.Rcontainer p{
+    font-size: 20px;
+    font-family: 'Roboto', 'Lato', 'Open Sans', sans-serif;
+
+}
+
+
+
+

@@ -36,4 +36,8 @@ class Person {
 		return password;
 	}
 	
+	public String displayInfo() {
+		return "Name : "+ fullName + "</br>Email: " + email+ "</br>Tel : " +phoneNo+ "</br>";
+	}
+	
 }

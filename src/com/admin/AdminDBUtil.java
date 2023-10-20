@@ -67,4 +67,31 @@ public class AdminDBUtil {
 		}
 		return admin;
 	}
+	
+	public static List<Count> getCount(){
+		
+		ArrayList<Count> count = new ArrayList<>();
+
+		try {
+			con = DBConnect.getConnection();
+			stmt = con.createStatement();
+			
+			String sql = "SELECT COUNT(*) FROM doctor ";
+			rs = stmt.executeQuery(sql);
+			
+			if(rs.next()) {
+				int doctor = rs.getInt(1);
+				
+				
+				Count c = new Count();
+				c.setDoctor(doctor);
+				count.add(c);
+				
+			}
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+		return count;
+	}
 }
