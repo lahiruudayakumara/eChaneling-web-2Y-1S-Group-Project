@@ -8,5 +8,6 @@
 </head>
 <body>
 	<h1> unsucces </h1>
+	<p><%= request.getAttribute("error") %></p>
 </body>
 </html>
