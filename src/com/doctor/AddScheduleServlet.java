@@ -28,9 +28,12 @@ public class AddScheduleServlet extends HttpServlet {
 		String endTime = request.getParameter("endTime");
 		String location = request.getParameter("location");
 		String specialization = request.getParameter("specialization");
+		int docCharge = Integer.parseInt(request.getParameter("docCharge"));
+		String availability = request.getParameter("availability");
 		
 
-		boolean isTrue = scheduleDBUtil.createSchedule(docName, docRegNum, date, startTime, endTime, location, specialization);
+		boolean isTrue = scheduleDBUtil.createSchedule(docName, docRegNum, date, startTime, endTime, 
+				location, specialization, docCharge, availability);
 
 		if(isTrue == true) {
 			RequestDispatcher dis1 = request.getRequestDispatcher("success.jsp");
