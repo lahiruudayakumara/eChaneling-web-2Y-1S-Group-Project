@@ -1,0 +1,66 @@
+@charset "ISO-8859-1";
+body {
+        font-family: 'Poppins', sans-serif;
+		background-image: url('../img/bg-img.jpg');
+		background-size: cover; /* Ensure the background image covers the entire body */
+		background-position: center; /* Center the background image */
+		color: blue; /* Text color */
+		align-items: center;
+		height: 100vh; /* Make sure the body takes up the full viewport height */
+		text-align: center;
+		display: flex;
+	}
+        
+form {
+		width: 500px;
+		padding-right: 80px;
+		padding-left: 60px;
+		background-color: rgba(255, 255, 255, 0.8); /* Add a semi-transparent white background */
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+		text-align: center;
+		border-radius: 30px;
+		margin-left: 300px;
+		margin-top: 100px;
+	}
+
+label {
+        display: block;
+        margin-top: 10px;
+    }
+
+input[type="text"],input[type="date"],input[type="time"] {
+		width: 100%;
+		padding: 10px;
+		margin-top: 5px;
+		border: 1px solid blue;
+		border-radius: 3px;
+		background-color: #f9f9f9;
+		color: #333;
+		font-size: 16px;
+		transition: border-color 0.3s, box-shadow 0.3s;
+		display:inline-block;
+	}
+
+input[type="text"]:focus,input[type="date"]:focus,input[type="time"]:focus {
+		border-color: blue; /* Change border color on focus */
+		box-shadow: 0 0 5px rgba(17, 97, 238, 0.5); /* Add a box shadow on focus */
+	}
+
+.center-button {
+        text-align: center;
+    }
+
+input[type="submit"] {
+	 	background-color: blue;
+		color: #fff;
+		padding: 10px 20px;
+		border: none;
+		border-radius: 3px;
+		cursor: pointer;
+		transition: background-color 0.3s, color 0.3s; /* Add a smooth transition */
+	}
+
+input[type="submit"]:hover {
+		background-color: #555; /* Change background color on hover */
+		color: #fff; /* Change text color on hover */
+	}
