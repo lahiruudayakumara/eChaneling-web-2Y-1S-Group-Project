@@ -21,7 +21,9 @@ public class ReadScheduleServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		List<Schedule> schedule = ReadSheduleDBUtil.getSchedule();
+		String doctorRegNumber = request.getParameter("doctorRegNum");
+		
+		List<Schedule> schedule = ReadSheduleDBUtil.getSchedule(doctorRegNumber);
 		request.setAttribute("schedule", schedule);
 		
 		RequestDispatcher dis = request.getRequestDispatcher("schedule.jsp");
