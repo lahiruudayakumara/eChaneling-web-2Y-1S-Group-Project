@@ -11,7 +11,7 @@ public class ReadSheduleDBUtil {
 	private static Statement statement = null;
 	private static ResultSet result;
 	
-	public static List<Schedule> getSchedule(){
+	public static List<Schedule> getSchedule(String doctorRegNumber){
 		ArrayList<Schedule> Schedule = new ArrayList<>();
 		
 		try {
@@ -19,20 +19,23 @@ public class ReadSheduleDBUtil {
 			con = DBConnect.getConnection();
 			statement = con.createStatement();
 			
-			String sql = " select * from shedule ";
+			String sql = " select * from shedule where docRegNum = '"+ doctorRegNumber +"'";
 			result = statement.executeQuery(sql);
 			
 			while(result.next()) {
 				int sId = result.getInt(1);
 				String docName = result.getString(2);
 				String docRegNum = result.getString(3);
-				String date = result.getString(4);;
+				String date = result.getString(4);
 				String startTime = result.getString(5);
 				String endTime = result.getString(6);
 				String location = result.getString(7);
 				String specialization = result.getString(8);
+				int docCharge = result.getInt(9);
+				String availability = result.getString(10);
 				
-				Schedule schedule = new Schedule(sId, docName, docRegNum, date, startTime, endTime, location, specialization);
+				Schedule schedule = new Schedule(sId, docName, docRegNum, date, startTime, 
+						endTime, location, specialization, docCharge, availability);
 				
 				Schedule.add(schedule);
 			}
