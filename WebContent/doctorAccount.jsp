@@ -12,18 +12,19 @@
 	<h1> Welcome to eChanneling</h1>
 	
 	<c:forEach var="doctor" items="${spDocDetails}">
-		${doctor.userId}
-		${doctor.name}
-		${doctor.email}
-		${doctor.phoneNum}
-		${doctor.work}
-		${doctor.specialization}
+		<p> Doctor ID : ${doctor.userId}</p>
+		<p> Doctor Name : ${doctor.name}</p>
+		<p> Email : ${doctor.email}</p>
+		<p>	Contact Number : ${doctor.phoneNum}</p>
+		<p> Work Place : ${doctor.work}</p>
+		<p> SpecialIzation : ${doctor.specialization}</p>
 	</c:forEach>
 	
 	<br>
 	
 	<form action="ReadScheduleServlet" method="post">
-			<input type="submit" name="view" value="view schedules">
+		<p> Doctor Register Number : <input type="text" name="doctorRegNum"> </p>
+		<input type="submit" name="view" value="view schedules">
 	</form>
 	
 </body>
