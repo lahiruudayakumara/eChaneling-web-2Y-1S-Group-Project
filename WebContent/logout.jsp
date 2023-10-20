@@ -7,7 +7,10 @@
     <title>Logout Page</title>
 </head>
 <body>
-    <h1>Logout Successful</h1>
-    <p>You have been logged out. Redirecting to the home page...</p>
+    <div style="text-align: center; padding-top: 100px;">
+        <h1>Logout Successful</h1>
+        <p>You have been logged out. Redirecting to the home page...</p>
+        <p>If you are not automatically redirected, <a href="home.jsp">click here</a>.</p>
+    </div>
 </body>
 </html>

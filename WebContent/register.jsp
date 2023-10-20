@@ -36,13 +36,16 @@
                     name="email"
                     placeholder="Enter Email"required/>
           </div>
-          <div class="user-input-box">
-            <label for="phoneNumber">Phone Number</label>
-            <input type="text"
-                    id="phoneNumber"
-                    name="phoneNumber"
-                    placeholder="Enter Phone Number"/>
-          </div>
+          
+			<div class="user-input-box">
+			  <label for="phoneNumber">Phone Number</label>
+			  <input type="text"
+			         id="phoneNumber"
+			         name="phoneNumber"
+			         placeholder="Enter Phone Number"
+			         maxlength="10" />
+			</div>
+
           
           <div class="user-input-box">
             <label for="address">User address</label>
