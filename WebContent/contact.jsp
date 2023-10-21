@@ -21,8 +21,8 @@ background-repeat: no-repeat;">
             <ol>
                 <li>You can search for your Doctor by name, specialisation, or even their hospital.</li><br>
                 <li>Then, by clicking search, you will be redirected to the available medical professionals.</li><br>
-                <li>Select your professional with the “Book Now” button and then you will be directed to the times that medical officer is available.</li><br>
-                <li>Enter the patient's details and click “Pay Now”.</li><br>
+                <li>Select your professional with the "Book Now" button and then you will be directed to the times that medical officer is available.</li><br>
+                <li>Enter the patient's details and click "Pay Now".</li><br>
                 <li>Congratulations! You have channeled your doctor! Wait for your confirmation email and your all set for your appointment</li>
             </ol>      
         </section>
@@ -80,17 +80,17 @@ background-repeat: no-repeat;">
         <section class="inquiry-form">
             <h2>Drop us a line</h2>
             <p>Get in touch if you have any questions.</p><br>
-            <form action="#" method="post">
+            <form action="drop" method="post">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required>
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
                 <label for="phone">Phone:</label>
-                <input type="tel" id="phone" name="phone">
+                <input type="tel" id="phone" name="phone" required>
                 <label for="subject">Subject:</label>
-                <input type="text" id="subject" name="subject">
+                <input type="text" id="subject" name="subject" required>
                 <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="4" required></textarea><br>
+                <textarea id="message" name="message" rows="4"></textarea><br>
                 <button type="submit" name="submit">Submit</button>
             </form>
         </section>

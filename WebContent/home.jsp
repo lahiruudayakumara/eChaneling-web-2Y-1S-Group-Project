@@ -9,6 +9,7 @@
     <title>E-Channelling</title>
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> 
 </head>
 
@@ -16,8 +17,29 @@
 background-size: cover;
 background-repeat: no-repeat;">
    
-    <header>
-        <h1>Welcome to E-Channelling</h1>
+    <header class="header">
+        <div class="hcontainer">
+            <nav class="navbar">
+               <div class="logo"><a href="#"><img src="img/logo.jpg" alt="logo"></a></div>
+               <ul class="nav-links">
+                    <li><a href="#">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Services</a>
+                        <div class="dropdown-content">
+                            <a href="#">Book an Appointment</a>
+                            <a href="#">Order Medicine</a>
+                        </div>
+                    </li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+                <div class="nav-buttons">
+                    <a href="#" class="sbutton">Sign Up</a>
+                    <a href="#" class="sbutton">Sign In</a>
+                </div>
+            </nav>
+        </div>
     </header>
 
     <div class="content1" style="background-image: url('img/Writing medical doctor Over blue cardio background.jpg');
@@ -25,7 +47,7 @@ background-repeat: no-repeat;">
         <div class="content2">
             <section class="search-section">
                 <h2>FIND A DOCTOR</h2>
-                <form id="doctor-search-form" method="post" action="#">
+                <form id="doctor-search-form" method="post" action="appointments">
                     <input type="text" name="doctor-name" placeholder="Doctor's Name">
                     <select name="specialization">
                         <option value="" disabled selected>Select a specialization</option> 
@@ -48,7 +70,7 @@ background-repeat: no-repeat;">
                         <option value="Nawaloka">Nawaloka Hospital</option>
                         <option value="Ninewhales">Ninewhales Hospital</option>
                     </select>
-                    <input type="date" name="date" placeholder="Select a date">
+                    <input type="date" name="date">
                     <button type="submit">Search</button>
                 </form>
             </section>

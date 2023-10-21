@@ -1,0 +1,29 @@
+/* CSS for the appointment cards */
+ @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+body, h1, h2, form, input, button {
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    font-size: inherit;
+    font-family: 'Poppins', sans-serif;
+    background-image: url('img/white-concrete-wall.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #333;
+}
+
+header {
+    background-color: #007BFF;
+    color: #fff;
+    text-align: center;
+    padding: 30px 0;
+ 
+
+ 
+
+ 
+ 

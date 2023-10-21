@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    background-image: url('img/white-concrete-wall.jpg');
+    background-size: cover;
+    
+}
+
+.apdt-container {
+    margin: 30px;
+    padding: 20px;
+    padding-top: 10px;
+    background-color: rgb(0, 123, 255, 0.2);
+    border: 2px solid #007bff;
+    border-radius: 10px;
+    color: #333;
+}
+
+#appointment-info {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: separate; /* Use separate instead of collapse */
+    margin-top: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid rgb(0, 123, 255);
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-collapse:separate;
+    border: 1px solid  rgba(0, 123, 255, 0.25);
+    border-radius: 100px;
+    overflow: hidden;
+}
+
+th {
+    background-color: #007bff;
+    color: #fff;
+}
+
+/* Apply basic styles to the entire form */
+
+.form-container{
+    margin: 30px;
+    padding: 20px;
+    border: 2px solid  #007bff;
+    border-radius: 10px;
+    background-color: rgb(0, 123, 255, 0.2);;
+}
+
+form {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    border: 2px solid rgb(0, 123, 255);
+    border-radius: 10px;
+    background-color: rgb(249, 249, 249, 0.6);
+}
+
+/* Style the form headings */
+.form-container h2{
+    text-align: center;
+    color: #333;
+}
+
+/* Style form fieldsets */
+fieldset {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color:rgb(249, 249, 249, 0.1);
+    border: 1px solid ;
+}
+
+legend {
+    font-size: large;
+    font-weight: bold;
+}
+
+/* Style form labels and input fields */
+label {
+    display: block;
+    margin: 10px 0;
+    color: #555;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="email"],
+input[type="tel"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+}
+
+.submit{
+text-align: center;
+}
+
+/* Style the submit button */
+input[type="submit"] {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width:auto;
+    font-size:15px;
+}
+
+/* Hover effect for the submit button */
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+
+
+

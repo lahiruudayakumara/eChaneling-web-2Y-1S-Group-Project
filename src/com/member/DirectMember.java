@@ -2,19 +2,18 @@ package com.member;
 
 public class DirectMember extends RegisteredMember {
 	
-	private String userName;
-	
-	public DirectMember(String name, String NIC, String phone, String email, String userName) {
-		super(name, NIC, phone, email);
-		this.userName = userName;
+	private int memberID;
+	public DirectMember(String name, String NIC, String phone, String email, String area, int memberID) {
+		super(name, NIC, phone, email, area);
+		this.memberID = memberID;
 	}
 	
-	public String getUserName() {
-		return userName;
+	public int getMemberID() {
+		return memberID;
 	}
 
 	@Override
-	public void setAppointment() {
+	public void bookAppointment() {
 	}
 	
 	
