@@ -9,7 +9,11 @@
       initial-scale=1.0"/>
     <link rel="stylesheet" href="css/register.css" />
   </head>
-  <body>
+ <div style="position: absolute; top: 0; left: 0;">
+    <a href="home.jsp" style="display: inline-block; padding: 10px 20px; background-color: #0074cc; color: #fff; text-decoration: none; border: none; border-radius: 5px; font-weight: bold; text-align: center; cursor: pointer;">Back to Home</a>
+</div>
+ <body>
+  
     <div class="container">
       <h1 class="form-title">Registration</h1>
       <form action="reguser" method="post">
@@ -27,7 +31,8 @@
             <input type="text"
                     id="Nic"
                     name="nic"
-                    placeholder="Enter Nic Numuber"required/>
+                    placeholder="Enter Nic Numuber(10 character)"required
+                    maxlength="10" />
           </div>
           <div class="user-input-box">
             <label for="email">Email</label>
@@ -42,7 +47,7 @@
 			  <input type="text"
 			         id="phoneNumber"
 			         name="phoneNumber"
-			         placeholder="Enter Phone Number"
+			         placeholder="Enter Phone Number(10 number)"
 			         maxlength="10" />
 			</div>
 

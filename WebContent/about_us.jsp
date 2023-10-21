@@ -13,7 +13,17 @@
       <link rel="stylesheet" type="text/css "href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> 
     
-<header class="header">
+<%@ page import="javax.servlet.http.HttpSession" %>
+<%@ page import="java.util.Objects" %>
+
+<%
+	HttpSession session1 = request.getSession(false);
+    String userName = (session1 != null) ? (String) session1.getAttribute("UserName") : null;
+%>
+
+
+   
+    <header class="header">
         <div class="hcontainer">
             <nav class="navbar">
                <div class="logo"><a href="#"><img src="img/logo.jpg" alt="logo"></a></div>
@@ -22,31 +32,27 @@
                     <li class="dropdown">
                         <a href="#" class="dropbtn">Services</a>
                         <div class="dropdown-content">
-                            <a href="Hospital.jsp">Hospital</a>
-                            <a href="#">Doctors</a>
+                            <a href="#">Book an Appointment</a>
+                            <a href="#">Order Medicine</a>
+                             <a href="Hospital.jsp">Hospital</a>
                         </div>
                     </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropbtn">Products</a>
-                        <div class="dropdown-content">
-                            <a href="#">Foods</a>
-                            <a href="#">Medicine</a>
-                            <a href="#">Accessories</a>
-                            <a href="#">Toys</a>
-                        </div>
-                    </li>
-                    <li><a href="about_us.jsp">About us</a></li>
-                    <li><a href="contact.jsp">Contact </a></li>
-                    <li><a href="user_info.jsp">User Info</a></li>
+                    <li><a href="blog.jsp">Blog</a></li>
+                    <li><a href="about_us.jsp">About Us</a></li>
+                    <li><a href="contact.jsp">Contact</a></li>
                 </ul>
                 <div class="nav-buttons">
+                    <% if (userName != null) { %>
+                    <a href="userRetrive" class="sbutton"><%=userName %></a>
+                    <a href="logout.jsp" class="sbutton">Logout</a>
+                <% } else { %>
                     <a href="register.jsp" class="sbutton">Sign Up</a>
                     <a href="login.jsp" class="sbutton">Sign In</a>
+                <% } %>
                 </div>
             </nav>
         </div>
     </header>
- 
     
     
        

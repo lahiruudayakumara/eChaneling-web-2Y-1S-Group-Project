@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 public class RegisteruserDBUtil {
 	
+	//final constant
 	private static final String userNic = null;
 	private static boolean isSucess;
 	private static Connection con = null;
@@ -119,14 +120,14 @@ public class RegisteruserDBUtil {
 			return isSucess;
 			
 		}
-		public static List<User> getUserDetails(String userNic){
+		public static List<User> getUserDetails(String userName){
 			
 			ArrayList<User> regUser = new ArrayList<>();
 			
 			try {
 				con = DBConnect.getConnection();
 				stmt = con.createStatement();
-				String sql = "SELECT * FROM user WHERE username = '" +userNic+ "'";
+				String sql = "SELECT * FROM user WHERE username = '" +userName+ "'";
 				rs = stmt.executeQuery(sql);
 				
 				while(rs.next()) {
