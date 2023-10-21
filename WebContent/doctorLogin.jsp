@@ -88,20 +88,41 @@
 			.login-block button:hover {
 			    background: #ff7b81;
 			}
+			
+			input[type="checkbox"] {
+			    width: 16px;
+			    height: 16px;
+			    border: 1px solid green;
+			    border-radius: 5px;
+			    margin-bottom: 20px;
+			    cursor: pointer;
+			}
+			
 	</style>
 	</head>
 	<body>
 		
 		<div class="login"></div>
 		<div class="login-block">
-		 <h1>Login</h1>
+		<h1>Login</h1>
 			<form action="doctorLogin" method="post">
 				<input type="email" name="email" placeholder="dushan123@gmail.com">
-				<input type="password" name="password" placeholder="Password">
+				<input type="password" name="password" id="password" placeholder="Password">
+				<input type="checkbox" onclick="togglePasswordVisibility()" id="show" name="show">
+				<label for="show">Show Password</label>
+        		<br>
 				<button>Submit</button>
 			</form>
 		</div>
-		
-		
-	</body>
+		<script>
+        function togglePasswordVisibility() {
+            var passwordInput = document.getElementById("password");
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text"; // Show the password
+            } else {
+                passwordInput.type = "password"; // Hide the password
+            }
+        }
+       </script>
+	   </body>
 </html>
