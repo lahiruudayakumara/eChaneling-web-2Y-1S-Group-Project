@@ -2,15 +2,17 @@
     pageEncoding="ISO-8859-1"%>
 <%@ page import="javax.servlet.http.HttpSession" %>
 <% 
+	//Session Validate
 	if (session.getAttribute("adminUserName")== null) {
-		response.sendRedirect("admin_login.jsp");
+		response.sendRedirect(" admin_login.jsp");
 	}
  %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Add Doctor</title>
+<link rel="icon" type="image/x-icon" href="./img/logo.jpg">
 <link rel="stylesheet" href="./css/admin.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
