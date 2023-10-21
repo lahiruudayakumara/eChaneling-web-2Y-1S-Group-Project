@@ -4,15 +4,52 @@
     <title>Contact Us</title>
     <link rel="stylesheet" type="text/css" href="css/contact.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> 
 </head>
+<%@ page import="javax.servlet.http.HttpSession" %>
+<%@ page import="java.util.Objects" %>
+
+<%
+	HttpSession session1 = request.getSession(false);
+    String userName = (session1 != null) ? (String) session1.getAttribute("UserName") : null;
+%>
+
 <body style="background-image: url('img/white-concrete-wall.jpg');
 background-size: cover;
 background-repeat: no-repeat;">
-    <header>
-        <h1>Contact Us</h1>
+   
+    <header class="header">
+        <div class="hcontainer">
+            <nav class="navbar">
+               <div class="logo"><a href="#"><img src="img/logo.jpg" alt="logo"></a></div>
+               <ul class="nav-links">
+                    <li><a href="home.jsp">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Services</a>
+                        <div class="dropdown-content">
+                            <a href="#">Book an Appointment</a>
+                            <a href="#">Order Medicine</a>
+                        </div>
+                    </li>
+                    <li><a href="blog.jsp">Blog</a></li>
+                    <li><a href="about_us.jsp">About Us</a></li>
+                    <li><a href="contact.jsp">Contact</a></li>
+                </ul>
+                <div class="nav-buttons">
+                    <% if (userName != null) { %>
+                    <a href="user_info.jsp" class="sbutton"><%=userName %></a>
+                    <a href="logout.jsp" class="sbutton">Logout</a>
+                <% } else { %>
+                    <a href="register.jsp" class="sbutton">Sign Up</a>
+                    <a href="login.jsp" class="sbutton">Sign In</a>
+                <% } %>
+                </div>
+            </nav>
+        </div>
     </header>
+
     <div class="container">
         
         <section class="channel-info">
@@ -96,7 +133,7 @@ background-repeat: no-repeat;">
         </section>
         <section class="history">
             <p>View your previous messages.</p><br>
-            <button><a href="#">Message History</a></button>
+            <button><a href="displaymsg.jsp">Message History</a></button>
         </section>
     </div>
     <footer class="footer">

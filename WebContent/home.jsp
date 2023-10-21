@@ -13,6 +13,14 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> 
 </head>
 
+<%@ page import="javax.servlet.http.HttpSession" %>
+<%@ page import="java.util.Objects" %>
+
+<%
+	HttpSession session1 = request.getSession(false);
+    String userName = (session1 != null) ? (String) session1.getAttribute("UserName") : null;
+%>
+
 <body style="background-image: url('img/white-concrete-wall.jpg');
 background-size: cover;
 background-repeat: no-repeat;">
@@ -22,7 +30,7 @@ background-repeat: no-repeat;">
             <nav class="navbar">
                <div class="logo"><a href="#"><img src="img/logo.jpg" alt="logo"></a></div>
                <ul class="nav-links">
-                    <li><a href="#">Home</a></li>
+                    <li><a href="home.jsp">Home</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropbtn">Services</a>
                         <div class="dropdown-content">
@@ -30,13 +38,18 @@ background-repeat: no-repeat;">
                             <a href="#">Order Medicine</a>
                         </div>
                     </li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="blog.jsp">Blog</a></li>
+                    <li><a href="about_us.jsp">About Us</a></li>
+                    <li><a href="contact.jsp">Contact</a></li>
                 </ul>
                 <div class="nav-buttons">
-                    <a href="#" class="sbutton">Sign Up</a>
-                    <a href="#" class="sbutton">Sign In</a>
+                    <% if (userName != null) { %>
+                    <a href="user_info.jsp" class="sbutton"><%=userName %></a>
+                    <a href="logout.jsp" class="sbutton">Logout</a>
+                <% } else { %>
+                    <a href="register.jsp" class="sbutton">Sign Up</a>
+                    <a href="login.jsp" class="sbutton">Sign In</a>
+                <% } %>
                 </div>
             </nav>
         </div>

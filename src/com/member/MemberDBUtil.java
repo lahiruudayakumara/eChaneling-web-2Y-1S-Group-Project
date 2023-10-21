@@ -3,6 +3,8 @@ package com.member;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MemberDBUtil {
 	
@@ -10,7 +12,7 @@ public class MemberDBUtil {
 	private static Statement stmt = null;
 	private static ResultSet rs = null;
 	
-	public static boolean dropMessage(String name, String email, String phone, String subject, String message) {
+	public static boolean dropMessage(String name, String email, String phone, String subject, String message, String userName) {
 		
 		boolean isSuccess = false;
 		
@@ -19,7 +21,7 @@ public class MemberDBUtil {
 			con = DBConnect.getConnection();
 			stmt = con.createStatement();
 			
-			String sql = "INSERT INTO contact_us VALUES(0,'"+ name+"','"+email+"','"+phone+"','"+subject+"','"+message+"')";
+			String sql = "INSERT INTO contact_us VALUES(0,'"+ name+"','"+email+"','"+phone+"','"+subject+"','"+message+"','"+userName+"')";
 			
 			int result = stmt.executeUpdate(sql);
 			
@@ -36,5 +38,5 @@ public class MemberDBUtil {
 		
 		return isSuccess;
 	}
-
+	
 }

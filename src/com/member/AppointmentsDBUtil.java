@@ -99,7 +99,7 @@ public class AppointmentsDBUtil {
 				String time = rs.getString(7);
 				double docCharge = rs.getDouble(9);
 				
-				Appointments appointment = new Appointments(appID,docName,spec,docRegNum,hosName,dt,time,docCharge);
+				Appointments appointment = new Appointments(appID,docName,docRegNum,spec,hosName,dt,time,docCharge);
 				app.add(appointment);
 			}
 			

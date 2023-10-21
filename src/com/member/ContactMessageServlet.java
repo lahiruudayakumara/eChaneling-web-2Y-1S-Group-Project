@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class ContactMessageServlet
@@ -27,12 +28,15 @@ public class ContactMessageServlet extends HttpServlet {
 		String subject = request.getParameter("subject");
 		String message = request.getParameter("message");
 		
+		HttpSession session = request.getSession(false);
+	    String userName = (session != null) ? (String) session.getAttribute("UserName") : null;
+		
 		boolean isTrue;
 		
-		isTrue = MemberDBUtil.dropMessage(name, email, phone, subject, message);
+		isTrue = MemberDBUtil.dropMessage(name, email, phone, subject, message, userName);
 		
 		if(isTrue == true) {
-			RequestDispatcher dis = request.getRequestDispatcher("success.jsp");
+			RequestDispatcher dis = request.getRequestDispatcher("displaymsg.jsp");
 			dis.forward(request, response);
 		}
 		else {
