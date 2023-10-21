@@ -46,11 +46,11 @@ public class RegisterLoginServlet extends HttpServlet {
 		if(isTrue == true) {
 			session.setAttribute("UserName", userName);
 			session.setAttribute("Upassword", password);
-			List<User> userDetails =  RegisteruserDBUtil.getUserDetails(userName);
+			response.sendRedirect("home.jsp");
+			/*List<User> userDetails =  RegisteruserDBUtil.getUserDetails(userName);
 			session.setAttribute("usernic", userName);
 			request.setAttribute("userDetails", userDetails);
-			
-			request.getRequestDispatcher("user_info.jsp").forward(request, response);
+			request.getRequestDispatcher("user_info.jsp").forward(request, response);*/
 		} else {
 			out.println("<script type='text/javascript'>");
 			out.println("alert('Your username and password is incorrect');");

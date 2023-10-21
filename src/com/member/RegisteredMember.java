@@ -1,42 +1,16 @@
 package com.member;
 
-public abstract class RegisteredMember {
+public abstract class RegisteredMember implements Viewable{
 	
 	protected String name;
-	protected String NIC;
 	protected String phone;
 	protected String email;
-	protected String area;
 	
-	public RegisteredMember(String name, String NIC, String phone, String email, String area) {
+	public RegisteredMember(String name, String phone, String email) {
 		this.name = name;
-		this.NIC = NIC;
-		this.phone = phone;
 		this.email = email;
-		this.area = area;
+		this.phone = phone;
 	}
-	
-	public String getName() {
-		return name;
-	}
-	public String getNIC() {
-		return NIC;
-	}
-	public String getPhone() {
-		return phone;
-	}
-	public String getEmail() {
-		return email;
-	}
-	public String getArea() {
-		return area;
-	}
-
-	abstract public void bookAppointment();
-	
-	public void viewAppointments() {
 		
-	}
-	
 }
 
