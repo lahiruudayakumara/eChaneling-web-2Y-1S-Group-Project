@@ -24,25 +24,25 @@
 		<form class="common_form" action="add" method="post">
 			<h3>Add Doctor</h3>
 			<label>Full Name : </label></br>
-			<input class="input_field" type="text" name="fName" required autocomplete="off"></br>
+			<input class="input_field" type="text" name="fName" placeholder="Ex: Lahiru Udayakumara" required autocomplete="off"></br>
 			
 			<label>Email : </label></br>
-			<input class="input_field" type="email" name="email" required autocomplete="off"></br>
+			<input class="input_field" type="email" name="email" placeholder="Ex: lahiru@gmail.com" required autocomplete="off"></br>
 			
 			<label>Mobile No : </label></br>
-			<input class="input_field" type="text" name="mobile" required autocomplete="off"></br>
+			<input class="input_field" type="tel" name="mobile" pattern="[0-9]{10}" placeholder="Ex: 077XXXXXXX" required autocomplete="off"></br>
 			
-			<label>Password : </label></br>
-			<input  id="password" class="input_field" type="password" name="password" required autocomplete="off"></br>
+			<label>Create Password : </label></br>
+			<input  id="password" class="input_field" type="password" name="password" placeholder="******" required autocomplete="off"></br>
 			
 			<label>Confirm Password : </label></br>
-			<input id="confirmPassword" class="input_field" type="password" name="confirmPassword" required autocomplete="off"></br>
+			<input id="confirmPassword" class="input_field" type="password" name="confirmPassword" placeholder="******" required autocomplete="off"></br>
 			
 			<label>Specialist : </label></br>
-			<input class="input_field" type="text" name="spec" required autocomplete="off"></br>
+			<input class="input_field" type="text" name="spec" placeholder="Allergy Specialist" required autocomplete="off"></br>
 			
 			<label>Work : </label></br>
-			<input class="input_field" type="text" name="work" required autocomplete="off"></br>
+			<input class="input_field" type="text" name="work" placeholder="Asiri Hospital" required autocomplete="off"></br>
 					
 			<input id="submit" class="submit_btn" type="submit" value="Add Doctor" name="submit" >
 			<a href="log">
