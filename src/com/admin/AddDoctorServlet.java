@@ -18,9 +18,8 @@ public class AddDoctorServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		int id = 0;
-		
-		//getParameters in addDoctors.jsp page
+				
+		//get Parameters in addDoctors.jsp page
 		String name = request.getParameter("fName");
 		String email = request.getParameter("email");
 		String mobile = request.getParameter("mobile");
@@ -34,7 +33,7 @@ public class AddDoctorServlet extends HttpServlet {
 		response.setContentType("text/html");
 		
 		//insert data
-		isTrue = DoctorDBUtil.addDoctor(id, name,email, mobile, password, spec, work);
+		isTrue = DoctorDBUtil.addDoctor( name,email, mobile, password, spec, work);
 		
 		//Check database update Istrue
 		if(isTrue == true) {
