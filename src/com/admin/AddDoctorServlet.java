@@ -19,11 +19,11 @@ public class AddDoctorServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 				
-		//get Parameters in addDoctors.jsp page
+		//get parameters in addDoctors.jsp page
 		String name = request.getParameter("fName");
 		String email = request.getParameter("email");
 		String mobile = request.getParameter("mobile");
-		String password = request.getParameter("configPassword");
+		String password = request.getParameter("confirmPassword");
 		String spec = request.getParameter("spec");
 		String work = request.getParameter("work");
 		
