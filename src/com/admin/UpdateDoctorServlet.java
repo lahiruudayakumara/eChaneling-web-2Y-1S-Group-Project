@@ -24,6 +24,7 @@ public class UpdateDoctorServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		response.setContentType("text/html");
 
+		//get parameter in update_doctor_details.jsp
 		String id = request.getParameter("docId");
 		String name = request.getParameter("fName");
 		String email = request.getParameter("email");
