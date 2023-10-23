@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+body, h1, h2, p, ul, li, form {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+/* Style the header section */
+header {
+    background-color: #007BFF;
+    color: #fff;
+    text-align:center;
+    padding: 20px;
+}
+
+/* Style the page container */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: justify;
+}
+
+.channel-info {
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.channel-info p{
+  font-size: small;
+  font-weight: 600;
+  color: #333;
+}
+
+.channel-info h2 {
+  color: #333;
+
+}
+
+/* Style the contact information section */
+.contact-info {
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.contact-info p{
+  font-size: small;
+  font-weight: 600;
+  color: #333;
+}
+
+td strong{
+  padding-right: 20px ;
+  color: #333;
+}
+
+.contact-info h2 {
+    color: #333;
+
+}
+
+/* Style the social links section */
+
+.social-linx{
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.social-linx h2 {
+  color: #333;
+
+}
+
+.social-linx p{
+  font-size: small;
+  font-weight: 600;
+  color: #333;
+}
+
+.wrapper .button{
+  display: inline-block;
+  height: 60px;
+  width: 60px;
+  float: left;
+  margin: 0 5px;
+  overflow: hidden;
+  background: #fff;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
+  transition: all 0.3s ease-out;
+}
+.wrapper .button:hover{
+  width: 200px;
+}
+
+.wrapper .button .icon{
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    text-align: center;
+    border-radius: 50px;
+    box-sizing: border-box;
+    line-height: 60px;
+    transition: all 0.3s ease-out;
+  }
+  .wrapper .button:nth-child(1):hover .icon{
+    background: #4267B2;
+  }
+  .wrapper .button:nth-child(2):hover .icon{
+    background: #1DA1F2;
+  }
+  .wrapper .button:nth-child(3):hover .icon{
+    background: #E1306C;
+  }
+  .wrapper .button:nth-child(4):hover .icon{
+    background: #ff0000;
+  }
+    .wrapper .button .icon a{
+    color: #333;
+  }
+  
+  .wrapper .button .icon i{
+    font-size: 25px;
+    line-height: 60px;
+    transition: all 0.3s ease-out;
+  }
+  .wrapper .button:hover .icon i{
+    color: #fff;
+  }
+
+  .wrapper .button span{
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 60px;
+    margin-left: 10px;
+    transition: all 0.3s ease-out;
+  }
+  .wrapper .button:nth-child(1) span{
+    color: #4267B2;
+  }
+  .wrapper .button:nth-child(2) span{
+    color: #1DA1F2;
+  }
+  .wrapper .button:nth-child(3) span{
+    color: #E1306C;
+  }
+  .wrapper .button:nth-child(4) span{
+    color: #ff0000;
+  }
+  
+
+
+/* Style the inquiry form section */
+.inquiry-form {
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 80px;
+}
+
+.inquiry-form h2{
+    color: #333;
+    font-size: 24px;
+}
+
+.inquiry-form p{
+  font-size: small;
+  font-weight: 600;
+  color: #333;
+}
+
+.inquiry-form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.inquiry-form input[type="text"],
+.inquiry-form input[type="email"],
+.inquiry-form input[type="tel"],
+.inquiry-form textarea {
+	background-color: rgb(0, 123, 255, 0.1);
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.inquiry-form button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover{
+  scale: 1.05;
+    background-color: #000080;
+}
+
+.history button{
+  background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.history{
+  padding: 20px;
+  border-radius: 5px;
+  margin-top: 40px;
+}
+
+.history button:hover{
+  scale: 1.05;
+    background-color: #000080;
+}
+
+.history button a{
+  text-decoration: none;
+  color: #fff;
+}
+
+.history p{
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}

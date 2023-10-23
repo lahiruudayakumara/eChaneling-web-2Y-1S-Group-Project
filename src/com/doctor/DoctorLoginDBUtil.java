@@ -9,19 +9,19 @@ import java.util.List;
 public class DoctorLoginDBUtil {
 	private static boolean isSuccess;
 	private static Connection con = null;
-	private static Statement stmt = null;
+	private static Statement statement = null;
 	private static ResultSet result;
 	
-	public static List<specalizedDoctor> getDoctor(String docEmail){
-		ArrayList<specalizedDoctor> specalizedDoctor = new ArrayList<>();
+	public static List<SpecalizedDoctor> getDoctor(String docEmail){
+		ArrayList<SpecalizedDoctor> specalizedDoctor = new ArrayList<>();
 		
 		try {
 			
 			con = DBConnect.getConnection();
-			stmt = con.createStatement();
+			statement = con.createStatement();
 			
 			String sql = " select * from doctor where email='"+ docEmail +"'";
-			result = stmt.executeQuery(sql);
+			result = statement.executeQuery(sql);
 			
 			while(result.next()) {
 				int id = result.getInt(1);
@@ -32,7 +32,7 @@ public class DoctorLoginDBUtil {
 				String Specialist = result.getString(6);
 				String work = result.getString(7);
 				
-				specalizedDoctor spDoc = new specalizedDoctor(fullname, email, phoneNo, work, id, password, Specialist);
+				SpecalizedDoctor spDoc = new SpecalizedDoctor(fullname, email, phoneNo, work, id, password, Specialist);
 				
 				specalizedDoctor.add(spDoc);
 			}
@@ -50,12 +50,12 @@ public class DoctorLoginDBUtil {
 		try {
 			
 			con = DBConnect.getConnection();
-			stmt = con.createStatement();
+			statement = con.createStatement();
 			
 			String sql = "select * from doctor where email='"+ docEmail +"' AND password='"+ password +"' ";
 
 			
-			result = stmt.executeQuery(sql);
+			result = statement.executeQuery(sql);
 			
 			if(result.next()) {
 				isSuccess = true;

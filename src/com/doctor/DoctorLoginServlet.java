@@ -31,7 +31,7 @@ public class DoctorLoginServlet extends HttpServlet {
 		boolean isTrue = DoctorLoginDBUtil.validate(email, password);
 		
 		if(isTrue == true) {
-			List<specalizedDoctor> spDocDetails = DoctorLoginDBUtil.getDoctor(email);
+			List<SpecalizedDoctor> spDocDetails = DoctorLoginDBUtil.getDoctor(email);
 			request.setAttribute("spDocDetails", spDocDetails);
 			
 			RequestDispatcher dis = request.getRequestDispatcher("doctorAccount.jsp");

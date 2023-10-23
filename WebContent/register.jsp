@@ -4,7 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Responsive Registration Form</title>
+    <title> Registration Form</title>
     <meta name="viewport" content="width=device-width,
       initial-scale=1.0"/>
     <link rel="stylesheet" href="css/register.css" />
@@ -36,13 +36,16 @@
                     name="email"
                     placeholder="Enter Email"required/>
           </div>
-          <div class="user-input-box">
-            <label for="phoneNumber">Phone Number</label>
-            <input type="text"
-                    id="phoneNumber"
-                    name="phoneNumber"
-                    placeholder="Enter Phone Number"/>
-          </div>
+          
+			<div class="user-input-box">
+			  <label for="phoneNumber">Phone Number</label>
+			  <input type="text"
+			         id="phoneNumber"
+			         name="phoneNumber"
+			         placeholder="Enter Phone Number"
+			         maxlength="10" />
+			</div>
+
           
           <div class="user-input-box">
             <label for="address">User address</label>
@@ -73,7 +76,7 @@
           </div>
           
              <div class="user-input-box">
-            <label for="password">Conform Password</label>
+            <label for="password">Confirm Password</label>
             <input type="password"
                     id="password"
                     name="password"
