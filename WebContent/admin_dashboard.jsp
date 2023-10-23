@@ -1,11 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>    
     <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+    <%@ page import="javax.servlet.http.HttpSession" %>
+<% 
+	//Session Validate
+	if (session.getAttribute("adminUserName")== null) {
+		response.sendRedirect(" admin_login.jsp");
+	}
+ %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Admin Dashboard</title>
+<link rel="icon" type="image/x-icon" href="./img/logo.jpg">
 <link rel="stylesheet" href="./css/admin.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,13 +21,31 @@
 <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,700;1,800;1,900;1,1000&display=swap" rel="stylesheet">
 </head>
 <body>
-	
+	<c:forEach var="admin" items="${adminDetails }">
+		<c:set var="aId" value="${admin.id}" />
+		<c:set var="fName" value="${admin.fullName}" />
+		<c:set var="email" value="${admin.email}" />
+		<c:set var="mobile" value="${admin.phoneNo}" />
+		<c:set var="pass" value="${admin.password}" />
+		<c:set var="uName" value="${admin.userName}" />
+		<c:set var="uRole" value="${admin.userRole}" />
+		
+			<c:url value="update_admin_details.jsp" var="adminUpdate">
+				<c:param name="aId" value="${aId}"/>
+				<c:param name="fName" value="${fName}"/>
+				<c:param name="email" value="${email}"/>
+				<c:param name="mobile" value="${mobile}"/>
+			    <c:param name="uName" value="${uName}"/>
+				<c:param name="uRole" value="${uRole}"/>
+				<c:param name="pass" value="${pass}"/>
+           	</c:url>
+           	
 	<!-- Header -->
 	<header>
 		<div class="header">
 			<div class="nav">
 				<div id="logo">
-					<h3>eChannelling - Admin Dashboard</h3>
+					<h3>eChannelling - Admin Dashboard  - ${admin.showMsg()}</h3>
 				</div>
 				<ul>
 					<li><a href="admin_logout">Logout</a>
@@ -35,18 +61,19 @@
 			</div>
 
 			<div class="user_info">
-				<img src="img/admin_avatar.png">
+				<img src="img/unkown.png">
 				<div class="user_details">
-					<c:forEach var="admin" items="${adminDetails }">
-					<h3>${admin.fullName}</h3>
-					<p>User Name : ${admin.userName}</p>
-					<p>User Name : ${admin.email}</p>
-					<p>Your Role: ${admin.userRole}</p>
-					<p>Mobile : ${admin.phoneNo}</p>
-					</c:forEach>
+				<div style="display: flex; position: fixed; left: 13%; top: 375px; object-fit:cover;">
+					<a href="${adminUpdate}"><i class="fa fa-pencil-square-o" 
+								  aria-hidden="true" 
+								  style="padding: 10px; background-color: cornflowerblue; border-radius: 20px; color: #fff;"
+								 ></i></a>
+				</div>
+					<p>${admin.displayInfo()}</p>
 				</div>
 			</div>	
 		</div>
+	</c:forEach>
 	
 		<div class="right_section">
 			<div class="display_tab">
@@ -100,14 +127,8 @@
 								<p>Doctors List</p>
 							</div>
 						</a>
-						
-						<a href="#">
-							<div class="left_item" >
-								<p>Appoiment Detais</p>
-							</div>
-						</a>
-						
-						<a href="#">
+												
+						<a href="" onclick="alert('None Pending Approvel');">
 							<div class="left_item">
 								<p>Pending for Approvel</p>
 							</div>
@@ -116,7 +137,7 @@
 					</div>
 					
 					<div class="rigt_side">
-						<img alt="" src="./img/rg.png" width="305px">
+						<img alt="" src="./img/visitor.jpg" width="305px">
 					</div>
 				</div>
 				

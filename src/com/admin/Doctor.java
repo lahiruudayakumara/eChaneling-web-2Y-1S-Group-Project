@@ -1,9 +1,16 @@
 package com.admin;
 
-public class Doctor extends Person implements MedicalProfessional {
+//Doctor class is a specific Person implementation, which extends Person and sets its initial behaviors.
+public class Doctor extends Person {
 	
 	private String specialization;
 	private String work;
+	
+	public Doctor() {
+		professional = new DoctorProfessional(); //Set the initial Professional behavior.
+		this.specialization = "";
+		this.work = "";
+	}
 	
 	public Doctor(int id, String fullName, String email, String phoneNo, String password, String specialization, String work) {
 		super(id, fullName, email, phoneNo, password);
@@ -29,13 +36,7 @@ public class Doctor extends Person implements MedicalProfessional {
 	
 	@Override
 	public String displayInfo() {
-		super.displayInfo();
-		return ""+super.displayInfo() + "Specialization : " +specialization+ "</br>Work : " +work+ "";
+		return "Email: " + email+ "</br>Tel : " +phoneNo+ "</br>" + "Specialization : " +specialization+ "</br>Work : " +work+ "";
 	}
-	
-	@Override
-	public String displayName(String fullName) {
-		return "Dr. " + getFullName() + " is Specialization " + getSpecialization() + ".";
-	}
-	
+		
 }

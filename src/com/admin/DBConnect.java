@@ -3,10 +3,11 @@ package com.admin;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
+//DB Connrction class
 public class DBConnect {
-	private static String url = "jdbc:mysql://localhost:3306/echannelling";
-	private static String user = "root";
-	private static String pass = "2023";
+	private static final String url = "jdbc:mysql://localhost:3306/echannelling";
+	private static final String user = "root";
+	private static final String pass = "2023";
 	private static Connection con;
 	
 	public static Connection getConnection() {

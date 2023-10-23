@@ -5,7 +5,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Doctor Information</title>
+<link rel="icon" type="image/x-icon" href="./img/logo.jpg">
 <link rel="stylesheet" href="./css/admin.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,12 +22,9 @@
 			<hr>
 		
 		        <c:forEach var="doctor" items="${doctorList}">
-		            <c:set var="n" value="${doctor.displayInfo()}" />
-		            <c:set var="n" value="${doctor.displayName(Name)}" />
-		            <c:set var="fName" value="${doctor.fullName}" />
 		            <div style="margin-top: 15px;">
 		            	<img class="info_img" src="img/unkown.png" width="150px"></br>
-		            	<h3>${doctor.displayName(Name)}</h3>
+		            	<h3>${doctor.showMsg()}</h3>
 		            	<p>${doctor.displayInfo()}</p>
 		            </div>
 		        </c:forEach>
