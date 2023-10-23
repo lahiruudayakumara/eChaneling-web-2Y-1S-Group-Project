@@ -60,17 +60,8 @@
   	<servlet-name>docLogin</servlet-name>
   	<url-pattern>/doctorLogin</url-pattern>
   </servlet-mapping>
-  
-  <!-- Update Doctor -->
-  <servlet>
-    <servlet-name>docLogin</servlet-name>
-    <servlet-class>com.doctor.DoctorLoginServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>docLogin</servlet-name>
-    <url-pattern>/doctorLogin</url-pattern>
-  </servlet-mapping>
 
+ <!-- Update Doctor -->
   <servlet>
     <servlet-name>updateDoctor</servlet-name>
     <servlet-class>com.admin.UpdateDoctorServlet</servlet-class>
