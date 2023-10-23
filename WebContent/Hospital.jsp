@@ -18,28 +18,28 @@
         }
 
         .left-container, .right-container {
-            width: 48%; /* Set the width to 48% for both containers to account for spacing */
+            width: 48%; 
             text-align: center;
             padding: 10px;
-            border: 1px solid #ccc; /* Add borders for separation */
+            border: 1px solid #ccc; 
         }
 
         .left-container {
-            order: 1; /* Display the left container first */
+            order: 1; 
         }
 
         .right-container {
-            order: 2; /* Display the right container second */
+            order: 2; /
         }
 
         .hospital {
             text-align: center;
-            margin-bottom: 20px; /* Add spacing between hospitals */
+            margin-bottom: 20px; 
         }
 
         .image-slider {
-            width: 300px; /* Set a fixed width for the image slider */
-            height: 200px; /* Set a fixed height for the image slider */
+            width: 300px; 
+            height: 200px; 
             margin: 0 auto;
             position: relative;
             overflow: hidden;
@@ -47,9 +47,9 @@
 
         .slide {
             display: none;
-            width: 100%; /* Ensure the image takes up the full width of the slider */
-            height: 100%; /* Ensure the image takes up the full height of the slider */
-            object-fit: cover; /* Maintain aspect ratio and cover the entire slider area */
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
             transition: opacity 1s ease;
         }
 
@@ -104,7 +104,7 @@
                         <div class="dropdown-content">
                             <a href="#">Book an Appointment</a>
                             <a href="#">Order Medicine</a>
-                             <a href="Hospiyal.jsp">Hospital</a>
+                             <a href="Hospital.jsp">Hospital</a>
                         </div>
                     </li>
                     <li><a href="blog.jsp">Blog</a></li>
@@ -114,7 +114,8 @@
                 <div class="nav-buttons">
                     <% if (userName != null) { %>
                     <a href="userRetrive" class="sbutton"><%=userName %></a>
-                    <a href="logout.jsp" class="sbutton" onclick="return confirm('Are you sure you want to log out?')">Logout</a>
+                    <a href="logout.jsp" class="sbutton" onclick="return confirm('Are you sure you want to logout?')">Logout</a>
+
 
                 <% } else { %>
                     <a href="register.jsp" class="sbutton">Sign Up</a>
