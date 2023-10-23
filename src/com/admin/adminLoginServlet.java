@@ -32,7 +32,7 @@ public class adminLoginServlet extends HttpServlet {
 				
 		boolean isTrue;
 		
-		HttpSession session = request.getSession(false);
+		HttpSession session = request.getSession();
         
 		//To check if session are available
         if (session != null) {
@@ -54,7 +54,8 @@ public class adminLoginServlet extends HttpServlet {
 		} else {
 			passInput = false;
 		}
-				
+		
+		//validate userName & password
 		isTrue = AdminDBUtil.validate(userName, password);
 		
 		if(isTrue == true) {
@@ -72,9 +73,10 @@ public class adminLoginServlet extends HttpServlet {
 			
 		} else if(nameInput == false && passInput == false) {
 			response.sendRedirect("admin_login.jsp");
+
 		} else {
 			out.println("<script type='text/javascript'>");
-			out.println("Incorrect Username or Password');");
+			out.println("alert('Incorrect Username or Password');");
 			out.println("location = 'admin_login.jsp'");
 			out.println("</script>");		
 		}
