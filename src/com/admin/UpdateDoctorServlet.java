@@ -36,7 +36,7 @@ public class UpdateDoctorServlet extends HttpServlet {
 
 		int convertDid = Integer.parseInt(id);
 
-		if(choose == "true"){
+		if(choose.equals("true")){
 			isTrue = DoctorDBUtil.updatedoctor(convertDid, name, email, mobile, confirmPass, spec, work);
 		} else {
 			isTrue = DoctorDBUtil.updatedoctor(convertDid, name, email, mobile, currentPass, spec, work);
