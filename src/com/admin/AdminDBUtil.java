@@ -1,3 +1,9 @@
+/*
+Name : W D L UDAYAKUMARA
+SID : IT22889324
+Group: 4.2
+Github Profile: https://github.com/lahiruudayakumara
+ */
 package com.admin;
 
 import java.sql.Connection;
@@ -5,8 +11,6 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-
-
 
 public class AdminDBUtil {
 	
@@ -38,6 +42,7 @@ public class AdminDBUtil {
 		return isSucess;
 	}
 	
+	//Get Login Admin Details
 	public static List<Admin> getAdmin(String userName){
 		
 		ArrayList<Admin> admin = new ArrayList<>();
@@ -58,8 +63,11 @@ public class AdminDBUtil {
 				String mobile = rs.getString(6);
 				String passU = rs.getString(7);
 				
-				Admin a = new Admin(id, fName, email, mobile, passU, uName, uRole);
-				admin.add(a);
+				Person a = new Admin(id, fName, email, mobile, passU, uName, uRole);
+				a.setProfessional(new AdminProfessional()); // Change the professional behavior at runtime.
+				a.showMsg(); // Perform the new flying behavior.
+				a.displayInfo();
+				admin.add((Admin) a);
 			}
 		}
 		catch(Exception e) {
@@ -68,6 +76,7 @@ public class AdminDBUtil {
 		return admin;
 	}
 	
+	//Count Doctors records in DB
 	public static List<Count> getCount(){
 		
 		ArrayList<Count> count = new ArrayList<>();
@@ -82,16 +91,34 @@ public class AdminDBUtil {
 			if(rs.next()) {
 				int doctor = rs.getInt(1);
 				
-				
 				Count c = new Count();
 				c.setDoctor(doctor);
 				count.add(c);
-				
+			}
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		return count;
+	}
+	
+	public static boolean updateAdmin(int id, String fname, String email, String mobile, String password, String uName, String uRole) {
+		
+		try {
+			con = DBConnect.getConnection();
+			stmt = con.createStatement();
+			String sql = "update admin set fullname='"+fname+"', userName='"+uName+"', userRole='"+uRole+"', email='"+email+"', phoneNo='"+mobile+"', password='"+password+"' where id='"+id+"'";
+			int rs = stmt.executeUpdate(sql);
+			
+			if(rs> 0) {
+				isSucess = true;
+			} else {
+				isSucess = false;
 			}
 		}
 		catch(Exception e) {
 			e.printStackTrace();
 		}
-		return count;
+		
+		return isSucess;
 	}
 }
