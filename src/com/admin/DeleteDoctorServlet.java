@@ -19,8 +19,8 @@ public class DeleteDoctorServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String id = request.getParameter("docId");
-		int cid = Integer.parseInt(id);
+		String id = request.getParameter("docId"); //get doctor id in jsp page
+		int cid = Integer.parseInt(id); // Convert String to integer
 		boolean isTrue;
 		
 		isTrue = DoctorDBUtil.deleteDoctor(cid);

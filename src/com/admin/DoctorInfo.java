@@ -17,15 +17,12 @@ import javax.servlet.http.HttpSession;
 public class DoctorInfo extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String id = request.getParameter("docId");
-		int cid = Integer.parseInt(id);
+		String id = request.getParameter("docId"); // get doctor id in jsp page
+		int cid = Integer.parseInt(id); // String convert into integer
 		
-		HttpSession session = request.getSession(false);
+		HttpSession session = request.getSession();
 		
 		if (session != null) {
         	if(session.getAttribute("adminUserName") != null && session.getAttribute("adminPassword") !=null) {

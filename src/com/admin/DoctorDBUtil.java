@@ -12,7 +12,8 @@ public class DoctorDBUtil {
 	private static Statement stmt = null;
 	private static ResultSet rs = null;
 	
-	public static boolean addDoctor(int id, String fName,String email, String mobile, String password, String spec, String work) {		
+	//Add Doctor
+	public static boolean addDoctor( String fName,String email, String mobile, String password, String spec, String work) {		
 		
 		try {
 			con = DBConnect.getConnection();
@@ -35,6 +36,7 @@ public class DoctorDBUtil {
 		
 	}
 	
+	//Update doctor details
 	public static boolean updatedoctor(int id, String fname, String email, String mobile, String password, String spec, String work ) {
 				
 		try {
@@ -56,6 +58,7 @@ public class DoctorDBUtil {
 		return isSucess;
 	}	
 	
+	//get Doctors Details
 	public static List<Doctor> getDoctorDetails(){
 		
 		ArrayList<Doctor> doc = new ArrayList<>();
@@ -76,7 +79,6 @@ public class DoctorDBUtil {
 				String work = rs.getString(7);
 				
 				Doctor d = new Doctor(id, fName, email, mobile, passU, spec, work);
-				d.displayInfo();
 				
 				doc.add(d);
 			}
@@ -89,6 +91,7 @@ public class DoctorDBUtil {
 		
 	}
 	
+	//Get doctor details
 	public static List<Doctor> getDoctorInfo(int Id){
 		
 		ArrayList<Doctor> docInfo = new ArrayList<>();
@@ -108,11 +111,12 @@ public class DoctorDBUtil {
 				String spec = rs.getString(6);
 				String work = rs.getString(7);
 				
-				Doctor d = new Doctor(id, fName, email, mobile, passU, spec, work);
-				d.displayInfo();
-				d.displayName(fName);
+				Person d = new Doctor(id, fName, email, mobile, passU, spec, work);
+				d.setProfessional(new DoctorProfessional()); // Change the professional behavior at runtime.
+				d.displayInfo(); // Perform the new professional behavior.
+				d.showMsg();
 				
-				docInfo.add(d);
+				docInfo.add((Doctor) d);
 			}
 			
 		}
@@ -123,8 +127,8 @@ public class DoctorDBUtil {
 		
 	}
 	
+	//Delete Doctor
 	public static boolean deleteDoctor(int Id) {
-		
 		
 		try {
 			con = DBConnect.getConnection();

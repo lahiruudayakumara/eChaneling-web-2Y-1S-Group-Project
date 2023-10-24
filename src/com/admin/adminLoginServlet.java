@@ -32,7 +32,7 @@ public class adminLoginServlet extends HttpServlet {
 				
 		boolean isTrue;
 		
-		HttpSession session = request.getSession(false);
+		HttpSession session = request.getSession();
         
 		//To check if session are available
         if (session != null) {
@@ -40,8 +40,7 @@ public class adminLoginServlet extends HttpServlet {
         		userName = (String) session.getAttribute("adminUserName");
             	password = (String) session.getAttribute("adminPassword"); 
         	}     	      	
-        } 
-		
+        }         
         //To check if userName input are available
 		if(request.getParameter("uName") != null) {
 			userName = request.getParameter("uName");
@@ -56,6 +55,7 @@ public class adminLoginServlet extends HttpServlet {
 			passInput = false;
 		}
 		
+		//validate userName & password
 		isTrue = AdminDBUtil.validate(userName, password);
 		
 		if(isTrue == true) {
@@ -72,12 +72,13 @@ public class adminLoginServlet extends HttpServlet {
 			dis.forward(request, response);
 			
 		} else if(nameInput == false && passInput == false) {
-			out.println("<script type='text/javascript'>");
-			out.println("alert('Your username and password is incorrect');");
-			out.println("location = 'admin_login.jsp'");
-			out.println("</script>");
-		} else {
 			response.sendRedirect("admin_login.jsp");
+
+		} else {
+			out.println("<script type='text/javascript'>");
+			out.println("alert('Incorrect Username or Password');");
+			out.println("location = 'admin_login.jsp'");
+			out.println("</script>");		
 		}
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

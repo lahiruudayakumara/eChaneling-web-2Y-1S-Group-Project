@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
+  
+  <!-- login -->
   <servlet>
     <servlet-name>login</servlet-name>
     <servlet-class>com.admin.adminLoginServlet</servlet-class>
@@ -8,6 +10,18 @@
     <servlet-name>login</servlet-name>
     <url-pattern>/log</url-pattern>
   </servlet-mapping>
+  
+  <!-- update admin details -->
+  <servlet>
+    <servlet-name>updateAdmin</servlet-name>
+    <servlet-class>com.admin.UpdateAdminServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>updateAdmin</servlet-name>
+    <url-pattern>/updateAdmin</url-pattern>
+  </servlet-mapping>
+ 
+  <!-- register user -->
   <servlet>
     <servlet-name>registerUser</servlet-name>
     <servlet-class>com.user.RegisteruserServlet</servlet-class>
@@ -16,6 +30,8 @@
     <servlet-name>registerUser</servlet-name>
     <url-pattern>/reguser</url-pattern>
   </servlet-mapping>
+
+  <!-- add doctor -->
   <servlet>
     <servlet-name>addDoctor</servlet-name>
     <servlet-class>com.admin.AddDoctorServlet</servlet-class>
@@ -24,6 +40,8 @@
     <servlet-name>addDoctor</servlet-name>
     <url-pattern>/add</url-pattern>
   </servlet-mapping>
+  
+  <!-- create schedule -->
   <servlet>
     <servlet-name>docCreateSchedule</servlet-name>
     <servlet-class>com.doctor.AddScheduleServlet</servlet-class>
@@ -32,14 +50,18 @@
     <servlet-name>docCreateSchedule</servlet-name>
     <url-pattern>/addSchedule</url-pattern>
   </servlet-mapping>
+  
+  <!-- Doctor Login -->
   <servlet>
-    <servlet-name>docLogin</servlet-name>
-    <servlet-class>com.doctor.DoctorLoginServlet</servlet-class>
+  	<servlet-name>docLogin</servlet-name>
+  	<servlet-class>com.doctor.DoctorLoginServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>docLogin</servlet-name>
-    <url-pattern>/doctorLogin</url-pattern>
+  	<servlet-name>docLogin</servlet-name>
+  	<url-pattern>/doctorLogin</url-pattern>
   </servlet-mapping>
+
+ <!-- Update Doctor -->
   <servlet>
     <servlet-name>updateDoctor</servlet-name>
     <servlet-class>com.admin.UpdateDoctorServlet</servlet-class>
@@ -48,6 +70,9 @@
     <servlet-name>updateDoctor</servlet-name>
     <url-pattern>/updateDoctor</url-pattern>
   </servlet-mapping>
+
+  
+  <!-- Doctor information -->
   <servlet>
     <servlet-name>doctorinformation</servlet-name>
     <servlet-class>com.admin.DoctorServlet</servlet-class>
@@ -56,6 +81,9 @@
     <servlet-name>doctorinformation</servlet-name>
     <url-pattern>/doctorinfo</url-pattern>
   </servlet-mapping>
+
+  
+  <!-- Delete doctor -->
   <servlet>
     <servlet-name>deletedoctor</servlet-name>
     <servlet-class>com.admin.DeleteDoctorServlet</servlet-class>
@@ -72,6 +100,8 @@
     <servlet-name>SessionCheckServlet</servlet-name>
     <url-pattern>/sessionCheck</url-pattern>
   </servlet-mapping>
+  
+  <!-- Admin Logiut -->
   <servlet>
     <servlet-name>adminSessionDestory</servlet-name>
     <servlet-class>com.admin.AdminLogOutServlet</servlet-class>
@@ -80,7 +110,10 @@
     <servlet-name>adminSessionDestory</servlet-name>
     <url-pattern>/admin_logout</url-pattern>
   </servlet-mapping>
-  <servlet>
+
+  
+  <!-- Doctor Info -->
+   <servlet>
     <servlet-name>doctorInfo</servlet-name>
     <servlet-class>com.admin.DoctorInfo</servlet-class>
   </servlet>
@@ -88,6 +121,9 @@
     <servlet-name>doctorInfo</servlet-name>
     <url-pattern>/doctor_Info</url-pattern>
   </servlet-mapping>
+
+
+  <!-- Register Login -->
   <servlet>
     <servlet-name>registerloging</servlet-name>
     <servlet-class>com.user.RegisterLoginServlet</servlet-class>
