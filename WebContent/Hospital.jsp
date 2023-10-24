@@ -10,6 +10,7 @@
     <link rel="stylesheet" type="text/css "href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> 
         <link rel="stylesheet" href="css/header.css">
         <link rel="stylesheet" href="css/footer.css">
+        <link rel="icon" type="image/x-icon" href="./img/logo.jpg">
     <style>
         .hospital-container {
             display: flex;
@@ -17,28 +18,28 @@
         }
 
         .left-container, .right-container {
-            width: 48%; /* Set the width to 48% for both containers to account for spacing */
+            width: 48%; 
             text-align: center;
             padding: 10px;
-            border: 1px solid #ccc; /* Add borders for separation */
+            border: 1px solid #ccc; 
         }
 
         .left-container {
-            order: 1; /* Display the left container first */
+            order: 1; 
         }
 
         .right-container {
-            order: 2; /* Display the right container second */
+            order: 2; /
         }
 
         .hospital {
             text-align: center;
-            margin-bottom: 20px; /* Add spacing between hospitals */
+            margin-bottom: 20px; 
         }
 
         .image-slider {
-            width: 300px; /* Set a fixed width for the image slider */
-            height: 200px; /* Set a fixed height for the image slider */
+            width: 300px; 
+            height: 200px; 
             margin: 0 auto;
             position: relative;
             overflow: hidden;
@@ -46,9 +47,9 @@
 
         .slide {
             display: none;
-            width: 100%; /* Ensure the image takes up the full width of the slider */
-            height: 100%; /* Ensure the image takes up the full height of the slider */
-            object-fit: cover; /* Maintain aspect ratio and cover the entire slider area */
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
             transition: opacity 1s ease;
         }
 
@@ -80,8 +81,18 @@
         }
     </style>
 </head>
-<body>
+
   
+    <%@ page import="javax.servlet.http.HttpSession" %>
+<%@ page import="java.util.Objects" %>
+
+<%
+	HttpSession session1 = request.getSession(false);
+    String userName = (session1 != null) ? (String) session1.getAttribute("UserName") : null;
+%>
+
+
+   
     <header class="header">
         <div class="hcontainer">
             <nav class="navbar">
@@ -91,33 +102,33 @@
                     <li class="dropdown">
                         <a href="#" class="dropbtn">Services</a>
                         <div class="dropdown-content">
-                            <a href="Hospital.jsp">Hospital</a>
-                            <a href="#">Doctors</a>
+                            <a href="#">Book an Appointment</a>
+                            <a href="#">Order Medicine</a>
+                             <a href="Hospital.jsp">Hospital</a>
                         </div>
                     </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropbtn">Products</a>
-                        <div class="dropdown-content">
-                            <a href="#">Foods</a>
-                            <a href="#">Medicine</a>
-                            <a href="#">Accessories</a>
-                            <a href="#">Toys</a>
-                        </div>
-                    </li>
-                    <li><a href="about_us.jsp">About us</a></li>
-                    <li><a href="contact.jsp">Contact </a></li>
-                    <li><a href="user_info.jsp">User Info</a></li>
+                    <li><a href="blog.jsp">Blog</a></li>
+                    <li><a href="about_us.jsp">About Us</a></li>
+                    <li><a href="contact.jsp">Contact</a></li>
                 </ul>
                 <div class="nav-buttons">
+                    <% if (userName != null) { %>
+                    <a href="userRetrive" class="sbutton"><%=userName %></a>
+                    <a href="logout.jsp" class="sbutton" onclick="return confirm('Are you sure you want to logout?')">Logout</a>
+
+
+                <% } else { %>
                     <a href="register.jsp" class="sbutton">Sign Up</a>
                     <a href="login.jsp" class="sbutton">Sign In</a>
+                <% } %>
                 </div>
             </nav>
         </div>
     </header>
-      <header>
+     
         <h1>Hospital Directory</h1>
     </header>
+    <body>
     <main>
         <div class="hospital-container">
             <div class="left-container">

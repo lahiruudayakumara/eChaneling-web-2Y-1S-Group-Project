@@ -18,6 +18,7 @@
      <link rel="stylesheet" href="H&F.css">
     <link rel="stylesheet" type="text/css "href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> 
         <link rel="stylesheet" href="css/header.css">
+        <link rel="icon" type="image/x-icon" href="./img/logo.jpg">
     
 
     <style>
@@ -102,7 +103,7 @@
 </head>
 
 <body>
-<header class="header">
+   <header class="header">
         <div class="hcontainer">
             <nav class="navbar">
                <div class="logo"><a href="#"><img src="img/logo.jpg" alt="logo"></a></div>
@@ -111,22 +112,14 @@
                     <li class="dropdown">
                         <a href="#" class="dropbtn">Services</a>
                         <div class="dropdown-content">
-                            <a href="Hospital.jsp">Hospital</a>
-                            <a href="#">Doctors</a>
+                            <a href="#">Book an Appointment</a>
+                            <a href="#">Order Medicine</a>
+                             <a href="Hospital.jsp">Hospital</a>
                         </div>
                     </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropbtn">Products</a>
-                        <div class="dropdown-content">
-                            <a href="#">Foods</a>
-                            <a href="#">Medicine</a>
-                            <a href="#">Accessories</a>
-                            <a href="#">Toys</a>
-                        </div>
-                    </li>
-                    <li><a href="about_us.jsp">About us</a></li>
-                    <li><a href="contact.jsp">Contact </a></li>
-                    <li><a href="">User Info</a></li>
+                    <li><a href="blog.jsp">Blog</a></li>
+                    <li><a href="about_us.jsp">About Us</a></li>
+                    <li><a href="contact.jsp">Contact</a></li>
                 </ul>
                <div class="logout-button" style="text-align: center; margin-top: 20px;">
     <a href="logout.jsp" onclick="return confirm('Are you sure you want to logout?');" style="display: inline-block; padding: 10px 20px; background-color: red; color: #fff; text-decoration: none; border: none; border-radius: 5px; font-weight: bold; cursor: pointer;">Logout</a>
