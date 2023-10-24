@@ -145,11 +145,19 @@
     <url-pattern>/drop</url-pattern>
   </servlet-mapping>
   <servlet>
-  	<servlet-name>ViewMessage</servlet-name>
-  	<servlet-class>com.member.ViewMessageServlet</servlet-class>
+    <servlet-name>ViewMessage</servlet-name>
+    <servlet-class>com.member.ViewMessageServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-  	<servlet-name>ViewMessage</servlet-name>
-  	<url-pattern>/viewMessage</url-pattern>
+    <servlet-name>ViewMessage</servlet-name>
+    <url-pattern>/viewMessage</url-pattern>
+  </servlet-mapping>
+  <servlet>
+  <servlet-name>LoginUser</servlet-name>
+  <servlet-class>com.user.UserLoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>LoginUser</servlet-name>
+  <url-pattern>/profile</url-pattern>
   </servlet-mapping>
 </web-app>
