@@ -6,12 +6,13 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ReadSheduleDBUtil {
-	private static Connection con = null;
-	private static Statement statement = null;
-	private static ResultSet result;
+public class DateDBUtil implements ISearchDBUtil{
+	private Connection con = null;
+	private Statement statement = null;
+	private ResultSet result;
 	
-	public static List<Schedule> getSchedule(String doctorRegNumber){
+	@Override
+	public List<Schedule> getSchedule(String value, String doctorRegNum) {
 		ArrayList<Schedule> Schedule = new ArrayList<>();
 		
 		try {
@@ -19,7 +20,7 @@ public class ReadSheduleDBUtil {
 			con = DBConnect.getConnection();
 			statement = con.createStatement();
 			
-			String sql = " select * from shedule where docRegNum = '"+ doctorRegNumber +"'";
+			String sql = " select * from shedule where date = '"+ value +"' and docRegNum='"+ doctorRegNum +"'";
 			result = statement.executeQuery(sql);
 			
 			while(result.next()) {
@@ -46,6 +47,7 @@ public class ReadSheduleDBUtil {
 		}
 		
 		return Schedule;
-		
 	}
+
+
 }

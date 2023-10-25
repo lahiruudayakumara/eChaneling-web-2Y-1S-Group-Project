@@ -1,7 +1,7 @@
 package com.doctor;
 
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,19 +11,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class AddScheduleServlet
+ * Servlet implementation class UpdateScheduleServlet
  */
-@WebServlet("/AddScheduleServlet")
-public class AddScheduleServlet extends HttpServlet {
+@WebServlet("/UpdateScheduleServlet")
+public class UpdateScheduleServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		PrintWriter out = response.getWriter();
-		response.setContentType("text/html");
 		
+		String id = request.getParameter("id");
 		String docName = request.getParameter("docName");
 		String docRegNum = request.getParameter("docRegNum");
 		String date = request.getParameter("date");
@@ -34,19 +33,22 @@ public class AddScheduleServlet extends HttpServlet {
 		int docCharge = Integer.parseInt(request.getParameter("docCharge"));
 		String availability = request.getParameter("availability");
 		
-
-		boolean isTrue = scheduleDBUtil.createSchedule(docName, docRegNum, date, startTime, endTime, 
+		boolean isTrue;
+		
+		isTrue = UpdateScheduleDBUtil.updateSchedule(id, docName, docRegNum, date, startTime, endTime, 
 				location, specialization, docCharge, availability);
-
+		
 		if(isTrue == true) {
-			out.println("<script type='text/javascript'>");
-			out.println("alert('Schedule Created Successfully !');");
-			out.println("location='doctorAddSchedule.jsp'");
-			out.println("</script>");
 			
-		} else {
-			RequestDispatcher dis2 = request.getRequestDispatcher("unsuccess.jsp");
-			dis2.forward(request, response);
+			List<Schedule> schedule = ReadSheduleDBUtil.getSchedule(docRegNum);
+			request.setAttribute("schedule", schedule);
+			
+			RequestDispatcher dis = request.getRequestDispatcher("schedule.jsp");
+			dis.forward(request, response);
+		}
+		else {
+			RequestDispatcher dis = request.getRequestDispatcher("unsuccess.jsp");
+			dis.forward(request, response);
 		}
 	}
 

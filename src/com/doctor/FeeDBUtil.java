@@ -6,22 +6,25 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ReadSheduleDBUtil {
-	private static Connection con = null;
-	private static Statement statement = null;
-	private static ResultSet result;
-	
-	public static List<Schedule> getSchedule(String doctorRegNumber){
+	public class FeeDBUtil implements ISearchDBUtil{
+		private Connection con = null;
+		private Statement statement = null;
+		private ResultSet result;
+		
+	@Override
+	public List<Schedule> getSchedule(String value, String doctorRegNum) {
 		ArrayList<Schedule> Schedule = new ArrayList<>();
 		
-		try {
+		int docFee = Integer.parseInt(value);
 			
+		try {
+				
 			con = DBConnect.getConnection();
 			statement = con.createStatement();
-			
-			String sql = " select * from shedule where docRegNum = '"+ doctorRegNumber +"'";
+				
+			String sql = " select * from shedule where docCharge = '"+ docFee +"' and docRegNum='"+ doctorRegNum +"'";
 			result = statement.executeQuery(sql);
-			
+				
 			while(result.next()) {
 				int sId = result.getInt(1);
 				String docName = result.getString(2);
@@ -33,10 +36,10 @@ public class ReadSheduleDBUtil {
 				String specialization = result.getString(8);
 				int docCharge = result.getInt(9);
 				String availability = result.getString(10);
-				
+					
 				Schedule schedule = new Schedule(sId, docName, docRegNum, date, startTime, 
 						endTime, location, specialization, docCharge, availability);
-				
+					
 				Schedule.add(schedule);
 			}
 		}
@@ -44,8 +47,8 @@ public class ReadSheduleDBUtil {
 			System.out.println("unsuccess !!!");
 			e.printStackTrace();
 		}
-		
+			
 		return Schedule;
-		
 	}
 }
+

@@ -6,6 +6,13 @@ public class Doctor {
 	protected String phoneNum;
 	protected String work;
 	
+	public Doctor() {
+		this.name = null;
+		this.email = null;
+		this.phoneNum = null;
+		this.work = null;
+	}
+	
 	public Doctor(String name, String email, String phoneNum, String work) {
 		this.name = name;
 		this.email = email;

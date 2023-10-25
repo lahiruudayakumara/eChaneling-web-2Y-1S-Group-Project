@@ -9,28 +9,22 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class ReadScheduleServlet
+ * Servlet implementation class ReadAppoinmentServlet
  */
-@WebServlet("/ReadScheduleServlet")
-public class ReadScheduleServlet extends HttpServlet {
+@WebServlet("/ReadAppoinmentServlet")
+public class ReadAppoinmentServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String doctorRegNumber = request.getParameter("doctorRegNum");
+		List<Appoinment> appoinment = ReadAppoinmentDBUtil.getAppoinment();
+		request.setAttribute("appoinment", appoinment);
 		
-		HttpSession session = request.getSession(); 
-		session.setAttribute("doctorRegNumber", doctorRegNumber); 
-		
-		List<Schedule> schedule = ReadSheduleDBUtil.getSchedule(doctorRegNumber);
-		request.setAttribute("schedule", schedule);
-		
-		RequestDispatcher dis = request.getRequestDispatcher("schedule.jsp");
+		RequestDispatcher dis = request.getRequestDispatcher("appoinment.jsp");
 		dis.forward(request, response);
 	}
 
