@@ -6,23 +6,21 @@ package com.member;
  * doctor's name, doctor's registration number, specialization, hospital name,
  * date, and time.
  */
-public class Appointments {
+public class Appointments{
 	
 	// Private member variables to store appointment details.
 	private int appointmentID;
 	private String doctorName;
-	private String doctorRegNum;
 	private String specialization;
 	private String hospitalName;
 	private String date;
 	private String time;
-	private double doctorCharge;
+	private int doctorCharge;
 
 	//Constructs an Appointments object with the specified appointment details.
-	public Appointments(int appointmentID, String doctorName, String docRegNum, String specialization, String hospitalName, String date, String time, double doctorCharge) {
+	public Appointments(int appointmentID, String doctorName,String specialization, String hospitalName, String date, String time, int doctorCharge) {
 		this.appointmentID = appointmentID;
 		this.doctorName = doctorName;
-		this.doctorRegNum = docRegNum;
 		this.specialization = specialization;
 		this.hospitalName = hospitalName;
 		this.date = date;
@@ -38,11 +36,6 @@ public class Appointments {
 	//Retrieves the name of the doctor associated with the appointment.
 	public String getDoctorName() {
 		return doctorName;
-	}
-
-	//Retrieves the registration number of the doctor associated with the appointment.
-	public String getDoctorRegNum() {
-		return doctorRegNum;
 	}
 
 	//Retrieves the specialization of the doctor associated with the appointment.
@@ -66,7 +59,7 @@ public class Appointments {
 	}
 	
 	//Retrieves the doctors's charge of the appointment.
-		public double getDoctorCharge() {
+		public int getDoctorCharge() {
 			return doctorCharge;
 		}
 }

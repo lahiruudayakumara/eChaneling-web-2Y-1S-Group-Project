@@ -41,7 +41,7 @@ public class AppointmentsDBUtil {
 			
 			if(doctorName != null)
 			{
-				sql_build += " docName LIKE '%" + doctorName +"%' ";
+				sql_build += " docName LIKE '" + doctorName +"%' ";
 				count = true;
 			}
 				
@@ -49,10 +49,10 @@ public class AppointmentsDBUtil {
 			if(specialization != null){			
 				 
 				if(count) {
-					sql_build += " and specialization LIKE '%" + specialization + "%' ";
+					sql_build += " and specialization LIKE '" + specialization + "%' ";
 				 }
 				else{
-					sql_build += " specialization LIKE '%" + specialization + "%' ";
+					sql_build += " specialization LIKE '" + specialization + "%' ";
 					count=true;
 				}
 			}
@@ -61,10 +61,10 @@ public class AppointmentsDBUtil {
 			if(hospitalName != null){
 				
 				if(count) {
-					sql_build += " and hospitalName LIKE '%" + hospitalName + "%' ";
+					sql_build += " and hospitalName LIKE '" + hospitalName + "%' ";
 				}
 				else{
-					sql_build += " hospitalName LIKE '%" + hospitalName + "%' ";
+					sql_build += " hospitalName LIKE '" + hospitalName + "%' ";
 					count=true;
 				}
 					
@@ -74,10 +74,21 @@ public class AppointmentsDBUtil {
 			if(date != null)
 			{
 				if(count) {
-					sql_build += " and date LIKE '%" + date + "%'";
+					sql_build += " and date LIKE '" + date + "%'";
 				}
 				else {
-					sql_build += " date LIKE '%" + date + "%'";
+					sql_build += " date LIKE '" + date + "%'";
+					count=true;
+				}
+			}
+			
+			if(date != null)
+			{
+				if(count) {
+					sql_build += " and availability = 'Available'";
+				}
+				else {
+					sql_build += " and availability = 'Available'";
 				}
 			}
 			
@@ -92,14 +103,13 @@ public class AppointmentsDBUtil {
 			while(rs.next()) {
 				int appID = rs.getInt(1);
 				String docName = rs.getString(2);
-				String docRegNum = rs.getString(3);
 				String spec = rs.getString(4);
 				String hosName = rs.getString(5);
 				String dt = rs.getString(6);
 				String time = rs.getString(7);
-				double docCharge = rs.getDouble(9);
+				int docCharge = rs.getInt(9);
 				
-				Appointments appointment = new Appointments(appID,docName,docRegNum,spec,hosName,dt,time,docCharge);
+				Appointments appointment = new Appointments(appID,docName,spec,hosName,dt,time,docCharge);
 				app.add(appointment);
 			}
 			
@@ -108,9 +118,156 @@ public class AppointmentsDBUtil {
 		catch(Exception e) {
 			e.printStackTrace();
 		}
-		
-		
-		
+			
 		return app;
 	}
+	
+	/* public static boolean placeAppointment(int appointment_no, String pName,String pNic,String pAge,String pGender,String pEmail,String pPhone,
+		 String pAddress,String pMedCon,String pAllergy,String pCurrMedi,String docName,String spec,String hosName,String date,String time,int fee,String userName)*/
+	public static boolean placeAppointment(int appointment_no, String userName, String doctor, String specialization, String hospital, String Sdate, String time, String pName,String pNic,String pGender,int pAge, String pEmail,String pPhone,String pAddress){
+		 
+		 
+		 boolean isSuccess = false;
+		
+		 try {
+			 con = DBConnect.getConnection();
+			 stmt = con.createStatement();
+			 
+			 String sql = "INSERT INTO appointments_details VALUES(0,'"+appointment_no+"','"+userName+"','"+doctor+"','"+specialization+"','"+hospital+"','"+Sdate+"','"+time+"','"+pName+"','"+pNic+"','"+pGender+"','"+pAge+"','"+pEmail+"','"+pPhone+"','"+pAddress+"')";
+			 
+			// String sql = "INSERT INTO appointment_details VALUES('"+appointment_no+"','"+pName+"','"+pNic+"','"+pAge+"','"+pGender+"','"+pEmail+"','"+pPhone+"','"+pAddress+"','"+pMedCon+"','"+pAllergy+"','"+pCurrMedi+"','"+docName+"','"+spec+"','"+hosName+"''"+date+"','"+time+"','"+fee+"','"+userName+"'";
+
+			 int result = stmt.executeUpdate(sql);
+			 
+			 if(result>0) {
+				 isSuccess=true;
+			 }
+			 else {
+				 isSuccess=false;
+			 }
+			 
+		 }
+		 catch(Exception e) {
+			 e.printStackTrace();
+		 }
+		
+		 return isSuccess;
+		 
+	 }
+	 
+	 public static boolean UpdateAvilability(int appointment_no) {
+		 
+		 boolean isSuccess = false;
+		 
+		 try {
+			 
+			 con = DBConnect.getConnection();
+			 stmt = con.createStatement();
+			 
+			 String sql = "Update doctor_schedule SET availability = 'Unavailable' WHERE scheduleID = '"+appointment_no+"'";
+			 
+			 int result = stmt.executeUpdate(sql);
+			 
+			 if(result>0) {
+				 isSuccess=true;
+			 }
+			 else {
+				 isSuccess=false;
+			 }
+			 
+		 }
+		 catch(Exception e) {
+			 e.printStackTrace();
+		 }
+		 
+		 return isSuccess;
+		 
+	   }
+	 
+	 	public static boolean ResetAvilability(int appointment_no) {
+		 
+		 boolean isSuccess = false;
+		 
+		 try {
+			 
+			 con = DBConnect.getConnection();
+			 stmt = con.createStatement();
+			 
+			 String sql = "Update doctor_schedule SET availability = 'Available' WHERE scheduleID = '"+appointment_no+"'";
+			 
+			 int result = stmt.executeUpdate(sql);
+			 
+			 if(result>0) {
+				 isSuccess=true;
+			 }
+			 else {
+				 isSuccess=false;
+			 }
+			 
+		 }
+		 catch(Exception e) {
+			 e.printStackTrace();
+		 }
+		 
+		 return isSuccess;
+		 
+	 }
+	 	
+	 	public static boolean DeleteAppointmentDetails(int appointment_no) {
+	 		
+	 		boolean isSuccess=false;
+	 		
+			try {
+				
+				con = DBConnect.getConnection();
+				stmt = con.createStatement();
+				
+				String sql = "DELETE FROM appointments_details WHERE app_id='"+appointment_no+"'";
+				
+				int result = stmt.executeUpdate(sql);
+				
+				if(result > 0) {
+					isSuccess=true;
+				}
+				else {
+					isSuccess=false;
+				}
+				
+			}
+			catch(Exception e) {
+				e.printStackTrace();
+			}
+			
+			return isSuccess;
+		}	
+	 	
+	 	public static boolean updateContactDetails(String id, String email, String phone, String address) {
+			
+			int convId = Integer.parseInt(id);
+			boolean isSuccess=false;
+			try {
+				
+				// Establish a database connection
+				con = DBConnect.getConnection();
+				stmt = con.createStatement();
+				
+				String sql = "UPDATE appointments_details SET patient_email='"+email+"',patient_phone='"+phone+"',patient_address='"+address+"' WHERE ref_no='"+convId+"'";
+				
+				int result = stmt.executeUpdate(sql);
+				
+				if(result > 0) {
+					isSuccess=true;
+				}
+				else {
+					isSuccess=false;
+				}
+			}
+			catch(Exception e) {
+				e.printStackTrace();
+			}
+			
+			return isSuccess;
+		}
+
 }
+
