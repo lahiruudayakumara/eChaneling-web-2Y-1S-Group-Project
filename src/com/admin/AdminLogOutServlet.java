@@ -16,14 +16,13 @@ import javax.servlet.http.HttpSession;
 public class AdminLogOutServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		HttpSession session = request.getSession(false);
+		HttpSession session = request.getSession();
         
         if (session != null) {
+        	session.removeAttribute("adminUserName");
+        	session.removeAttribute("adminPassword");
         	session.invalidate();
         	response.sendRedirect("admin_login.jsp");
         } else {

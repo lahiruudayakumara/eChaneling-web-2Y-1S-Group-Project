@@ -98,7 +98,9 @@
                 </div>
             </div>
         </div>
-        <div class="copyright"> <p>&copy; 2023 E-Channelling</p><br></div>
+                <div class="copyright"> <p>&copy; 2023 E-Channelling</p>
+            <p><a href="#"> By NexTech Visionaries</a></p>
+        </div>
     </footer>
     
 </body>

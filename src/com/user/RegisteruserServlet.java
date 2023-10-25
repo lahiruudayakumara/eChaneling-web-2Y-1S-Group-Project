@@ -47,7 +47,7 @@ public class RegisteruserServlet extends HttpServlet {
 			List<User> userDetails =  RegisteruserDBUtil.getUserDetails(userName);
 			session.setAttribute("usernic", userName);
 			request.setAttribute("userDetails", userDetails);
-			RequestDispatcher dis = request.getRequestDispatcher("user_info.jsp");
+			RequestDispatcher dis = request.getRequestDispatcher("login.jsp");
 			dis.forward(request, response);
 		} else {
 			out.println("<script type='text/javascript'>");

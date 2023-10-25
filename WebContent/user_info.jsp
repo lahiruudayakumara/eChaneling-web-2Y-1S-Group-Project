@@ -1,6 +1,8 @@
 
     <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>    
+    
+    
     <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
     
@@ -11,6 +13,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Info Page</title>
     <link rel="stylesheet" href="css/user_info.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+     <link rel="stylesheet" href="H&F.css">
+    <link rel="stylesheet" type="text/css "href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> 
+        <link rel="stylesheet" href="css/header.css">
+        <link rel="icon" type="image/x-icon" href="./img/logo.jpg">
+    
 
     <style>
         .user-info {
@@ -94,6 +103,34 @@
 </head>
 
 <body>
+   <header class="header">
+        <div class="hcontainer">
+            <nav class="navbar">
+               <div class="logo"><a href="#"><img src="img/logo.jpg" alt="logo"></a></div>
+               <ul class="nav-links">
+                    <li><a href="home.jsp">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Services</a>
+                        <div class="dropdown-content">
+                            <a href="#">Book an Appointment</a>
+                            <a href="#">Order Medicine</a>
+                             <a href="Hospital.jsp">Hospital</a>
+                        </div>
+                    </li>
+                    <li><a href="blog.jsp">Blog</a></li>
+                    <li><a href="about_us.jsp">About Us</a></li>
+                    <li><a href="contact.jsp">Contact</a></li>
+                </ul>
+               <div class="logout-button" style="text-align: center; margin-top: 20px;">
+    <a href="logout.jsp" onclick="return confirm('Are you sure you want to logout?');" style="display: inline-block; padding: 10px 20px; background-color: red; color: #fff; text-decoration: none; border: none; border-radius: 5px; font-weight: bold; cursor: pointer;">Logout</a>
+</div>
+            </nav>
+        </div>
+    </header>
+      <header>
+
+    </header>
+    
 
     <div class="user-info">
         <div class="blur-overlay"></div>
@@ -135,12 +172,62 @@
            		<c:param name="tpno" value="${tpno}"/>
            	</c:url>
             <a href="${userupdate }" class="Settings"><center>Account Settings</center></a>
-            <a href="yohan gona" class="Settings"><center>Appoiment Detailes</center></a>
+            <a href="yohan gona" class="Settings"><center>My appointment</center></a>
             </div>
+           
+
+	
             </center>
             
             
+        <footer class="footer">
+        <div class="fcontainer">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Privacy Policies</a></li>
+                        <li><a href="#">T & C</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>               
+                <div class="footer-col">
+                    <h4>Get Help</h4>
+                    <ul>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Live Chat</a></li>
+                        <li><a href="#">Refund</a></li>
+                    </ul>
+                </div>               
+ 
+                <div class="footer-col">
+                    <h4>Payment</h4>
+                    <div class="payment-links">
+                        <a href="#"><i class="fab fa-cc-visa"></i></a>
+                        <a href="#"><i class="fab fa-cc-mastercard"></i></a>
+                        <a href="#"><i class="fab fa-cc-amex"></i></a>
+                        <a href="#"><i class="fab fa-cc-paypal"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>follow us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+                <div class="copyright"> <p>&copy; 2023 E-Channelling</p>
+            <p><a href="4member.html"> By NexTech Visionaries</a></p>
             
+        </div>
+        
+    </footer>    
 
 </html>
 

@@ -7,7 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1> unsucces </h1>
-	<p><%= request.getAttribute("error") %></p>
+
+	<h1>Unsuccess</h1>
+
 </body>
 </html>
