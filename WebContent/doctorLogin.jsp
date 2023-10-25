@@ -7,9 +7,10 @@
 		<title>Doctor Login</title>
 		<style type="text/css">
 			body {
-			    background: url('img/logo.jpg') no-repeat fixed center center;
+			    background:rgba(0, 0, 0, 0.5)url('img/logo.jpg') no-repeat fixed center center;
 			    background-size: cover;
 			    font-family: Montserrat;
+			    background-blend-mode: darken;
 			}
 			
 			.login {
@@ -21,7 +22,11 @@
 			.login-block {
 			    width: 320px;
 			    padding: 20px;
-			    background: #fff;
+			    background: transparent;
+			    border: 2px solid rgba(255, 255, 255, .2);
+			    backdrop-filter: blur(20px);
+			    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+			    background-color: rgba(255, 255, 255, 0.2);
 			    border-radius: 5px;
 			    border-top: 5px solid #128020;
 			    margin: 0 auto;
@@ -29,7 +34,7 @@
 			
 			.login-block h1 {
 			    text-align: center;
-			    color: #000;
+			    color: #fff;
 			    font-size: 18px;
 			    text-transform: uppercase;
 			    margin-top: 0;
@@ -41,7 +46,7 @@
 			    height: 42px;
 			    box-sizing: border-box;
 			    border-radius: 5px;
-			    border: 1px solid green;
+			    border: 2px solid green;
 			    margin-bottom: 20px;
 			    font-size: 14px;
 			    font-family: Montserrat;
@@ -66,7 +71,7 @@
 			}
 			
 			.login-block input:active, .login-block input:focus {
-			    border: 1px solid #ff656c;
+			    border: 2px solid #ff656c;
 			}
 			
 			.login-block button {
@@ -74,7 +79,7 @@
 			    height: 40px;
 			    background: #07a63e;
 			    box-sizing: border-box;
-			    border-radius: 5px;
+			    border-radius: 25px;
 			    border: 1px solid #c6f203;
 			    color: #fff;
 			    font-weight: bold;
@@ -92,8 +97,6 @@
 			input[type="checkbox"] {
 			    width: 16px;
 			    height: 16px;
-			    border: 1px solid green;
-			    border-radius: 5px;
 			    margin-bottom: 20px;
 			    cursor: pointer;
 			}
@@ -109,7 +112,7 @@
 				<input type="email" name="email" placeholder="dushan123@gmail.com">
 				<input type="password" name="password" id="password" placeholder="Password">
 				<input type="checkbox" onclick="togglePasswordVisibility()" id="show" name="show">
-				<label for="show">Show Password</label>
+				<label for="show" style="color: #fff" >Show Password</label>
         		<br>
 				<button>Submit</button>
 			</form>

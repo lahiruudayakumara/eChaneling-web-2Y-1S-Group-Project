@@ -39,6 +39,7 @@ public class UpdateScheduleServlet extends HttpServlet {
 				location, specialization, docCharge, availability);
 		
 		if(isTrue == true) {
+			
 			List<Schedule> schedule = ReadSheduleDBUtil.getSchedule(docRegNum);
 			request.setAttribute("schedule", schedule);
 			

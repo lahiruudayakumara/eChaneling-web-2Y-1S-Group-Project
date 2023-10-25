@@ -5,6 +5,7 @@
 <head>
 	<meta charset="ISO-8859-1">
 	<title>View Scedule</title>
+	<link rel="stylesheet" href="./css/admin.css" />
 	<style type="text/css">
 		body {
 			    background: url('img/logo.jpg') no-repeat fixed center center;
@@ -87,6 +88,19 @@
 	</style>
 </head>
 <body>
+	<header>
+	<div class="header">
+			<div class="nav">
+				<div id="logo">
+					<h3><a>Doctor Dashboard</a></h3>
+				</div>
+				<ul>
+					<li><a href="doctorLogOut.jsp">Logout</a>
+				</ul>
+			</div>
+		</div>
+	</header>
+	
 	<div class="login"></div>
 	<div class="login-block">
 		<form action="ReadScheduleServlet" method="post">

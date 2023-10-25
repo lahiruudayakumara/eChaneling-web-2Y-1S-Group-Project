@@ -29,6 +29,7 @@ public class DeleteScheduleServlet extends HttpServlet {
 		isTrue = DeleteScheduleDBUtil.deleteSchedule(id);
 		
 		if(isTrue == true) {
+			
 			List<Schedule> schedule = ReadSheduleDBUtil.getSchedule(docRegNum);
 			request.setAttribute("schedule", schedule);
 			

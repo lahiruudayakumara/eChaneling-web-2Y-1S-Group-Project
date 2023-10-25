@@ -15,7 +15,7 @@ public class DeleteScheduleDBUtil {
 			con = DBConnect.getConnection();
 			statement = con.createStatement();
 				
-			String sql = "delete from shedule where sheduleIDu='"+ id +"'";
+			String sql = "delete from shedule where sheduleID='"+ id +"'";
 				
 			int result = statement.executeUpdate(sql);
 				
