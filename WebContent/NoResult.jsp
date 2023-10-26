@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page import="javax.servlet.http.HttpSession" %>
+<%@ page import="java.util.Objects" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -61,14 +63,19 @@
 
     </style>
 </head>
+
+<%
+	HttpSession session1 = request.getSession(false);
+    String userName = (session1 != null) ? (String) session1.getAttribute("UserName") : null;
+%>
+
 <body>
-	
-	<header class="header">
+ <header class="header">
         <div class="hcontainer">
             <nav class="navbar">
                <div class="logo"><a href="#"><img src="img/logo.jpg" alt="logo"></a></div>
                <ul class="nav-links">
-                    <li><a href="#">Hospitals</a></li>
+                    <li><a href="index.jsp">Home</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropbtn">Services</a>
                         <div class="dropdown-content">
@@ -76,13 +83,18 @@
                             <a href="#">Order Medicine</a>
                         </div>
                     </li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="blog.jsp">Blog</a></li>
+                    <li><a href="about_us.jsp">About Us</a></li>
+                    <li><a href="contact.jsp">Contact</a></li>
                 </ul>
                 <div class="nav-buttons">
-                    <a href="#" class="sbutton">Sign Up</a>
-                    <a href="#" class="sbutton">Sign In</a>
+                    <% if (userName != null) { %>
+                    <a href="user_info.jsp" class="sbutton"><%=userName %></a>
+                    <a href="logout.jsp" class="sbutton">Logout</a>
+                <% } else { %>
+                    <a href="register.jsp" class="sbutton">Sign Up</a>
+                    <a href="login.jsp" class="sbutton">Sign In</a>
+                <% } %>
                 </div>
             </nav>
         </div>
@@ -97,7 +109,7 @@
             </div>
         </div>
         <div class="back-to-home">
-            <a href="#"><button>Back to Home</button></a>
+            <a href="index.jsp"><button>Back to Home</button></a>
         </div>    
     </div>
     </div>
