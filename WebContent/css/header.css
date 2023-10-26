@@ -33,6 +33,15 @@ html,body{
     }
 }
 
+@media(max-width: 500px){
+    .header{
+        padding: 20 20;
+    }
+    .nav-links{
+    display:none;
+    }
+}
+
 .hcontainer {
     max-width: 100%;
     min-width: 100%;
@@ -117,3 +126,4 @@ html,body{
        border-radius: 30px;
     }
 }
+
