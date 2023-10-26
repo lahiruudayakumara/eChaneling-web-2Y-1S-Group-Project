@@ -268,6 +268,127 @@ public class AppointmentsDBUtil {
 			
 			return isSuccess;
 		}
+	 	
+	 	public static boolean deleteAppointment(int id) {
+	 		
+	 		boolean isSuccess = false;
+	 		
+try {
+				
+				con = DBConnect.getConnection();
+				stmt = con.createStatement();
+				
+				String sql = "DELETE FROM appointments_details WHERE ref_no='"+id+"'";
+				
+				int result = stmt.executeUpdate(sql);
+				
+				if(result > 0) {
+					isSuccess=true;
+				}
+				else {
+					isSuccess=false;
+				}
+				
+			}
+			catch(Exception e) {
+				e.printStackTrace();
+			}
+	 		
+	 		return isSuccess;
+	 	}
+	 	
+	 	public static boolean createReund(int appId, int refId, String name,String nic,String username) {
+	 		
+	 		boolean isSuccess = false;
+	 		
+	 		try {
+	 			
+	 			con = DBConnect.getConnection();
+				stmt = con.createStatement();
+				
+				String sql = "INSERT INTO to_refund VALUES(0,'"+appId+"','"+refId+"','"+name+"','"+nic+"','"+username+"')";
+				
+				int result = stmt.executeUpdate(sql);
+				 
+				 if(result>0) {
+					 isSuccess=true;
+				 }
+				 else {
+					 isSuccess=false;
+				 }
+				
+				
+	 		}catch(Exception e) {
+	 			e.printStackTrace();
+	 		}
+	 		
+	 		return isSuccess;
+	 		
+	 	}
+	 	
+	 	public static List<Refund> getRefundDetails(int id) {
+	 		
+	 		ArrayList<Refund> refund = new ArrayList<>();
+	 		
+	 		try {
+	 			
+	 			con = DBConnect.getConnection();
+				stmt = con.createStatement();
+				
+				String sql = "SELECT * FROM to_refund WHERE refId='"+id+"'";
+				
+				// Execute the SQL query
+				rs = stmt.executeQuery(sql);
+				
+				// If a matching appointment is found, create an Appointments object and add it to the list
+				while(rs.next()) {
+					int refundId = rs.getInt(1);
+					int appId = rs.getInt(2);
+					int refId = rs.getInt(3);
+					String name = rs.getString(4);
+					String nic = rs.getString(5);
+					String username = rs.getString(6);
+					
+					Refund refundDatails = new Refund(refundId,appId,refId,name,nic,username);
+					refund.add(refundDatails );
+				}
+				
+				
+	 		}catch(Exception e) {
+	 			e.printStackTrace();
+	 		}
+	 		
+	 		return refund;
+	 	}
+	 	
+	 	public static boolean claimRefund(int refundId,int refId,int appId,String patName,String patNic,String refundReason,String bankName,String branchName,String accHolderName,String accNo) {
+	 		
+	 		boolean isSuccess = false;
+	 		
+	 		try {
+	 			
+	 			con = DBConnect.getConnection();
+				stmt = con.createStatement();
+				
+				String sql = "INSERT INTO refund VALUES('"+refundId+"','"+refId+"','"+appId+"','"+patName+"','"+patNic+"','"+refundReason+"','"+bankName+"','"+branchName+"','"+accHolderName+"','"+accNo+"')";
+				
+				int result = stmt.executeUpdate(sql);
+				 
+				 if(result>0) {
+					 isSuccess=true;
+				 }
+				 else {
+					 isSuccess=false;
+				 }
+				
+				
+	 		}catch(Exception e) {
+	 			e.printStackTrace();
+	 		}
+	 		
+	 		return isSuccess;
+	 		
+	 	}
 
 }
 
