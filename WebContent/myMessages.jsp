@@ -23,6 +23,14 @@ body {
     
 }
 
+.title{
+	margin: 30px;
+    padding: 20px;
+    padding-top: 10px;
+    color: #333;
+    text-align:center;
+}
+
 .msg-container {
     margin: 30px;
     padding: 20px;
@@ -61,33 +69,44 @@ th {
     background-color: #007bff;
     color: #fff;
 }
-          .msgUD {
-            display: flex;
-            justify-content: center; /* Center the buttons horizontally */
-            margin-top: 10px;
-        }
+/* Add this CSS to center the button container and center-align the buttons */
 
-        .msgUD button {
-            padding: 10px 30px; /* Increased width */
-            margin: 0 10px; /* Gap between buttons */
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top:20px;
+}
 
-        .update-button {
-            background-color: #4CAF50; /* Green color */
-            color: #fff;
-        }
+.action-button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s;
+    color: #fff;
+}
 
-        .delete-button {
-            background-color: #FF5733; /* Red color */
-            color: #fff;
-        }
+.update-button {
+    background-color: #4CAF50; /* Green color */
+}
 
-        .msgUD button:hover {
-            background-color: #0056b3;
-        }
+.delete-button {
+    background-color: #FF5733; /* Red color */
+}
+
+.back-button {
+    background-color: #007bff;
+}
+
+.action-button:hover {
+    background-color: #0056b3;
+}
+
+
 </style>
 </head>
 <%
@@ -100,9 +119,9 @@ th {
 <header class="header">
         <div class="hcontainer">
             <nav class="navbar">
-               <div class="logo"><a href="#"><img src="img/logo.jpg" alt="logo"></a></div>
+               <div class="logo"><a href=""><img src="img/logo.jpg" alt="logo"></a></div>
                <ul class="nav-links">
-                    <li><a href="home.jsp">Home</a></li>
+                    <li><a href="index.jsp">Home</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropbtn">Services</a>
                         <div class="dropdown-content">
@@ -126,9 +145,36 @@ th {
             </nav>
         </div>
     </header>
+    
+    <div class=title><h2>My messages</h2></div>
 
 <c:forEach var="msg" items="${messages}">
-
+	
+	<c:set var="id" value="${msg.msgId }"/>
+	<c:set var="name" value="${msg.name}"/>
+	<c:set var="email" value="${msg.email}"/>
+	<c:set var="phone" value="${msg.phone}"/>
+	<c:set var="subject" value="${msg.subject}"/>
+	<c:set var="message" value="${msg.message}"/>
+	
+	<c:url value="UpdateMessage.jsp" var="msgupdate">
+	<c:param name="id" value="${msg.msgId}"></c:param>
+	<c:param name="name" value="${msg.name}"></c:param>
+	<c:param name="email" value="${msg.email}"></c:param>
+	<c:param name="phone" value="${msg.phone}"></c:param>
+	<c:param name="subject" value="${msg.subject}"></c:param>
+	<c:param name="message" value="${msg.message}"></c:param>
+	</c:url>
+	
+	<c:url value="DeleteMessage.jsp" var="msgdelete">
+	<c:param name="id" value="${msg.msgId}"></c:param>
+	<c:param name="name" value="${msg.name}"></c:param>
+	<c:param name="email" value="${msg.email}"></c:param>
+	<c:param name="phone" value="${msg.phone}"></c:param>
+	<c:param name="subject" value="${msg.subject}"></c:param>
+	<c:param name="message" value="${msg.message}"></c:param>
+	</c:url>
+   
     <div class="msg-container">
         <div id="msg-info">
             <table>
@@ -158,12 +204,19 @@ th {
                 </tr>
             </table>
         </div>
-        <div class = "msgUD">
-      		<button class="update-button" type="submit">Update</button>
-            <button class="delete-button" type="Submit">Delete</button>
-        </div>
+        <div class="msgUD">
+		    <div class="button-container">
+		    	<a href="${msgupdate}"> <button class="action-button update-button" type="submit">Update</button></a>
+		        <a href="${msgdelete}"><button class="action-button delete-button" type="Submit">Delete</button></a>
+		        <a href="contact.jsp"><button class="action-button back-button">Back</button></a>
+		    </div>
+		</div>
     </div>
 </c:forEach>
+
+
+
+
 
 <footer class="footer">
         <div class="fcontainer">
