@@ -1,6 +1,7 @@
 package com.doctor;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -20,7 +21,9 @@ public class AddScheduleServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+		PrintWriter out = response.getWriter();
+		response.setContentType("text/html");
+		
 		String docName = request.getParameter("docName");
 		String docRegNum = request.getParameter("docRegNum");
 		String date = request.getParameter("date");
@@ -28,13 +31,18 @@ public class AddScheduleServlet extends HttpServlet {
 		String endTime = request.getParameter("endTime");
 		String location = request.getParameter("location");
 		String specialization = request.getParameter("specialization");
+		int docCharge = Integer.parseInt(request.getParameter("docCharge"));
+		String availability = request.getParameter("availability");
 		
 
-		boolean isTrue = scheduleDBUtil.createSchedule(docName, docRegNum, date, startTime, endTime, location, specialization);
+		boolean isTrue = scheduleDBUtil.createSchedule(docName, docRegNum, date, startTime, endTime, 
+				location, specialization, docCharge, availability);
 
 		if(isTrue == true) {
-			RequestDispatcher dis1 = request.getRequestDispatcher("success.jsp");
-			dis1.forward(request, response);
+			out.println("<script type='text/javascript'>");
+			out.println("alert('Schedule Created Successfully !');");
+			out.println("location='doctorAddSchedule.jsp'");
+			out.println("</script>");
 			
 		} else {
 			RequestDispatcher dis2 = request.getRequestDispatcher("unsuccess.jsp");

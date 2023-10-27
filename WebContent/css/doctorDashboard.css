@@ -1,0 +1,137 @@
+@charset "ISO-8859-1";
+body {
+            font-family: 'Nunito', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        #container {
+            display: flex;
+            height: 100vh;
+        }
+
+        #sidebar {
+            width: 175px;
+            background-color: #0a7390;
+            color: #fff;
+            padding: 20px;
+        }
+
+        #content {
+            flex: 1;
+            padding: 20px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+            padding: 10px 10px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #fff;
+            padding: 10px 10px;
+            display: inline-block;
+            width: 100px;
+        }
+
+        #header {
+            background-color: #04AA6D;
+            color: #fff;
+            padding: 20px;
+        }
+
+        #header h1 {
+            margin: 0;
+        }
+
+        #widgets {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .widget {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin: 10px;
+            padding: 20px;
+            width: calc(50% - 20px);
+            box-sizing: border-box;
+        }
+        
+.widget {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 20px;
+    width: calc(50% - 20px);
+    box-sizing: border-box;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.widget h2 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+    padding: 15px;
+    margin-top:10px;
+}
+
+.widget p {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+th, td {
+  padding: 15px;
+  text-align: left;
+}
+
+#logo img {
+    display: inline;
+    margin: 10px auto;
+    max-width: 150px; /* Adjust the width as needed */
+    height: auto;
+}
+
+#sidebar a:hover {
+    background-color: #555;
+}
+
+.widget ul li a {
+    color: white;
+    width: 100%;
+    background-color: #04AA6D;
+    border-radius: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+.widget ul li a:hover{
+	background-color: orange;
+}
+
+.appoinments {
+    color: white;
+    width: 200px;
+    background-color: #04AA6D;
+    border-radius: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
+    margin-left: 11px;
+    border: none;
+    width: 100%;
+    font-size: 17px;
+}
+
+.appoinments:hover{
+	background-color: orange;
+}

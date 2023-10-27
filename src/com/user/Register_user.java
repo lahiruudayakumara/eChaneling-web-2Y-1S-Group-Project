@@ -1,5 +1,6 @@
 package com.user;
 
+//Register_user class (Inheritance)
 public class Register_user extends User {
 	
 	private String password;
@@ -11,6 +12,7 @@ public class Register_user extends User {
 		this.username = username;
 	}
 
+	// Getters and setters for additional attributes (Encapsulation)
 	public String getPassword() {
 		return password;
 	}

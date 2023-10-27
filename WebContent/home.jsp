@@ -36,6 +36,7 @@ background-repeat: no-repeat;">
                         <div class="dropdown-content">
                             <a href="#">Book an Appointment</a>
                             <a href="#">Order Medicine</a>
+                             <a href="Hospital.jsp">Hospital</a>
                         </div>
                     </li>
                     <li><a href="blog.jsp">Blog</a></li>
@@ -44,7 +45,7 @@ background-repeat: no-repeat;">
                 </ul>
                 <div class="nav-buttons">
                     <% if (userName != null) { %>
-                    <a href="user_info.jsp" class="sbutton"><%=userName %></a>
+                    <a href="userRetrive" class="sbutton"><%=userName %></a>
                     <a href="logout.jsp" class="sbutton">Logout</a>
                 <% } else { %>
                     <a href="register.jsp" class="sbutton">Sign Up</a>

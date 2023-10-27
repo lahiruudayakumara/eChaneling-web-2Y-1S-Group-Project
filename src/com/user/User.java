@@ -1,12 +1,15 @@
 package com.user;
 
+//User class (Abstraction, Encapsulation, Inheritance)
 public class User {
+	// User class represents a basic user entity
 	protected String nic;
 	protected String name;
 	protected String address;
 	protected String email;
 	protected int tpno;
 	
+	// Constructor for creating a User object
 	public User(String nic, String name, String address, String email, int tpno) {
 		this.name = name;
 		this.nic = nic;
@@ -15,6 +18,7 @@ public class User {
 		this.tpno = tpno;
 	}
 
+	 // Getters and setters for User attributes (Encapsulation)
 	public String getName() {
 		return name;
 	}

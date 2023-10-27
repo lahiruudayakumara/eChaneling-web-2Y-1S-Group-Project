@@ -9,9 +9,11 @@ public class Schedule {
 	private String endTime;
 	private String location;
 	private String specialization;
+	private int docCharge;
+	private String availability;
 	
 	public Schedule(int scheduleId, String docName, String docRegNum, String date, String startTime, String endTime,
-			String location, String specialization) {
+			String location, String specialization, int docCharge, String availability) {
 		this.scheduleId = scheduleId;
 		this.docName = docName;
 		this.docRegNum = docRegNum;
@@ -20,6 +22,8 @@ public class Schedule {
 		this.endTime = endTime;
 		this.location = location;
 		this.specialization = specialization;
+		this.docCharge = docCharge;
+		this.availability = availability;
 		
 	}
 
@@ -53,6 +57,14 @@ public class Schedule {
 
 	public String getSpecialization() {
 		return specialization;
+	}
+
+	public int getDocCharge() {
+		return docCharge;
+	}
+
+	public String getAvailability() {
+		return availability;
 	}
 
 }
