@@ -138,18 +138,82 @@
   </servlet-mapping>
   <servlet>
     <servlet-name>DropMessage</servlet-name>
-    <servlet-class>com.member.ContactMessageServlet</servlet-class>
+    <servlet-class>com.member.InsertMessageServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>DropMessage</servlet-name>
     <url-pattern>/drop</url-pattern>
   </servlet-mapping>
   <servlet>
-  	<servlet-name>ViewMessage</servlet-name>
-  	<servlet-class>com.member.ViewMessageServlet</servlet-class>
+    <servlet-name>ViewMessage</servlet-name>
+    <servlet-class>com.member.ViewMessageServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-  	<servlet-name>ViewMessage</servlet-name>
-  	<url-pattern>/viewMessage</url-pattern>
+    <servlet-name>ViewMessage</servlet-name>
+    <url-pattern>/viewMessage</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>UpdateMessage</servlet-name>
+    <servlet-class>com.member.UpdateMessageServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpdateMessage</servlet-name>
+    <url-pattern>/updatemsg</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>DeleteMessage</servlet-name>
+    <servlet-class>com.member.DeleteMessageServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteMessage</servlet-name>
+    <url-pattern>/deletemsg</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>PlaceAppointment</servlet-name>
+    <servlet-class>com.member.PlaceAppointmentServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PlaceAppointment</servlet-name>
+    <url-pattern>/placed</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>MakePayment</servlet-name>
+    <servlet-class>com.member.MakePaymentServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MakePayment</servlet-name>
+    <url-pattern>/payment</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ViewAppointment</servlet-name>
+    <servlet-class>com.member.ViewAppointmentsDetailsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ViewAppointment</servlet-name>
+    <url-pattern>/myappointments</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>UpdateContactDetails</servlet-name>
+    <servlet-class>com.member.UpdateContactDetailsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpdateContactDetails</servlet-name>
+    <url-pattern>/contdetails</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>CancelAppointment</servlet-name>
+    <servlet-class>com.member.CancelAppointmentServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CancelAppointment</servlet-name>
+    <url-pattern>/cancel</url-pattern>
+  </servlet-mapping>
+    <servlet>
+    <servlet-name>ClaimRefund</servlet-name>
+    <servlet-class>com.member.ClaimRefundServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ClaimRefund</servlet-name>
+    <url-pattern>/claim</url-pattern>
   </servlet-mapping>
 </web-app>
