@@ -7,9 +7,9 @@ import java.sql.DriverManager;
  * The DBConnect class provides a method for establishing a connection to a MySQL database.
  */
 public class DBConnect {
-	private static String url = "jdbc:mysql://localhost:3306/echannelling";
-	private static String userName = "root";
-	private static String password = "2023";
+	private static final String url = "jdbc:mysql://localhost:3306/echannelling";//use costant variables
+	private static final String userName = "root";//use costant variables
+	private static final String password = "2023";//use costant variables
 	private static Connection con;
 	
 	/**

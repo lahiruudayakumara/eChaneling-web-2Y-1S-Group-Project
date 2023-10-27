@@ -12,13 +12,13 @@ public class Member extends RegisteredMember{
 	private static Statement stmt = null;
 	private static ResultSet rs = null;
 	
-	String subject;
-	String message;
-	int msgId;
-	String username;
+	private String subject;
+	private String message;
+	private int msgId;
+	private  String username;
 	
-	public Member(String name, String phone, String email,String subject,String message, int msgId, String username) {
-		super(name, phone, email);
+	public Member(String name, String email, String phone,String subject,String message, int msgId, String username) {
+		super(name, email, phone);
 		this.subject = subject;
 		this.message = message;
 		this.msgId = msgId;
@@ -80,7 +80,7 @@ public class Member extends RegisteredMember{
 				String mssg = rs.getString(6);
 				String uname = rs.getString(7);
 				
-				Member member = new Member(name, email, phone, sub, mssg, msgId, uname);
+				Member member = new Member(name, email,phone,sub, mssg, msgId, uname);
 				msg.add(member);
 			}
 		}

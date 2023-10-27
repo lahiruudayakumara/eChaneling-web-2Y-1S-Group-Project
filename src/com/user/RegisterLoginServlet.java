@@ -46,9 +46,10 @@ public class RegisterLoginServlet extends HttpServlet {
 		if(isTrue == true) {
 			session.setAttribute("UserName", userName);
 			session.setAttribute("Upassword", password);
-			
-			response.sendRedirect("home.jsp");
+
+			response.sendRedirect("index.jsp");
 			/*List<User> userDetails =  RegisteruserDBUtil.getUserDetails(userName);*/
+
 			session.setAttribute("usernic", userName);
 			/*session.setAttribute("userDetails", userDetails);*/
 			/*request.getRequestDispatcher("user_info.jsp").forward(request, response);*/

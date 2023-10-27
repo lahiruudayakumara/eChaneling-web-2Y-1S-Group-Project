@@ -7,6 +7,56 @@
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> 
+    <script>
+        function validateForm() {
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var phone = document.getElementById("phone").value;
+            var subject = document.getElementById("subject").value;
+            var message = document.getElementById("message").value;
+            var isValid = true;
+
+
+
+            if (name.trim() === "") {
+                document.getElementById("nameError").textContent = "Name is required.";
+                isValid = false;
+            }
+
+            if (email.trim() === "") {
+                document.getElementById("emailError").textContent = "Email is required.";
+                isValid = false;
+            } else if (!validateEmail(email)) {
+                document.getElementById("emailError").textContent = "Invalid email format.";
+                isValid = false;
+            }
+
+            if (phone.trim() === "" || !/^\d{10}$/.test(phone)) {
+                alert("Please enter a valid 10-digit phone number.");
+                isValid = false;
+            }
+
+            if (subject.trim() === "") {
+                document.getElementById("subjectError").textContent = "Subject is required.";
+                isValid = false;
+            }
+
+            if (message.trim() === "") {
+                document.getElementById("messageError").textContent = "Message is required.";
+                isValid = false;
+            }
+
+            return isValid;
+        }
+
+        function validateEmail(email) {
+            // Basic email format validation
+            var emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/;
+            return emailRegex.test(email);
+        }
+    </script>
+</body>
+</html>
 </head>
 <%@ page import="javax.servlet.http.HttpSession" %>
 <%@ page import="java.util.Objects" %>
@@ -25,7 +75,7 @@ background-repeat: no-repeat;">
             <nav class="navbar">
                <div class="logo"><a href="#"><img src="img/logo.jpg" alt="logo"></a></div>
                <ul class="nav-links">
-                    <li><a href="home.jsp">Home</a></li>
+                    <li><a href="index.jsp">Home</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropbtn">Services</a>
                         <div class="dropdown-content">
@@ -117,7 +167,7 @@ background-repeat: no-repeat;">
         <section class="inquiry-form">
             <h2>Drop us a line</h2>
             <p>Get in touch if you have any questions.</p><br>
-            <form action="drop" method="post">
+            <form action="drop" method="post" onsubmit="return validateForm()">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required>
                 <label for="email">Email:</label>

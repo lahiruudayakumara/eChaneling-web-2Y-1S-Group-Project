@@ -1,54 +1,69 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Payment Gateway</title>
-    <link rel="stylesheet" href="css/payment.css">
-    <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" type="text/css" href="css/PatientDetailsForm.css">
+    <link rel="stylesheet" type="text/css" href="css/header.css">
+    <link rel="stylesheet" type="text/css" href="css/footer.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> 
-	<script>
-function validatePaymentForm() {
-    var cardNumber = document.getElementsByName("card-number")[0].value;
-    var expiration = document.getElementsByName("expiration")[0].value;
-    var cvv = document.getElementsByName("cvv")[0].value;
-    var cardType = document.querySelector('input[name="payment-method"]:checked');
+    
+    <script>
+function validateForm() {
+    // Get form field values
+    var fullName = document.getElementById("first_name").value;
+    var nic = document.getElementById("nic").value;
+    var age = document.getElementById("age").value;
+    var gender = document.querySelector('input[name="gender"]:checked');
+    var email = document.getElementById("email").value;
+    var phone = document.getElementById("phone").value;
 
-    var currentYear = new Date().getFullYear() % 100;
-    var [month, year] = expiration.split("/");
 
+    // Initialize a variable to check if all validations pass
     var isValid = true;
 
-    if (!cardType) {
-        alert("Please select a payment method (Visa or Mastercard).");
+    // Validate Full Name
+    if (fullName.trim() === "") {
+        alert("Full Name is required.");
         isValid = false;
     }
 
-    if (!/^\d{16}$/.test(cardNumber)) {
-        alert("Please enter a valid 16-digit card number.");
+ // Validate NIC (Sri Lankan NIC format)
+    if (nic.trim() === "" || !/^\d{12}$|^\d{9}[VvXx]$/.test(nic)) {
+        alert("Please enter a valid NIC number.");
         isValid = false;
     }
 
-    if (!/^\d{2}\/\d{2}$/.test(expiration) || month < 1 || month > 12 || year < currentYear) {
-        alert("Please enter a valid expiration date in MM/YY format.");
+    // Validate Age
+    if (age.trim() === "" || isNaN(age) || age < 1 || age > 120) {
+        alert("Please enter a valid age.");
         isValid = false;
     }
 
-    if (!/^\d{3}$/.test(cvv)) {
-        alert("Please enter a valid 3-digit CVV.");
+    // Validate Gender
+    if (!gender) {
+        alert("Please select a gender.");
         isValid = false;
     }
+
+    // Validate Email
+    if (email.trim() !== "" && !/^\S+@\S+\.\S+$/.test(email)) {
+        alert("Please enter a valid email address.");
+        isValid = false;
+    }
+
+    // Validate Phone Number
+    if (phone.trim() === "" || !/^\d{10}$/.test(phone)) {
+        alert("Please enter a valid 10-digit phone number.");
+        isValid = false;
+    }
+
 
     return isValid;
 }
-</script>
-
-	
-	
+</script>    
 </head>
+
 <%@ page import="javax.servlet.http.HttpSession" %>
 <%@ page import="java.util.Objects" %>
 
@@ -90,46 +105,79 @@ background-repeat: no-repeat;">
             </nav>
         </div>
     </header>
-
-
-    <div class="container">
-        <h1>Payment Details</h1>
-        <form id="payment-form" method="POST" action="payment"  onsubmit="return validatePaymentForm()">
-            
-            <div class="payment-methods">
-                <label>Select Payment Method</label><br>
-                <div class="payment-method">
-                    <input type="radio" id="visa" name="payment-method" value="visa" required>
-                    <label for="visa"><img src="img/png-transparent-mastercard-visa-credit-card-american-express-company-mastercard-blue-company-text.png" alt="Visa"></label>
-                </div>
-                <div class="payment-method">
-                    <input type="radio" id="mastercard" name="payment-method" value="mastercard" required>
-                    <label for="mastercard"><img src="img/png-transparent-logo-mastercard-font-solar-home-text-orange-logo.png" alt="Mastercard"></label>
-                </div>
-            </div>
-            
-            <label for="card-number">Card Number</label>
-            <input type="text" name="card-number" placeholder="1234 5678 9012 3456" required>
-
-            <label for="expiration">Expiration Date</label>
-            <input type="text" name="expiration" placeholder="MM/YY" required>
-
-            <label for="cvv">CVV</label>
-            <input type="text" name="cvv" placeholder="123" required>
-
-            <label for="card_holder_name">Cardholder Name</label>
-            <input type="text" name="card_holder_name" placeholder="John Doe" required>
-
-            <label for="accept-terms">
-                <input type="checkbox" id="accept-terms" name="accept-terms" required>
-                I accept the <a href="terms_and_conditions.html" target="_blank">Terms & Conditions</a>
-            </label>
-
-            <button type="submit" name="pay">Pay Now</button>
-        </form>
-    </div>
     
-   <footer class="footer">
+
+<div class="form-container">
+    <h2>Cancel an Appointment</h2>
+    <form action="cancel" method="post" onsubmit="return validateForm()">
+    
+    <%
+    	String refId = request.getParameter("refId");
+	    String appId = request.getParameter("appId");
+	    String name = request.getParameter("patName");
+	    String nic = request.getParameter("patNic");
+	    String docName = request.getParameter("docName");
+	    String docSpec = request.getParameter("docSpec");
+	    String hosName = request.getParameter("hosName");
+	    String date = request.getParameter("date");
+	    String time = request.getParameter("time");
+%>
+    
+    <div class="apdt-container">
+        <div id="appointment-info">
+            <h2>Appointment Details</h2>
+            <table>
+                <tr>
+                    <td>Appointment No</td>
+                    <td><%=appId%></td>
+                </tr>
+                <tr>
+                    <td>Doctor</td>
+                    <td>Dr.<%=docName%></td>
+                </tr>
+                <tr>
+                    <td>Specialization</td>
+                    <td><%=docSpec%></td>
+                </tr>
+                <tr>
+                    <td>Hospital</td>
+                    <td><%=hosName%></td>
+                </tr>
+                <tr>
+                    <td>Session Date</td>
+                    <td><%=date%></td>
+                </tr>
+                <tr>
+                    <td>Session Start Time</td>
+                    <td><%=time%></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+ 
+        	
+        <!-- Personal Information -->
+        <fieldset>
+            <legend>Appointment Information</legend>
+            <label for="reference_no">Reference No:</label>
+            <input type="text" id="reference_no" name="reference_no" value="<%=refId%>" readonly>
+            
+            <label for="appointment_no">Appointment No:</label>
+            <input type="text" id="appointment_no" name="appointment_no" value="<%=appId%>" readonly>
+            
+            <label for="name">Patient Name:</label>
+            <input type="text" id="first_name" name="first_name" value="<%=name%>" readonly required>
+
+            <label for="nic">Patient NIC:</label>
+            <input type="text" id="nic" name="nic" value="<%=nic%>" readonly required>
+        </fieldset>       
+
+        <!-- Submit Button -->
+       <div class="submit"><input type="submit" name="submit" value="Apply Re-fund"></div> 
+    </form>
+    </div>
+
+    <footer class="footer">
         <div class="fcontainer">
             <div class="row">
                 <div class="footer-col">
@@ -176,5 +224,7 @@ background-repeat: no-repeat;">
         </div>
     </footer>
     
+   
 </body>
 </html>
+

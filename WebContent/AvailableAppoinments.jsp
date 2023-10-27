@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page import="javax.servlet.http.HttpSession" %>
+<%@ page import="java.util.Objects" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -60,18 +62,22 @@ background-color: #2980b9;
 }
  
  </style>
- 
+<%
+	HttpSession session1 = request.getSession(false);
+    String userName = (session1 != null) ? (String) session1.getAttribute("UserName") : null;
+%>
 </head>
+
 <body style="background-image: url('img/white-concrete-wall.jpg');
 background-size: cover;
 background-repeat: no-repeat;">
-
+   
     <header class="header">
         <div class="hcontainer">
             <nav class="navbar">
                <div class="logo"><a href="#"><img src="img/logo.jpg" alt="logo"></a></div>
                <ul class="nav-links">
-                    <li><a href="#">Hospitals</a></li>
+                    <li><a href="index.jsp">Home</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropbtn">Services</a>
                         <div class="dropdown-content">
@@ -79,13 +85,18 @@ background-repeat: no-repeat;">
                             <a href="#">Order Medicine</a>
                         </div>
                     </li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="blog.jsp">Blog</a></li>
+                    <li><a href="about_us.jsp">About Us</a></li>
+                    <li><a href="contact.jsp">Contact</a></li>
                 </ul>
                 <div class="nav-buttons">
-                    <a href="#" class="sbutton">Sign Up</a>
-                    <a href="#" class="sbutton">Sign In</a>
+                    <% if (userName != null) { %>
+                    <a href="user_info.jsp" class="sbutton"><%=userName %></a>
+                    <a href="logout.jsp" class="sbutton">Logout</a>
+                <% } else { %>
+                    <a href="register.jsp" class="sbutton">Sign Up</a>
+                    <a href="login.jsp" class="sbutton">Sign In</a>
+                <% } %>
                 </div>
             </nav>
         </div>
@@ -96,16 +107,33 @@ background-repeat: no-repeat;">
 <div class=card-container>
 <c:forEach var="app" items="${appDetails}">
     
+    <c:set var="docName" value="${app.doctorName}"/>
+    <c:set var="appId" value="${app.appointmentID}"/>
+    <c:set var="spec" value="${app.specialization}"/>
+    <c:set var="hosName" value="${app.hospitalName}"/>
+    <c:set var="date" value="${app.date}"/>
+    <c:set var="time" value="${app.time}"/>
+    <c:set var="docCharge" value="${app.doctorCharge}"/>
+    
+   	<c:url value="PatientDetailsForm.jsp" var="channel">
+		<c:param name="docName" value="${app.doctorName}"/>
+		<c:param name="appID" value="${app.appointmentID}"/>
+		<c:param name="spec" value="${app.specialization}"/>
+		<c:param name="hosName" value="${app.hospitalName}"/>
+		<c:param name="date" value="${app.date}"/>
+		<c:param name="time" value="${app.time}"/>
+		<c:param name="charge" value="${app.doctorCharge}"/>
+	</c:url>
+    
      <div class="cards">
         <h2>Dr.${app.doctorName}</h2>
-        <p>Appointment ID: ${app.appointmentID}</p>
+        <p>Appointment No: ${app.appointmentID}</p>
         <p>Specialization: ${app.specialization}</p>
         <p>Hospital: ${app.hospitalName}</p>
-        <p>Date: ${app.date}</p>
-        <p>Time: ${app.time}</p>
-        <button type="submit">Channel</button>
+        <p>Session Date: ${app.date}</p>
+        <p>Session Start Time: ${app.time}</p>
+        <a href="${channel}"><button type="button">Book Now</button></a>
     </div>
-
 </c:forEach>
 </div>
 <footer class="footer">

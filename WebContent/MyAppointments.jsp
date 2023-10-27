@@ -2,16 +2,16 @@
 <%@ page import="java.util.Objects" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<html lang="en">
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My Messages</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Appointments</title>
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> 
-<style>
+	<style>
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
 body {
     font-family: 'Poppins', sans-serif;
@@ -109,17 +109,23 @@ th {
 
 </style>
 </head>
+
+<%@ page import="javax.servlet.http.HttpSession" %>
+<%@ page import="java.util.Objects" %>
+
 <%
 	HttpSession session1 = request.getSession(false);
     String userName = (session1 != null) ? (String) session1.getAttribute("UserName") : null;
 %>
 
-<body>
-
-<header class="header">
+<body style="background-image: url('img/white-concrete-wall.jpg');
+background-size: cover;
+background-repeat: no-repeat;">
+   
+    <header class="header">
         <div class="hcontainer">
             <nav class="navbar">
-               <div class="logo"><a href=""><img src="img/logo.jpg" alt="logo"></a></div>
+               <div class="logo"><a href="#"><img src="img/logo.jpg" alt="logo"></a></div>
                <ul class="nav-links">
                     <li><a href="index.jsp">Home</a></li>
                     <li class="dropdown">
@@ -146,78 +152,106 @@ th {
         </div>
     </header>
     
-    <div class=title><h2>My messages</h2></div>
+    <div class=title><h2>My Appointments</h2></div>
 
-<c:forEach var="msg" items="${messages}">
+<c:forEach var="appData" items="${appDetails}">
+
+
+	<c:set var="refId" value="${appData.getReferenceID()}"/>
+	<c:set var="appId" value="${appData.getAppointmentID()}"/>
+	<c:set var="uName" value="${appData.getUserName()}"/>
+	<c:set var="docName" value="${appData.getDoctorName()}"/>
+	<c:set var="docSpec" value="${appData.getSpecialization()}"/>
+	<c:set var="hosName" value="${appData.getHospitalName()}"/>
+	<c:set var="date" value="${appData.getDate()}"/>
+	<c:set var="time" value="${appData.getTime()}"/>
+	<c:set var="patName" value="${appData.geteName()}"/>
+	<c:set var="patNic" value="${appData.getNic()}"/>
+	<c:set var="patGender" value="${appData.getGender()}"/>
+	<c:set var="patAge" value="${appData.getAge()}"/>
+	<c:set var="patEmail" value="${appData.getEmail()}"/>
+	<c:set var="patPhone" value="${appData.getPhone()}"/>
+	<c:set var="patAddress" value="${appData.getAddress()}"/>
 	
-	<c:set var="id" value="${msg.msgId }"/>
-	<c:set var="name" value="${msg.name}"/>
-	<c:set var="email" value="${msg.email}"/>
-	<c:set var="phone" value="${msg.phone}"/>
-	<c:set var="subject" value="${msg.subject}"/>
-	<c:set var="message" value="${msg.message}"/>
-	
-	<c:url value="UpdateMessage.jsp" var="msgupdate">
-	<c:param name="id" value="${msg.msgId}"></c:param>
-	<c:param name="name" value="${msg.name}"></c:param>
-	<c:param name="email" value="${msg.email}"></c:param>
-	<c:param name="phone" value="${msg.phone}"></c:param>
-	<c:param name="subject" value="${msg.subject}"></c:param>
-	<c:param name="message" value="${msg.message}"></c:param>
-	</c:url>
-	
-	<c:url value="DeleteMessage.jsp" var="msgdelete">
-	<c:param name="id" value="${msg.msgId}"></c:param>
-	<c:param name="name" value="${msg.name}"></c:param>
-	<c:param name="email" value="${msg.email}"></c:param>
-	<c:param name="phone" value="${msg.phone}"></c:param>
-	<c:param name="subject" value="${msg.subject}"></c:param>
-	<c:param name="message" value="${msg.message}"></c:param>
-	</c:url>
-   
-    <div class="msg-container">
+		<c:url value="UpdateContactDetails.jsp" var="appupdate">
+		<c:param name="refId" value="${appData.getReferenceID()}"></c:param>
+		<c:param name="patEmail" value="${appData.getEmail()}"></c:param>
+		<c:param name="patPhone" value="${appData.getPhone()}"></c:param>
+		<c:param name="patAddress" value="${appData.getAddress()}"></c:param>
+		</c:url>
+		
+		<c:url value="DeleteAppDetails.jsp" var="appdelete">
+		<c:param name="refId" value="${appData.getReferenceID()}"></c:param>
+		<c:param name="appId" value="${appData.getAppointmentID()}"></c:param>
+		<c:param name="patName" value="${appData.geteName()}"></c:param>
+		<c:param name="patNic"  value="${appData.getNic()}"></c:param>
+		<c:param name="docName" value="${appData.getDoctorName()}"/>
+		<c:param name="docSpec" value="${appData.getSpecialization()}"/>
+		<c:param name="hosName" value="${appData.getHospitalName()}"/>
+		<c:param name="date" value="${appData.getDate()}"/>
+		<c:param name="time" value="${appData.getTime()}"/>
+		</c:url>
+		
+	    <div class="msg-container">
         <div id="msg-info">
             <table>
                 <tr>
-                    <td>Message ID</td>
-                    <td> ${msg.msgId }</td>
+                    <td>Reference ID</td>
+                    <td>${appData.getReferenceID()}</td>
                 </tr>
                 <tr>
-                    <td>Name</td>
-                    <td> ${msg.name}</td>
+                    <td>Appointment No</td>
+                    <td>${appData.getAppointmentID()}</td>
                 </tr>
                 <tr>
-                    <td>E-mail</td>
-                    <td>${msg.email}</td>
+                    <td>Patient's Name</td>
+                    <td>${appData.geteName()}</td>
                 </tr>
                 <tr>
-                    <td>Phone</td>
-                    <td>${msg.phone}</td>
+                    <td>Doctor's Name</td>
+                    <td>${appData.getDoctorName()}</td>
                 </tr>
                 <tr>
-                    <td>Subject</td>
-                    <td>${msg.subject}</td>
+                    <td>Doctor's Specialization</td>
+                    <td>${appData.getSpecialization()}</td>
                 </tr>
                 <tr>
-                    <td>Message</td>
-                    <td>${msg.message}</td>
+                    <td>Hospital Name</td>
+                    <td>${appData.getHospitalName()}</td>
+                </tr>
+                <tr>
+                    <td>Session Date</td>
+                    <td>${appData.getDate()}</td>
+                </tr>
+                <tr>
+                    <td>Session Time</td>
+                    <td>${appData.getTime()}</td>
+                </tr>
+                <tr>
+                    <td>Patient's Email</td>
+                    <td>${appData.getEmail()}</td>
+                </tr>
+                <tr>
+                    <td>Patient's Phone</td>
+                    <td>${appData.getPhone()}</td>
+                </tr>
+                <tr>
+                    <td>Patient's Address</td>
+                    <td>${appData.getAddress()}</td>
                 </tr>
             </table>
         </div>
         <div class="msgUD">
 		    <div class="button-container">
-		    	<a href="${msgupdate}"> <button class="action-button update-button" type="submit">Update</button></a>
-		        <a href="${msgdelete}"><button class="action-button delete-button" type="Submit">Delete</button></a>
-		        <a href="contact.jsp"><button class="action-button back-button">Back</button></a>
+		    	<a href="${appupdate}"><button class="action-button update-button" type="submit">Update contact-Info</button></a>
+		        <a href="${appdelete}"><button class="action-button delete-button" type="Submit">Cancel</button></a>
+		        <a href="index.jsp"><button class="action-button back-button">Back</button></a>
 		    </div>
 		</div>
     </div>
+
+
 </c:forEach>
-
-
-
-
-
 <footer class="footer">
         <div class="fcontainer">
             <div class="row">
@@ -264,6 +298,7 @@ th {
             <p><a href="#"> By NexTech Visionaries</a></p>
         </div>
     </footer>
+
 
 
 </body>

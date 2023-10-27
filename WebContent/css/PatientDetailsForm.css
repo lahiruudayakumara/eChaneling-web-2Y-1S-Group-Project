@@ -25,6 +25,23 @@ body {
     text-align: center;
 }
 
+.payment-container {
+    margin: 30px;
+    padding: 20px;
+    padding-top: 10px;
+    background-color: rgb(0, 123, 255, 0.2);
+    border: 2px solid #007bff;
+    border-radius: 10px;
+    color: #333;
+}
+
+.payment-info {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    
+}
+
 table {
     width: 100%;
     border-collapse: separate; /* Use separate instead of collapse */
@@ -106,6 +123,30 @@ textarea {
     border: 1px solid #ddd;
     border-radius: 5px;
     margin-bottom: 10px;
+    font-size: 16px;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    font-size: 16px;
+    color: #333;
+    outline: none; /* Remove the default focus border */
+    cursor: pointer; /* Show a pointer cursor on hover */
+}
+
+select option {
+    background-color: #fff;
+    color: #333;
+    font-size: 16px;
+}
+
+/* Style the select element when it's focused or hovered */
+select:hover, select:focus {
+    border-color: #007BFF; /* Change the border color on hover or focus */
 }
 
 input[type="radio"] {
