@@ -28,6 +28,11 @@ public class Register_user extends User {
 	public void setUsername(String username) {
 		this.username = username;
 	}
+	
+	@Override
+	public void showName() {
+		System.out.println("I  am person ");
+	}
 
 }
 	

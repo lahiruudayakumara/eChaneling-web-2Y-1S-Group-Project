@@ -1,7 +1,7 @@
 package com.user;
 
 //User class (Abstraction, Encapsulation, Inheritance)
-public class User {
+public class User implements IPerson{
 	// User class represents a basic user entity
 	protected String nic;
 	protected String name;
@@ -59,7 +59,10 @@ public class User {
 		this.tpno = tpno;
 	}
 	
-	
+	public void showName() {
+		System.out.println("I am person");
+		
+	}
 }
 	
 	
