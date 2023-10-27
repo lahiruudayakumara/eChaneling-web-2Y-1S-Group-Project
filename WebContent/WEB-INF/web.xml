@@ -252,8 +252,8 @@
   <servlet-mapping>
     <servlet-name>ClaimRefund</servlet-name>
     <url-pattern>/claim</url-pattern>
-
-  </servlet>
+  </servlet-mapping>
+  
   <servlet-mapping>
     <servlet-name>ViewMessage</servlet-name>
     <url-pattern>/viewMessage</url-pattern>
