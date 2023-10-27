@@ -70,7 +70,6 @@
     <servlet-name>updateDoctor</servlet-name>
     <url-pattern>/updateDoctor</url-pattern>
   </servlet-mapping>
-
   
   <!-- Doctor information -->
   <servlet>
@@ -81,7 +80,6 @@
     <servlet-name>doctorinformation</servlet-name>
     <url-pattern>/doctorinfo</url-pattern>
   </servlet-mapping>
-
   
   <!-- Delete doctor -->
   <servlet>
@@ -111,7 +109,6 @@
     <url-pattern>/admin_logout</url-pattern>
   </servlet-mapping>
 
-  
   <!-- Doctor Info -->
    <servlet>
     <servlet-name>doctorInfo</servlet-name>
@@ -132,6 +129,7 @@
     <servlet-name>registerloging</servlet-name>
     <url-pattern>/regloging</url-pattern>
   </servlet-mapping>
+  
   <servlet>
     <servlet-name>registerdelete</servlet-name>
     <servlet-class>com.user.DeleteUserServlet</servlet-class>
@@ -140,6 +138,7 @@
     <servlet-name>registerdelete</servlet-name>
     <url-pattern>/userDelete</url-pattern>
   </servlet-mapping>
+  
   <servlet>
     <servlet-name>registerRetrive</servlet-name>
     <servlet-class>com.user.UserServlet</servlet-class>
@@ -148,6 +147,7 @@
     <servlet-name>registerRetrive</servlet-name>
     <url-pattern>/userRetrive</url-pattern>
   </servlet-mapping>
+  
   <servlet>
     <servlet-name>registerupdate</servlet-name>
     <servlet-class>com.user.UserUpadate</servlet-class>
@@ -156,6 +156,7 @@
     <servlet-name>registerupdate</servlet-name>
     <url-pattern>/userUpdate</url-pattern>
   </servlet-mapping>
+  
   <servlet>
     <servlet-name>pwUpdate</servlet-name>
     <servlet-class>com.user.UpdatePWServlet</servlet-class>
@@ -164,6 +165,7 @@
     <servlet-name>pwUpdate</servlet-name>
     <url-pattern>/passwordUpdate</url-pattern>
   </servlet-mapping>
+  
   <servlet>
     <servlet-name>SearchAppointment</servlet-name>
     <servlet-class>com.member.SearchAppointmentServlet</servlet-class>
@@ -172,6 +174,7 @@
     <servlet-name>SearchAppointment</servlet-name>
     <url-pattern>/appointments</url-pattern>
   </servlet-mapping>
+  
   <servlet>
     <servlet-name>DropMessage</servlet-name>
     <servlet-class>com.member.InsertMessageServlet</servlet-class>
@@ -180,15 +183,16 @@
     <servlet-name>DropMessage</servlet-name>
     <url-pattern>/drop</url-pattern>
   </servlet-mapping>
+  
   <servlet>
     <servlet-name>ViewMessage</servlet-name>
     <servlet-class>com.member.ViewMessageServlet</servlet-class>
-
   </servlet>
   <servlet-mapping>
     <servlet-name>ViewMessage</servlet-name>
     <url-pattern>/viewMessage</url-pattern>
   </servlet-mapping>
+  
   <servlet>
     <servlet-name>UpdateMessage</servlet-name>
     <servlet-class>com.member.UpdateMessageServlet</servlet-class>
@@ -197,6 +201,7 @@
     <servlet-name>UpdateMessage</servlet-name>
     <url-pattern>/updatemsg</url-pattern>
   </servlet-mapping>
+  
   <servlet>
     <servlet-name>DeleteMessage</servlet-name>
     <servlet-class>com.member.DeleteMessageServlet</servlet-class>
@@ -205,6 +210,7 @@
     <servlet-name>DeleteMessage</servlet-name>
     <url-pattern>/deletemsg</url-pattern>
   </servlet-mapping>
+  
   <servlet>
     <servlet-name>PlaceAppointment</servlet-name>
     <servlet-class>com.member.PlaceAppointmentServlet</servlet-class>
@@ -213,6 +219,7 @@
     <servlet-name>PlaceAppointment</servlet-name>
     <url-pattern>/placed</url-pattern>
   </servlet-mapping>
+  
   <servlet>
     <servlet-name>MakePayment</servlet-name>
     <servlet-class>com.member.MakePaymentServlet</servlet-class>
@@ -221,6 +228,7 @@
     <servlet-name>MakePayment</servlet-name>
     <url-pattern>/payment</url-pattern>
   </servlet-mapping>
+  
   <servlet>
     <servlet-name>ViewAppointment</servlet-name>
     <servlet-class>com.member.ViewAppointmentsDetailsServlet</servlet-class>
@@ -229,6 +237,7 @@
     <servlet-name>ViewAppointment</servlet-name>
     <url-pattern>/myappointments</url-pattern>
   </servlet-mapping>
+  
   <servlet>
     <servlet-name>UpdateContactDetails</servlet-name>
     <servlet-class>com.member.UpdateContactDetailsServlet</servlet-class>
@@ -237,6 +246,7 @@
     <servlet-name>UpdateContactDetails</servlet-name>
     <url-pattern>/contdetails</url-pattern>
   </servlet-mapping>
+  
   <servlet>
     <servlet-name>CancelAppointment</servlet-name>
     <servlet-class>com.member.CancelAppointmentServlet</servlet-class>
@@ -245,7 +255,8 @@
     <servlet-name>CancelAppointment</servlet-name>
     <url-pattern>/cancel</url-pattern>
   </servlet-mapping>
-    <servlet>
+  
+  <servlet>
     <servlet-name>ClaimRefund</servlet-name>
     <servlet-class>com.member.ClaimRefundServlet</servlet-class>
   </servlet>
@@ -254,17 +265,13 @@
     <url-pattern>/claim</url-pattern>
   </servlet-mapping>
   
-  <servlet-mapping>
-    <servlet-name>ViewMessage</servlet-name>
-    <url-pattern>/viewMessage</url-pattern>
-  </servlet-mapping>
   <servlet>
-  <servlet-name>LoginUser</servlet-name>
-  <servlet-class>com.user.UserLoginServlet</servlet-class>
+  	<servlet-name>LoginUser</servlet-name>
+  	<servlet-class>com.user.UserLoginServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-  <servlet-name>LoginUser</servlet-name>
-  <url-pattern>/profile</url-pattern>
-
+  	<servlet-name>LoginUser</servlet-name>
+  	<url-pattern>/profile</url-pattern>
   </servlet-mapping>
+  
 </web-app>
